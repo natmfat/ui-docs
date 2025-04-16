@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getFiles, toStaticPaths } from "./content";
+import { getSlugs } from "./content";
 export default async function Page({
   params,
 }: {
@@ -15,7 +15,7 @@ export default async function Page({
 }
 
 export async function getStaticPaths() {
-  return toStaticPaths(await getFiles());
+  return getSlugs();
 }
 
 export const dynamicParams = false;
