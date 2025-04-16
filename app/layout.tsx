@@ -1,15 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
+import {
+  IconButton,
+  Interactive,
+  RiCommandIcon,
+  RiSunIcon,
+  Surface,
+  Text,
+  View,
+} from "natmfat";
+import { tokens } from "natmfat/lib/tokens";
+import { ComponentPropsWithoutRef } from "react";
+import { cn } from "natmfat/lib/cn";
+import Link from "next/link";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontMono = IBM_Plex_Mono({
+  weight: ["400"],
   subsets: ["latin"],
+  variable: "--font-family-code",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fontSans = IBM_Plex_Sans({
+  weight: ["400", "500", "600"],
   subsets: ["latin"],
+  variable: "--font-family-default",
 });
 
 export const metadata: Metadata = {
@@ -25,10 +40,56 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${fontSans.className} ${fontMono.className} antialiased`}
+        data-theme="dark"
       >
-        {children}
+        <View className="max-w-7xl px-6 mx-auto">
+          <header className="flex py-6 flex-row items-center justify-between">
+            <View asChild>
+              <nav className="flex-row items-center gap-4">
+                <Text className="text-subhead-big font-bold" asChild>
+                  <Link href="/">natmfat</Link>
+                </Text>
+                <NavLink href="#">Docs</NavLink>
+                <NavLink href="#">Components</NavLink>
+                <NavLink href="#">Themes</NavLink>
+                <NavLink href="#">Colors</NavLink>
+                <NavLink href="#">Magic</NavLink>
+              </nav>
+            </View>
+
+            <View className="flex-row items-center gap-2">
+              <Interactive>
+                <View className="h-8 select-none flex-row text-foreground-dimmest hover:text-foreground-dimmer items-center justify-between gap-2 w-72 max-w-full shrink-1 px-1">
+                  <Text className="pl-2">Search documentation...</Text>
+
+                  <Surface
+                    elevated
+                    className="flex-row items-center gap-1 text-small border border-interactive rounded-lg px-0.5"
+                  >
+                    <RiCommandIcon size={tokens.space12} />K
+                  </Surface>
+                </View>
+              </Interactive>
+              <IconButton alt="theme" className="h-8 w-8">
+                <RiSunIcon />
+              </IconButton>
+            </View>
+          </header>
+          {children}
+        </View>
       </body>
     </html>
+  );
+}
+
+function NavLink({ className, ...props }: ComponentPropsWithoutRef<"a">) {
+  return (
+    <Text asChild>
+      <a
+        {...props}
+        className={cn(className, "flex flex-row items-center gap-1")}
+      />
+    </Text>
   );
 }
