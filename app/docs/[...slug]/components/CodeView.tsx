@@ -19,20 +19,21 @@ export function CodeView({
   children?: ReactNode;
 }) {
   const text = useMemo(() => getNodeText(children).trim(), [children]);
-  const codeBlockProps = {
-    ...props,
-    text,
-    theme: sunburst,
-    showLineNumbers: false,
-  } satisfies CodeBlockProps;
   return (
     <View
       className={cn(
         className,
-        "mt-2 rounded-default bg-surface relative font-mono"
+        "mt-2 rounded-default overflow-hidden bg-surface relative font-mono"
       )}
     >
-      <CodeBlock {...codeBlockProps} />
+        <CodeBlock {...(
+          {
+            ...props,
+            text,
+            theme: sunburst,
+            showLineNumbers: false,
+          } satisfies CodeBlockProps
+        )} />
 
       <IconButton
         alt="Copy to clipboard"

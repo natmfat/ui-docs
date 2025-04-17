@@ -8,3 +8,9 @@
 [data-theme] {
   --background-dimmer: var(--interactive-border);
 }
+
+pre, code {
+  white-space: pre-wrap !important;      /* Wrap text while preserving whitespace */
+  word-break: break-all !important;      /* Break words at any character */
+  overflow-wrap: break-word !important;  /* Break long words if necessary */
+}

@@ -12,20 +12,23 @@ import { StatusBanner, RiInformationIcon } from "natmfat";
 />
 
 import { StepRoot, StepItem } from "../../components/Step";
-import { CodeView } from "../../components/CodeView";
 
 <StepRoot>
   <StepItem value={1} title="Create project">
     Create a Next.js project. Choose any configuration.
-    <CodeView language="bash">pnpm create next-app@latest</CodeView>
+```bash
+pnpm create next-app@latest
+```
   </StepItem>
   <StepItem value={2} title="Install natmfat">
-    <CodeView language="bash">pnpm add natmfat</CodeView>
+```bash
+pnpm add natmfat
+```
   </StepItem>
   <StepItem value={3} title="Add fonts">
     Fonts are not included in the natmfat package. We recommend using Google Fonts. Note that applying a `data-theme` attribute somewhere is required for styles to appear.
-<CodeView language="ts">
-{`import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+```ts
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 
 const fontMono = IBM_Plex_Mono({
     weight: ["400"],
@@ -46,12 +49,12 @@ export default function RootLayout() {
         data-theme="dark"
       ></body>
     )
-}`}
-</CodeView>
+}
+```
   </StepItem>
   <StepItem value={4} title="Setup TailwindCSS">
     I highly recommend using TailwindCSS to create layouts and apply basic styles to components. After installing TailwindCSS, you must overwrite the `globals.css` file with our own custom styles. natmfat already ships with a version of [preflight](https://tailwindcss.com/docs/preflight), so re-including it is unnecessary and may create visual inconsistencies. Our recommended TailwindCSS config gives you access to natmfat colors and applies TailwindCSS classes with maximum precedence.
-    <CodeView language="css">{`
+```css
 @import "natmfat/styles/layers.css";
 @import "natmfat/styles/core.css";
 
@@ -60,7 +63,7 @@ export default function RootLayout() {
 @import "tailwindcss/utilities.css" layer(utilities);
 
 /* legacy config; "important" isn't supported yet in v4 */
-@config "natmfat/integrations/tailwind.config.ts";`}</CodeView>
+@config "natmfat/integrations/tailwind.config.ts";
+```
   </StepItem>
-
 </StepRoot>

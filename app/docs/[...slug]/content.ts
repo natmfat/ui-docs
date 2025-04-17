@@ -4,8 +4,16 @@ import { type Toc } from "./components/TableOfContents";
 const GETTING_STARTED = "Getting Started";
 
 export const CONTENT = {
-  [GETTING_STARTED]: ["introduction", "installation"],
-  Installation: ["next", "react-router", "vite", "manual"],
+  [GETTING_STARTED]: ["introduction", "installation", "typography", "colors", "theming"],
+  Installation: ["next", "react-router", "vite"],
+  Components: ["accordion", "alert-dialog", "anchor", "avatar", "banner", "button", "button-group", "checkbox", "colorway", "command", "dialog", "heading", "icon-button", "inline-code", "input", "interactive", "label", "loading", "measure-bar", "multiline-input", "pill", "popover", "radio-group", "search-bar", "select", "separator", "slider", "stacked-avatars", "status-banner", "surface", "switch", "tabs", "text", "theme-provider", "timestamp", "toast", "tooltip"
+
+
+
+
+
+
+]
 };
 
 export function getSlugs() {

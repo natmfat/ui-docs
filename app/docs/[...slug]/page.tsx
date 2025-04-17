@@ -22,8 +22,8 @@ export default async function Page({
   try {
     const { Post, frontmatter, toc } = await importContent(...slug);
     return (
-      <View className="flex-1 flex-row gap-6">
-        <View className="flex-1 w-full">
+      <>
+        <View className="flex-1 max-w-full">
           <View className="w-full">
             <Heading level={1}>{frontmatter.title}</Heading>
             <Heading
@@ -33,12 +33,12 @@ export default async function Page({
             >
               {frontmatter.description}
             </Heading>
-            <View className="flex-1 w-full [&>*:first-child]:mt-0 mt-6">
+            <View className="flex-1 w-full [&>*:first-child]:mt-0 pt-6">
               <Post />
             </View>
           </View>
 
-          <View className="flex-row justify-between">
+          <View className="flex-row justify-between pt-6">
             {footer.left ? (
               <Button variant="noFill" asChild>
                 <Link href={footer.left.href}>
@@ -60,7 +60,7 @@ export default async function Page({
           <Text className="font-bold">On This Page</Text>
           <TableOfContents toc={toc} />
         </View>
-      </View>
+      </>
     );
   } catch (e) {
     return notFound();

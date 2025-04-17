@@ -8,8 +8,8 @@ export default async function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <View className="flex-row gap-6">
-      <View className="shrink-0 w-52 gap-6">
+    <View className="flex-row gap-6 flex-1 max-w-full">
+      <View className="shrink-0 w-52 gap-6 max-h-screen overflow-y-scroll">
         {Object.entries(getLayout()).map(([heading, items]) => {
           return (
             <View key={heading} className="gap-2">
@@ -25,7 +25,8 @@ export default async function Layout({
           );
         })}
       </View>
-      <View className="flex-1 max-w-full">{children}</View>
+
+      {children}
     </View>
   );
 }

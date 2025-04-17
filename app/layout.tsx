@@ -81,7 +81,7 @@ export default function RootLayout({
           </header>
 
           <View className="items-stretch min-h-screen">
-            <View className="max-w-7xl h-full w-full grow-1 shrink-0 mx-auto border-x border-interactive border-dashed p-6 pt-20">
+            <View className="max-w-7xl h-full w-full overflow-hidden flex-1 mx-auto border-x border-interactive border-dashed p-6 pt-20">
               {children}
             </View>
 
