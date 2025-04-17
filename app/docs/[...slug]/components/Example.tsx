@@ -1,7 +1,6 @@
 import {
   View,
   Surface,
-  RiCheckIcon,
   RiCheckboxCircleIcon,
   RiCloseCircleIcon,
   Text,

@@ -67,8 +67,8 @@ export default async function Page({
   }
 }
 
-export async function getStaticPaths() {
+export const generateStaticParams = async () => {
   return getSlugs();
-}
+};
 
 export const dynamicParams = false;

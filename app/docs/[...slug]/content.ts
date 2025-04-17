@@ -1,5 +1,6 @@
 import path from "path";
 import { type Toc } from "./components/TableOfContents";
+import { GetStaticPaths } from "next";
 
 const GETTING_STARTED = "Getting Started";
 
@@ -49,19 +50,24 @@ export const CONTENT = {
     "toast",
     "tooltip",
     "heading",
-    "text"
+    "text",
   ].sort(),
 };
 
-export function getSlugs() {
+export const getSlugs = (): Array<{ slug: string[] }> => {
   return Object.entries(CONTENT)
     .map(([key, values]) => {
       return values.map((value) => ({
-        slug: getSlug(key, value),
+        slug: [
+          key === GETTING_STARTED
+            ? ""
+            : key.split(" ").join("-").toLocaleLowerCase(),
+          value.toLocaleLowerCase(),
+        ].filter(c => c.length > 0),
       }));
     })
     .flat(2);
-}
+};
 
 function getSlug(heading: string, subheading: string) {
   return path
