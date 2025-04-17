@@ -2,14 +2,14 @@ import { Heading, View } from "natmfat";
 import { getLayout } from "./[...slug]/content";
 import { ListItem } from "./components/ListItem";
 
-export default async function Layout({
+export default  function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <View className="flex-row gap-6 flex-1 max-w-full">
-      <View className="shrink-0 w-52 gap-6 max-h-screen overflow-y-scroll">
+      <View className="shrink-0 w-52 gap-6">
         {Object.entries(getLayout()).map(([heading, items]) => {
           return (
             <View key={heading} className="gap-2">
@@ -25,7 +25,6 @@ export default async function Layout({
           );
         })}
       </View>
-
       {children}
     </View>
   );

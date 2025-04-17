@@ -1,0 +1,132 @@
+---
+title: Typography
+description: Using text in your app
+---
+
+natmfat provides you with components to manage text. Pre-set configurations including font-size, weight, or leading (line height) are all calibrated to use natmfat in product. Selecting the appropriate type style is determined by layout or template structure.
+
+## Typeface: IBM Plex
+
+natmfat uses the open-source typeface IBM Plex.
+
+import { Surface } from "../components/Surface";
+
+<Surface className="text-header-big">
+  <p className="font-sans">IBM Plex Sans</p>
+  <p className="font-mono">IBM Plex Mono</p>
+</Surface>
+
+### Sans-serif font stack
+
+```css
+font-family: "IBM Plex Sans", sans-serif;
+```
+
+### Mono font stack
+
+```css
+font-family: "IBM Plex Mono", sans-serif;
+```
+
+## Scale
+
+The natmfat type scale is built on a single equation, based on [IBM Carbon Typography](https://carbondesignsystem.com/elements/typography/overview/). The formula for our scale was created to provide hierarchy for all types of experiences.
+
+import { Text } from "natmfat";
+
+<Surface>
+  <table className="w-full text-left text-small table table-auto">
+    <thead>
+      <tr className="text-foreground-dimmer">
+        <th className="font-regular">px</th>
+        <th className="font-regular">variant</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>plex 12</td>
+        <td>
+          <Text size="small">Small</Text>
+        </td>
+      </tr>
+      <tr>
+        <td>plex 14</td>
+        <td>
+          <Text size="default">Default</Text>
+        </td>
+      </tr>
+      <tr>
+        <td>plex 16</td>
+        <td>
+          <Text size="subheadDefault">Subhead Default</Text>
+        </td>
+      </tr>
+      <tr>
+        <td>plex 20</td>
+        <td>
+          <Text size="subheadBig">Subhead Big</Text>
+        </td>
+      </tr>
+      <tr>
+        <td>plex 24</td>
+        <td>
+          <Text size="headerDefault">Header Default</Text>
+        </td>
+      </tr>
+      <tr>
+        <td>plex 32</td>
+        <td>
+          <Text size="headerBig">Header Big</Text>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</Surface>
+
+## Style
+
+Typography creates purposeful texture, guiding users to read and understand the hierarchy of information. The right typographic treatment and the controlled usage of type styles helps manage the display of content, keeping it useful, simple, and effective.
+
+
+### Weights
+
+Font weight is an important typographic variable that can add emphasis and differentiate content hierarchy. Font weight and size pairings must be carefully balanced. A bold weight will always have more emphasis than a lighter weight font of the same size. However, a lighter weight font can rank hierarchically higher than a bold font if the lighter weight type size is significantly larger than the bold one.
+
+We suggest using IBM Plex Regular, Medium, and Semibold for digital experiences. The semibold weight is ideal for section headers, but should not be used for long text.
+
+<Surface className="text-header-big">
+  <p className="font-bold">Semibold (600)</p>
+  <p className="font-medium">Medium (500)</p>
+  <p className="font-regular">Regular (400)</p>
+</Surface>
+
+### Italic
+
+Each weight has an italic style, which should only be used when you need to emphasize certain words in a sentence (i.e., titles of works, technical terms, names of devices, and captions).
+
+<Surface className="text-header-big italic">
+  <p className="font-bold">Semibold Italic (600)</p>
+  <p className="font-medium">Medium (500)</p>
+  <p className="font-regular">Regular (400)</p>
+</Surface>
+
+
+## Type color
+
+Type color should be carefully considered, with legibility and accessibility as paramount concerns. Keep type color neutral in running text. Use primary blue for primary actions.
+
+import { ExampleRoot, ExampleItem } from "../components/Example"
+import { View, RiArrowRightIcon } from "natmfat"
+import { tokens } from "natmfat/lib/tokens";
+
+<ExampleRoot>
+  <ExampleItem good>Neutral color for text</ExampleItem>
+  <ExampleItem><span className="text-magenta-default">I'm a magenta sentence for no reason</span></ExampleItem>
+  <ExampleItem good description="Core blue colors are used for text links and primary actions. You should probably use Anchor or Button instead.">
+    <View className="text-primary-default flex-row items-center gap-2">
+      <span>Link</span>
+      <RiArrowRightIcon size={tokens.space24} />
+    </View>
+  </ExampleItem>
+  <ExampleItem good description="Other use cases for colored type are code snippets, warnings, alerts, etc."><span className="text-negative-default">Oops!<br />Something went wrong.</span></ExampleItem>
+</ExampleRoot>
