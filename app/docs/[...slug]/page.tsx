@@ -1,6 +1,16 @@
 import { notFound } from "next/navigation";
-import { getSlugs } from "./content";
+import { getFooterButtons, getSlugs } from "./content";
 import React from "react";
+import { TableOfContents } from "./components/TableOfContents";
+import {
+  Button,
+  Heading,
+  RiArrowLeftSIcon,
+  RiArrowRightSIcon,
+  Text,
+  View,
+} from "natmfat";
+import Link from "next/link";
 
 export default async function Page({
   params,
@@ -8,16 +18,55 @@ export default async function Page({
   params: Promise<{ slug: string[] }>;
 }) {
   const { slug } = await params;
-  try {
-    const { default: Post, toc } = await import(
-      `../content/${slug.join("/")}.mdx`
-    );
 
+  const footer = getFooterButtons(slug);
+
+  try {
+    const {
+      default: Post,
+      frontmatter,
+      toc,
+    } = await import(`./content/${slug.join("/")}.mdx`);
     return (
-      <>
-        {JSON.stringify(toc)}
-        <Post />
-      </>
+      <View className="flex-row gap-4">
+        <View className="flex-1 w-full gap-6">
+          <View className="w-full">
+            <Heading level={1}>{frontmatter.title}</Heading>
+            <Heading
+              level={2}
+              size="subheadDefault"
+              className="text-foreground-dimmer mt-2"
+            >
+              {frontmatter.description}
+            </Heading>
+            <View className="[&>*:first-child]:mt-0 mt-6">
+              <Post />
+            </View>
+          </View>
+
+          <View className="flex-row justify-between">
+            {footer.left ? (
+              <Button variant="noFill" asChild>
+                <Link href={footer.left.href}>
+                  <RiArrowLeftSIcon />
+                  {footer.left.title}
+                </Link>
+              </Button>
+            ) : null}
+            {footer.right ? (
+              <Button variant="noFill" asChild className="ml-auto">
+                <Link href={footer.right.href}>
+                  {footer.right.title} <RiArrowRightSIcon />
+                </Link>
+              </Button>
+            ) : null}
+          </View>
+        </View>
+        <View className="w-52 shrink-0 gap-2">
+          <Text className="font-bold">On This Page</Text>
+          <TableOfContents toc={toc} />
+        </View>
+      </View>
     );
   } catch (e) {
     return notFound();

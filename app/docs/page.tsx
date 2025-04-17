@@ -1,4 +1,4 @@
-import Introduction from "./content/introduction.mdx";
+import Introduction from "./[...slug]/content/introduction.mdx";
 
 export default function Page() {
   return <Introduction />;

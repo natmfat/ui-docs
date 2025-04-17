@@ -8,6 +8,7 @@ import {
   RiSunIcon,
   Surface,
   Text,
+  ThemeProvider,
   View,
 } from "natmfat";
 import { tokens } from "natmfat/lib/tokens";
@@ -43,41 +44,43 @@ export default function RootLayout({
         className={`${fontSans.className} ${fontMono.className} antialiased`}
         data-theme="dark"
       >
-        <View className="max-w-7xl px-6 mx-auto">
-          <header className="flex py-6 flex-row items-center justify-between">
-            <View asChild>
-              <nav className="flex-row items-center gap-4">
-                <Text className="text-subhead-big font-bold" asChild>
-                  <Link href="/">natmfat</Link>
-                </Text>
-                <NavLink href="#">Docs</NavLink>
-                <NavLink href="#">Components</NavLink>
-                <NavLink href="#">Themes</NavLink>
-                <NavLink href="#">Colors</NavLink>
-                <NavLink href="#">Magic</NavLink>
-              </nav>
-            </View>
+        <ThemeProvider>
+          <View className="max-w-7xl w-full px-6 mx-auto">
+            <header className="flex py-6 flex-row items-center justify-between">
+              <View asChild>
+                <nav className="flex-row items-center gap-4">
+                  <Text className="text-subhead-big font-bold" asChild>
+                    <Link href="/">natmfat</Link>
+                  </Text>
+                  <NavLink href="#">Docs</NavLink>
+                  <NavLink href="#">Components</NavLink>
+                  <NavLink href="#">Themes</NavLink>
+                  <NavLink href="#">Colors</NavLink>
+                  <NavLink href="#">Magic</NavLink>
+                </nav>
+              </View>
 
-            <View className="flex-row items-center gap-2">
-              <Interactive>
-                <View className="h-8 select-none flex-row text-foreground-dimmest hover:text-foreground-dimmer items-center justify-between gap-2 w-72 max-w-full shrink-1 px-1">
-                  <Text className="pl-2">Search documentation...</Text>
+              <View className="flex-row items-center gap-2">
+                <Interactive>
+                  <View className="h-8 select-none flex-row text-foreground-dimmest hover:text-foreground-dimmer items-center justify-between gap-2 w-64 max-w-full shrink-1 px-1">
+                    <Text className="pl-2">Search documentation...</Text>
 
-                  <Surface
-                    elevated
-                    className="flex-row items-center gap-1 text-small border border-interactive rounded-lg px-0.5"
-                  >
-                    <RiCommandIcon size={tokens.space12} />K
-                  </Surface>
-                </View>
-              </Interactive>
-              <IconButton alt="theme" className="h-8 w-8">
-                <RiSunIcon />
-              </IconButton>
-            </View>
-          </header>
-          {children}
-        </View>
+                    <Surface
+                      elevated
+                      className="flex-row items-center gap-1 text-small border border-interactive rounded-lg px-0.5"
+                    >
+                      <RiCommandIcon size={tokens.space12} />K
+                    </Surface>
+                  </View>
+                </Interactive>
+                <IconButton alt="theme" className="h-8 w-8">
+                  <RiSunIcon />
+                </IconButton>
+              </View>
+            </header>
+            {children}
+          </View>
+        </ThemeProvider>
       </body>
     </html>
   );

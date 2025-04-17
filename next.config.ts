@@ -1,9 +1,5 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import withToc from "@stefanprobst/rehype-extract-toc";
-import withTocExport from "@stefanprobst/rehype-extract-toc/mdx";
 
 const nextConfig: NextConfig = {
   pageExtensions: ["mdx", "ts", "tsx"],
@@ -16,15 +12,20 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  transpilePackages: ["shiki"],
+  experimental: {
+    optimizePackageImports: ["shiki"],
+  },
 };
 
 const withMDX = createMDX({
   options: {
+    remarkPlugins: [["remark-frontmatter"], ["remark-mdx-frontmatter"]],
     rehypePlugins: [
-      rehypeSlug,
-      rehypeAutolinkHeadings,
-      withToc,
-      [withTocExport, { name: "toc" }],
+      ["rehype-slug"],
+      ["rehype-autolink-headings"],
+      ["@stefanprobst/rehype-extract-toc"],
+      ["@stefanprobst/rehype-extract-toc/mdx", { name: "toc" }],
     ],
   },
 });

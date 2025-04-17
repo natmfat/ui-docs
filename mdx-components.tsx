@@ -1,5 +1,17 @@
 import type { MDXComponents } from "mdx/types";
-import { Anchor, Heading, Separator, Text, View } from "natmfat";
+import {
+  Anchor,
+  Heading,
+  InlineCode,
+  RiExternalLinkIcon,
+  Separator,
+  Text,
+  View,
+} from "natmfat";
+import { CodeView } from "./app/docs/[...slug]/components/CodeView";
+import Link from "next/link";
+import { tokens } from "natmfat/lib/tokens";
+import { cn } from "natmfat/lib/cn";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -58,29 +70,37 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     li: (props) => (
       <li {...props} className="[&>ul]:mt-0 [&>ol]:mt-0 align-middle" />
     ),
-    a: ({ href, ...props }) => (
-      <Anchor
-        {...props}
-        href={href}
-        {...(href.startsWith("https")
-          ? {
-              target: "_blank",
-              rel: "noreferrer",
-            }
-          : {})}
-      />
-    ),
-    // code: ({ className, ...props }) => {
-    //   return (
-    //     <CodeView
-    //       className="mt-2"
-    //       {...props}
-    //       // https://stackoverflow.com/questions/71907116/react-markdown-and-react-syntax-highlighter
-    //       language={getLanguage(className)}
-    //     />
-    //   );
-    // },
-    // eslint-disable-next-line
+    a: ({ href, children, ...props }) =>
+      href.startsWith("https") ? (
+        <Anchor
+          {...props}
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-block"
+        >
+          <span className="flex flex-row gap-0.5 w-fit items-center">
+            {children}
+            <RiExternalLinkIcon size={tokens.space12} />
+          </span>
+        </Anchor>
+      ) : (
+        <Anchor {...props} asChild>
+          <Link href={href}>{children}</Link>
+        </Anchor>
+      ),
+    code: ({ className, ...props }) => {
+      return !className ? (
+        <InlineCode {...props} />
+      ) : (
+        <CodeView
+          className={cn("mt-2", className)}
+          {...props}
+          // https://stackoverflow.com/questions/71907116/react-markdown-and-react-syntax-highlighter
+          language={getLanguage(className)}
+        />
+      );
+    },
     img: ({ alt, ...props }) => (
       <View className="flex-col items-center justify-center gap-2 mt-2 text-center">
         <View className="rounded-default border border-interactive bg-surface overflow-hidden">
@@ -101,4 +121,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </View>
     ),
   };
+}
+
+function getLanguage(className: string = "") {
+  const language = (/language-(\w+)/.exec(className) || [])[0];
+  return language ? language.substring("language-".length) : "text";
 }
