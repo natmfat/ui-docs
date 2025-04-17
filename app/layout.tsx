@@ -13,10 +13,10 @@ import {
   View,
 } from "natmfat";
 import { tokens } from "natmfat/lib/tokens";
-import { ComponentPropsWithoutRef } from "react";
-import { cn } from "natmfat/lib/cn";
-import Link, { LinkProps } from "next/link";
+import Link from "next/link";
 import { Section } from "./components/Section";
+import { ThemeButton } from "./components/ThemeButton";
+import { Logo } from "./components/Logo";
 
 const fontMono = IBM_Plex_Mono({
   weight: ["400"],
@@ -51,9 +51,14 @@ export default function RootLayout({
             <View className="px-6 py-4 border-x border-interactive border-dashed max-w-7xl w-full mx-auto flex-row justify-between items-center">
               <View asChild>
                 <nav className="flex-row items-center gap-4">
-                  <Text className="text-subhead-big font-bold" asChild>
-                    <Link href="/">natmfat</Link>
-                  </Text>
+                  <View className="flex-row items-center gap-2" asChild>
+                    <Link href="/">
+                      <Logo />
+                      <Text className="text-subhead-default font-bold">
+                        natmfat/ui
+                      </Text>
+                    </Link>
+                  </View>
                   <Link href="/docs">Docs</Link>
                   <Link href="/docs/components/accordion">Components</Link>
                   <Link href="/themes">Themes</Link>
@@ -74,17 +79,13 @@ export default function RootLayout({
                     </Surface>
                   </View>
                 </Interactive>
-                <IconButton alt="theme" className="h-8 w-8">
-                  <RiSunIcon />
-                </IconButton>
+                <ThemeButton />
               </View>
             </View>
           </header>
 
           <View className="items-stretch min-h-screen">
-            <View className="pt-16 flex-1 h-full">
-              {children}
-            </View>
+            <View className="pt-16 flex-1 h-full">{children}</View>
 
             <Section>
               <footer>

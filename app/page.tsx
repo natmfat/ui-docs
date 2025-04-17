@@ -15,7 +15,7 @@ export default function Home() {
       <Heading level={1}>Beautifully designed components</Heading>
       <Text className="mt-1 max-w-lg" multiline>
         A set of beautifully-designed, accessible components. Works with your
-        favorite frameworks. Open Source.
+        favorite frameworks. 
       </Text>
       <View className="flex-row gap-2 mt-3">
         <Button color="primary" asChild>
