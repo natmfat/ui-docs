@@ -6,6 +6,7 @@ import {
   Text,
   View,
 } from "natmfat";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -16,14 +17,13 @@ export default function Home() {
         favorite frameworks. Open Source.
       </Text>
       <View className="flex-row gap-2 mt-3">
-        <Button color="primary">
-          Get Started
-          <RiArrowRightIcon />
+        <Button color="primary" asChild>
+          <Link href="/docs">
+            Get Started
+            <RiArrowRightIcon />
+          </Link>
         </Button>
-        <Button>
-          Use Magic
-          <RiMagicIcon />
-        </Button>
+        <Button variant="noFill">Use Magic</Button>
       </View>
     </View>
   );

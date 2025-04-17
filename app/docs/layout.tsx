@@ -1,6 +1,7 @@
 import { Heading, View } from "natmfat";
 import { getLayout } from "./[...slug]/content";
 import { ListItem } from "./components/ListItem";
+import { Section } from "../components/Section";
 
 export default  function Layout({
   children,
@@ -8,7 +9,8 @@ export default  function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <View className="flex-row gap-6 flex-1 max-w-full">
+    <Section>
+      <View className="flex-row gap-6 flex-1 max-w-full">
       <View className="shrink-0 w-52 gap-6">
         {Object.entries(getLayout()).map(([heading, items]) => {
           return (
@@ -27,5 +29,6 @@ export default  function Layout({
       </View>
       {children}
     </View>
+    </Section>
   );
 }

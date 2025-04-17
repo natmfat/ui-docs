@@ -5,6 +5,10 @@
 @import "tailwindcss/utilities.css" layer(utilities);
 @config "natmfat/integrations/tailwind.config";
 
+html, body {
+  overscroll-behavior: none;
+}
+
 [data-theme] {
   --background-dimmer: var(--interactive-border);
 }

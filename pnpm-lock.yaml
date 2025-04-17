@@ -23,9 +23,9 @@ importers:
       '@stefanprobst/rehype-extract-toc':
         specifier: ^3.0.0
         version: 3.0.0
-      '@types/mdx':
-        specifier: ^2.0.13
-        version: 2.0.13
+      immer:
+        specifier: ^10.1.1
+        version: 10.1.1
       natmfat:
         specifier: ^0.0.33
         version: 0.0.33(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -38,6 +38,9 @@ importers:
       react-code-blocks:
         specifier: ^0.1.6
         version: 0.1.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react-colorful:
+        specifier: ^5.6.1
+        version: 5.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react-dom:
         specifier: ^19.0.0
         version: 19.1.0(react@19.1.0)
@@ -56,10 +59,16 @@ importers:
       remark-mdx-frontmatter:
         specifier: ^5.1.0
         version: 5.1.0
+      zustand:
+        specifier: ^5.0.3
+        version: 5.0.3(@types/react@19.1.2)(immer@10.1.1)(react@19.1.0)
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.1.4
+      '@types/mdx':
+        specifier: ^2.0.13
+        version: 2.0.13
       '@types/node':
         specifier: ^20
         version: 20.17.30
@@ -1325,6 +1334,9 @@ packages:
   highlightjs-vue@1.0.0:
     resolution: {integrity: sha512-PDEfEF102G23vHmPhLyPboFCD+BkMGu+GuJe2d9/eH4FsCwvgBpnc9n0pGE+ffKdph38s6foEZiEjdgHdzp+IA==}
 
+  immer@10.1.1:
+    resolution: {integrity: sha512-s2MPrmjovJcoMaHtx6K11Ra7oD05NT97w1IC5zpMkT6Atjr7H8LjaDd81iIxUYpMKSRRNMJE703M1Fhr/TctHw==}
+
   inline-style-parser@0.2.4:
     resolution: {integrity: sha512-0aO8FkhNZlj/ZIbNi7Lxxr12obT7cL1moPfE4tg1LkX7LlLfC6DeX4l2ZEud1ukP9jNQyNnfzQVqwbwmAATY4Q==}
 
@@ -1646,6 +1658,12 @@ packages:
     peerDependencies:
       react: '>=16'
 
+  react-colorful@5.6.1:
+    resolution: {integrity: sha512-1exovf0uGTGyq5mXQT0zgQ80uvj2PCwvF8zY1RN9/vbJVSjSo3fsB/4L3ObbF7u70NduSiK4xu4Y6q1MHoUGEw==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
   react-dom@19.1.0:
     resolution: {integrity: sha512-Xs1hdnE+DyKgeHJeJznQmYMIBG3TKIHJJT95Q58nHLSrElKlGQqDTR2HQ9fx5CN/Gk6Vh/kupBTDLU11/nDk/g==}
     peerDependencies:
@@ -1903,6 +1921,24 @@ packages:
     resolution: {integrity: sha512-10ULxpnOCQXxJvBgxsn9ptjq6uviG/htZKk9veJGhlqn3w/DxQ631zFF+nlQXLwmImeS5amR2dl2U8sg6U9jsQ==}
     engines: {node: '>= 14'}
     hasBin: true
+
+  zustand@5.0.3:
+    resolution: {integrity: sha512-14fwWQtU3pH4dE0dOpdMiWjddcH+QzKIgk1cl8epwSE7yag43k/AD/m4L6+K7DytAOr9gGBe3/EXj9g7cdostg==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      immer: '>=9.0.6'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+      use-sync-external-store:
+        optional: true
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -3188,6 +3224,8 @@ snapshots:
 
   highlightjs-vue@1.0.0: {}
 
+  immer@10.1.1: {}
+
   inline-style-parser@0.2.4: {}
 
   is-alphabetical@1.0.4: {}
@@ -3760,6 +3798,11 @@ snapshots:
     transitivePeerDependencies:
       - react-dom
 
+  react-colorful@5.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+
   react-dom@19.1.0(react@19.1.0):
     dependencies:
       react: 19.1.0
@@ -4108,5 +4151,11 @@ snapshots:
   xtend@4.0.2: {}
 
   yaml@2.7.1: {}
+
+  zustand@5.0.3(@types/react@19.1.2)(immer@10.1.1)(react@19.1.0):
+    optionalDependencies:
+      '@types/react': 19.1.2
+      immer: 10.1.1
+      react: 19.1.0
 
   zwitch@2.0.4: {}

@@ -15,7 +15,8 @@ import {
 import { tokens } from "natmfat/lib/tokens";
 import { ComponentPropsWithoutRef } from "react";
 import { cn } from "natmfat/lib/cn";
-import Link from "next/link";
+import Link, { LinkProps } from "next/link";
+import { Section } from "./components/Section";
 
 const fontMono = IBM_Plex_Mono({
   weight: ["400"],
@@ -53,10 +54,10 @@ export default function RootLayout({
                   <Text className="text-subhead-big font-bold" asChild>
                     <Link href="/">natmfat</Link>
                   </Text>
-                  <NavLink href="#">Docs</NavLink>
-                  <NavLink href="#">Components</NavLink>
-                  <NavLink href="#">Themes</NavLink>
-                  <NavLink href="#">Magic</NavLink>
+                  <Link href="/docs">Docs</Link>
+                  <Link href="/docs/components/accordion">Components</Link>
+                  <Link href="/themes">Themes</Link>
+                  <Link href="/magic">Magic</Link>
                 </nav>
               </View>
 
@@ -81,12 +82,12 @@ export default function RootLayout({
           </header>
 
           <View className="items-stretch min-h-screen">
-            <View className="max-w-7xl h-full w-full overflow-hidden flex-1 mx-auto border-x border-interactive border-dashed p-6 pt-20">
+            <View className="pt-16">
               {children}
             </View>
 
-            <View className="border-t border-interactive border-dashed w-full grow-0">
-              <footer className="max-w-7xl w-full mx-auto p-6 border-x border-interactive border-dashed">
+            <Section>
+              <footer>
                 Built by{" "}
                 <Anchor
                   href="https://natmfat.com"
@@ -96,21 +97,10 @@ export default function RootLayout({
                   natmfat
                 </Anchor>
               </footer>
-            </View>
+            </Section>
           </View>
         </ThemeProvider>
       </body>
     </html>
-  );
-}
-
-function NavLink({ className, ...props }: ComponentPropsWithoutRef<"a">) {
-  return (
-    <Text asChild>
-      <a
-        {...props}
-        className={cn(className, "flex flex-row items-center gap-1")}
-      />
-    </Text>
   );
 }
