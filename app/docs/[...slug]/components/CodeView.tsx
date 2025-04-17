@@ -29,7 +29,7 @@ export function CodeView({
     <View
       className={cn(
         className,
-        "mt-2 rounded-default overflow-hidden bg-surface relative max-w-full w-full font-mono"
+        "mt-2 rounded-default bg-surface relative font-mono"
       )}
     >
       <CodeBlock {...codeBlockProps} />

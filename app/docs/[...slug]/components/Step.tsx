@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 export function StepRoot({ children }: { children: ReactNode }) {
   return (
-    <View asChild className="py-6 [&>*:last-child]:">
+    <View asChild className="py-6">
       <ol>{children}</ol>
     </View>
   );

@@ -3,4 +3,66 @@ title: Vite
 description: Install and configure natmfat for Vite.
 ---
 
-Install and configure natmfat for Vite.
+import { StatusBanner, RiInformationIcon } from "natmfat";
+
+<StatusBanner
+  color="primary"
+  icon={<RiInformationIcon />}
+  text="The following guide is for Tailwind v4."
+/>
+
+
+import { StepRoot, StepItem } from "../../components/Step";
+import { CodeView } from "../../components/CodeView";
+
+<StepRoot>
+  <StepItem value={1} title="Create project">
+    Create a Vite project.
+    <CodeView language="bash">pnpm create vite@latest</CodeView>
+  </StepItem>
+  <StepItem value={2} title="Install natmfat">
+    <CodeView language="bash">pnpm add natmfat</CodeView>
+  </StepItem>
+  <StepItem value={3} title="Add fonts">
+    Fonts are not included in the natmfat package. We recommend using Google Fonts. Note that applying a `data-theme` attribute somewhere (preferably the body) is required for styles to appear.
+<CodeView language="html">
+{`
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin="anonymous"
+/>
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+/>
+`}
+</CodeView>
+  </StepItem>
+  <StepItem value={4} title="Setup TailwindCSS">
+    I highly recommend using TailwindCSS to create layouts and apply basic styles to components. After installing TailwindCSS, you must overwrite the `globals.css` file with our own custom styles. natmfat already ships with a version of [preflight](https://tailwindcss.com/docs/preflight), so re-including it is unnecessary and may create visual inconsistencies. Our recommended TailwindCSS config gives you access to natmfat colors and applies TailwindCSS classes with maximum precedence.
+    <CodeView language="css">{`
+@import "natmfat/styles/layers.css";
+@import "natmfat/styles/core.css";
+
+/* replace @import "tailwindcss" with the necessary parts: */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/* legacy config; "important" isn't supported yet in v4 */
+@config "natmfat/integrations/tailwind.config.ts";`}</CodeView>
+  </StepItem>
+  <StepItem value={5} title="Setup Vite">
+    natmfat imports CSS modules directly within components, so you may need to add this to your Vite config.
+    <CodeView language="ts">{`
+import { defineConfig } from "vite";
+
+export default defineConfig({
+    // ... rest of config
+    ssr: {
+      noExternal: ["natmfat"],
+    },
+});`}</CodeView>
+  </StepItem>
+</StepRoot>
