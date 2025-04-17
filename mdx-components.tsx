@@ -94,7 +94,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         <InlineCode {...props} />
       ) : (
         <CodeView
-          className={cn("mt-2", className)}
+          className={className}
           {...props}
           // https://stackoverflow.com/questions/71907116/react-markdown-and-react-syntax-highlighter
           language={getLanguage(className)}

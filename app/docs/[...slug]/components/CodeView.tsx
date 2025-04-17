@@ -5,6 +5,7 @@ import { View } from "natmfat/components/View";
 import { cn } from "natmfat/lib/cn";
 import { ComponentProps, ReactNode, useMemo } from "react";
 import { CodeBlock, sunburst } from "react-code-blocks";
+import { copyToClipboard } from "natmfat/lib/copyToClipboard";
 
 type CodeBlockProps = ComponentProps<typeof CodeBlock>;
 
@@ -28,7 +29,7 @@ export function CodeView({
     <View
       className={cn(
         className,
-        "border border-interactive rounded-default overflow-hidden bg-surface relative"
+        "mt-2 rounded-default overflow-hidden bg-surface relative max-w-full w-full font-mono"
       )}
     >
       <CodeBlock {...codeBlockProps} />
@@ -36,6 +37,9 @@ export function CodeView({
       <IconButton
         alt="Copy to clipboard"
         className="absolute top-2 right-2 z-10"
+        onClick={() => {
+          copyToClipboard(text);
+        }}
       >
         <RiClipboardIcon />
       </IconButton>
