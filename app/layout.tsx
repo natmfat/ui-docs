@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import {
+  Anchor,
   IconButton,
   Interactive,
   RiCommandIcon,
@@ -45,8 +46,8 @@ export default function RootLayout({
         data-theme="dark"
       >
         <ThemeProvider>
-          <View className="max-w-7xl w-full px-6 mx-auto">
-            <header className="flex py-6 flex-row items-center justify-between">
+          <header className="flex border-b border-interactive border-dashed fixed left-0 right-0 top-0 bg-surface z-50 w-full">
+            <View className="px-6 py-4 border-x border-interactive border-dashed max-w-7xl w-full mx-auto flex-row justify-between items-center">
               <View asChild>
                 <nav className="flex-row items-center gap-4">
                   <Text className="text-subhead-big font-bold" asChild>
@@ -55,7 +56,6 @@ export default function RootLayout({
                   <NavLink href="#">Docs</NavLink>
                   <NavLink href="#">Components</NavLink>
                   <NavLink href="#">Themes</NavLink>
-                  <NavLink href="#">Colors</NavLink>
                   <NavLink href="#">Magic</NavLink>
                 </nav>
               </View>
@@ -77,8 +77,26 @@ export default function RootLayout({
                   <RiSunIcon />
                 </IconButton>
               </View>
-            </header>
-            {children}
+            </View>
+          </header>
+
+          <View className="items-stretch min-h-screen">
+            <View className="max-w-7xl h-full w-full grow-1 shrink-0 mx-auto border-x border-interactive border-dashed p-6 pt-20">
+              {children}
+            </View>
+
+            <View className="border-t border-interactive border-dashed w-full grow-0">
+              <footer className="max-w-7xl w-full mx-auto p-6 border-x border-interactive border-dashed">
+                Built by{" "}
+                <Anchor
+                  href="https://natmfat.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  natmfat
+                </Anchor>
+              </footer>
+            </View>
           </View>
         </ThemeProvider>
       </body>

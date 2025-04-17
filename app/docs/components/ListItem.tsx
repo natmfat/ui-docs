@@ -14,7 +14,7 @@ export function ListItem({ slug, title }: { slug: string; title: string }) {
       className={cn(pathname === slug && "bg-interactive")}
     >
       <View asChild>
-        <Link href={slug} className="px-1.5 py-0.5">
+        <Link href={slug} className="px-3 py-1">
           {title}
         </Link>
       </View>

@@ -64,7 +64,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     p: (props) => (
       <Text {...props} multiline color="default" className="mt-2" />
     ),
-    hr: () => <Separator />,
+    hr: () => <Separator className="my-4" />,
     ul: (props) => <ul {...props} className="list-disc pl-6 mt-2" />,
     ol: (props) => <ul {...props} className="list-decimal pl-6 mt-2" />,
     li: (props) => (

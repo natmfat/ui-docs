@@ -1,12 +1,11 @@
 import path from "path";
-
-const CONTENT_DIR = path.join(process.cwd(), "./app/docs/content");
+import { type Toc } from "./components/TableOfContents";
 
 const GETTING_STARTED = "Getting Started";
 
 export const CONTENT = {
   [GETTING_STARTED]: ["introduction", "installation"],
-  Installation: ["vite"],
+  Installation: ["next", "react-router", "vite", "manual"],
 };
 
 export function getSlugs() {
@@ -28,6 +27,19 @@ function getSlug(heading: string, subheading: string) {
       subheading
     )
     .toLocaleLowerCase();
+}
+
+export async function importContent(...slug: string[]) {
+  const {
+    default: Post,
+    frontmatter,
+    toc,
+  } = await import(`./content/${slug.join("/")}.mdx`);
+  return {
+    Post,
+    frontmatter: frontmatter as { title: string; description: string },
+    toc: toc as Toc["children"],
+  };
 }
 
 function getDocHref(heading: string, subheading: string) {
@@ -106,11 +118,11 @@ export function getFooterButtons(slug: string[]): {
           title: capitalize(nextSubheading),
           href: getDocHref(heading, nextSubheading),
         };
-      } else if (i < subheadings.length - 1) {
+      } else if (i < contentKeys.length - 1) {
         // grab first subheading in next section
         const nextHeading = contentKeys[i + 1] as keyof typeof CONTENT;
         const nextSubheadings = CONTENT[nextHeading];
-        const nextSubheading = nextSubheadings[nextSubheadings.length - 1];
+        const nextSubheading = nextSubheadings[0];
         right = {
           title: capitalize(nextSubheading),
           href: getDocHref(nextHeading, nextSubheading),
@@ -122,7 +134,7 @@ export function getFooterButtons(slug: string[]): {
   return { left: null, right: null };
 }
 
-function capitalize(text: string) {
+export function capitalize(text: string) {
   return text
     .split(/ |-|\//)
     .map((word) => word.charAt(0).toLocaleUpperCase() + word.substring(1))

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getFooterButtons, getSlugs } from "./content";
+import { getFooterButtons, getSlugs, importContent } from "./content";
 import React from "react";
 import { TableOfContents } from "./components/TableOfContents";
 import {
@@ -18,17 +18,11 @@ export default async function Page({
   params: Promise<{ slug: string[] }>;
 }) {
   const { slug } = await params;
-
   const footer = getFooterButtons(slug);
-
   try {
-    const {
-      default: Post,
-      frontmatter,
-      toc,
-    } = await import(`./content/${slug.join("/")}.mdx`);
+    const { Post, frontmatter, toc } = await importContent(...slug);
     return (
-      <View className="flex-row gap-4">
+      <View className="flex-row gap-6">
         <View className="flex-1 w-full gap-6">
           <View className="w-full">
             <Heading level={1}>{frontmatter.title}</Heading>
@@ -69,6 +63,7 @@ export default async function Page({
       </View>
     );
   } catch (e) {
+    console.log(e);
     return notFound();
   }
 }

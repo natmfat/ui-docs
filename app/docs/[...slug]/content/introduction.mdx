@@ -9,14 +9,16 @@ A React component library built on [Radix Primitives](https://www.radix-ui.com/p
 
 ## Motivation
 
-natmfat is a closed-source design system that provides a uniform surface for all projects associated with my brand.
+natmfat is a closed-source design system that provides a uniform surface for all projects associated with my brand. I provide documentation for others to create similar apps, but ultimately all components are built to serve my needs and purposes.
 
-This is a component library. Unlike "open code" component registries like [shadcn/ui](https://ui.shadcn.com/), design and implementation are tightly coupled here. To ensure designs are consistent, you should not be modifying components or their implementation regardless. While natmfat does not provide an exhaustive list of components, I provide composable component utilities, tokens, and CSS layers to make building similarly themed components and overriding styles easy.
+This is a component library.
+
+Unlike "open code" component registries like [shadcn/ui](https://ui.shadcn.com/), design and implementation are intertwined and packaged together. This ensures designs are consistent across many projects. You should not be modifying components or their implementation - natmfat provides a near exhaustive list of components that continues grows as I use and develop the library. Additionally, should a component not be implemented, I provide composable component utilities, tokens, and CSS layers to make building similarly themed components and overriding styles easy.
 
 ## Composition
 
-Every component in natmfat shares a composable interface based on Radix Primitives. If a commonly used component does not exist, I'll bring it in and adjust its style to match the rest of the design system. Each component is familiar and easy to learn.
+Every component in natmfat shares a composable interface based on Radix Primitives. If a commonly used component does not exist, I'll bring it in and adjust its style to match the rest of the design system. Every component should feel familiar and easy to learn.
 
 ## Beautiful Defaults
 
-natmfat comes with a large collection of components. They are designed to look good on their own and come together naturally as a consistent system. Because CSS tokens are used exclusively as a source of truth, it's easy to create sitewide themes that fit best the nature of the product.
+natmfat comes with a large collection of components. They are designed to look good on their own and come together naturally as a consistent design system. Because CSS tokens are used exclusively as a source of truth, you can also create sitewide themes that alter the style of all components.

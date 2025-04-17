@@ -5,6 +5,15 @@ description: How to install dependencies and structure your app.
 
 ## Frameworks
 
+import { FrameworkRoot, FrameworkItem } from "../components/Framework";
+
+<FrameworkRoot>
+  <FrameworkItem href="/docs/installation/next" type="Next.js" />
+  <FrameworkItem href="/docs/installation/react-router" type="React Router" />
+  <FrameworkItem href="/docs/installation/vite" type="Vite" />
+  <FrameworkItem href="/docs/installation/manual" type="Manual" />
+</FrameworkRoot>
+
 ## Typescript
 
-This project and the components are written in TypeScript. We recommend using TypeScript for your project as well for type safety and autocompletions.
+This project and the components are written in TypeScript, and types are published with the package to NPM. We recommend using TypeScript for your project for type safety and autocompletions, but no additional changes are necessary to use natmfat in a JavaScript project.
