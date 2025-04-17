@@ -82,7 +82,7 @@ export default function RootLayout({
           </header>
 
           <View className="items-stretch min-h-screen">
-            <View className="pt-16">
+            <View className="pt-16 flex-1 h-full">
               {children}
             </View>
 

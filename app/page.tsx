@@ -7,10 +7,11 @@ import {
   View,
 } from "natmfat";
 import Link from "next/link";
+import { Section } from "./components/Section";
 
 export default function Home() {
   return (
-    <View>
+    <Section className="h-full flex-1" grow>
       <Heading level={1}>Beautifully designed components</Heading>
       <Text className="mt-1 max-w-lg" multiline>
         A set of beautifully-designed, accessible components. Works with your
@@ -25,6 +26,6 @@ export default function Home() {
         </Button>
         <Button variant="noFill">Use Magic</Button>
       </View>
-    </View>
+    </Section>
   );
 }
