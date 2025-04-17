@@ -1,4 +1,6 @@
-import type { NextConfig, Redirect } from "next";
+// @ts-nocheck
+
+import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
@@ -12,10 +14,9 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  transpilePackages: ["shiki"],
-  experimental: {
-    optimizePackageImports: ["shiki"],
-  },
+  // experimental: {
+  //   optimizePackageImports: ["natmfat"],
+  // },
 };
 
 const withMDX = createMDX({
