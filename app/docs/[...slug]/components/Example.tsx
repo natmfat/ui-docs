@@ -29,7 +29,7 @@ export function ExampleItem({
       <Surface
         className={cn(
           className,
-          "aspect-square grid place-items-center relative text-header-default [&_*]:text-header-default p-8 rounded-default"
+          "aspect-video grid place-items-center relative text-header-default [&_*]:text-header-default p-8 rounded-default"
         )}
         elevated
       >

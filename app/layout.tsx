@@ -6,7 +6,7 @@ import {
   IconButton,
   Interactive,
   RiCommandIcon,
-  RiSunIcon,
+  RiGithubIcon,
   Surface,
   Text,
   ThemeProvider,
@@ -47,8 +47,8 @@ export default function RootLayout({
         data-theme="dark"
       >
         <ThemeProvider>
-          <header className="flex border-b border-interactive border-dashed fixed left-0 right-0 top-0 bg-surface z-50 w-full">
-            <View className="px-6 py-4 border-x border-interactive border-dashed max-w-7xl w-full mx-auto flex-row justify-between items-center">
+          <header className="flex border-b border-outline-dimmest border-dashed fixed left-0 right-0 top-0 bg-surface z-50 w-full">
+            <View className="px-6 py-4 border-x border-outline-dimmest border-dashed max-w-7xl w-full mx-auto flex-row justify-between items-center">
               <View asChild>
                 <nav className="flex-row items-center gap-4">
                   <View className="flex-row items-center gap-2" asChild>
@@ -73,13 +73,24 @@ export default function RootLayout({
 
                     <Surface
                       elevated
-                      className="flex-row items-center gap-1 text-small border border-interactive rounded-lg px-0.5"
+                      className="flex-row items-center gap-1 text-small border border-outline-dimmest rounded-lg px-0.5"
                     >
                       <RiCommandIcon size={tokens.space12} />K
                     </Surface>
                   </View>
                 </Interactive>
-                <ThemeButton />
+                <View className="flex-row">
+                  <IconButton alt="GitHub" className="w-8 h-8" asChild>
+                    <a
+                      href="https://github.com/natmfat/ui-docs"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <RiGithubIcon />
+                    </a>
+                  </IconButton>
+                  <ThemeButton />
+                </View>
               </View>
             </View>
           </header>
@@ -97,6 +108,15 @@ export default function RootLayout({
                 >
                   natmfat
                 </Anchor>
+                . The source code for documentation and examples is available on{" "}
+                <Anchor
+                  href="https://github.com/natmfat/ui-docs"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </Anchor>
+                .
               </footer>
             </Section>
           </View>

@@ -23,13 +23,13 @@ export function CodeView({
     <View
       className={cn(
         className,
-        "mt-2 rounded-default overflow-hidden bg-surface relative font-mono"
+        "mt-2 rounded-default overflow-hidden relative font-mono max-h-96 px-1 bg-[#000]"
       )}
     >
         <CodeBlock {...(
           {
             ...props,
-            text,
+            text: text,
             theme: sunburst,
             showLineNumbers: false,
           } satisfies CodeBlockProps

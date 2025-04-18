@@ -2,3 +2,227 @@
 title: Theming
 description: Using CSS Variables and color utilities for theming.
 ---
+
+Themes are used to customize component styles to fit the specific aesthetic of a brand or product.
+
+Themes are used to modify existing components to fit a specific visual style. By using natmfat tokens, developers can easily customize all of their components by changing a set of universal variables, eliminating the need to modify individual components.
+
+## Customizing a Theme
+
+The default theme acts as a starting point; from there designers and developers can define how their own components and styles deviate from the default. Altering one, some, or all of the default token values will result in a new theme. The developer supplies new CSS variables in order to override the default theme.
+
+```css
+@layer theme {
+  [data-theme="light"] {
+    --blue-dimmest: #b2d9ff;
+    --blue-dimmer: #6bb5ff;
+    --blue-default: #0f87ff;
+    --blue-stronger: #005cb8;
+    --blue-strongest: #004182;
+  }
+}
+```
+
+## Tokens
+
+Tokens use CSS variables as a source of truth exclusively, so code only needs to be changed once in one place to create system-wide effects. Tokens are used across all components and help keep global patterns and styles consistent. All tokens come pre-baked into natmfat, and are exposed as utility classes through the [TailwindCSS integration](/installation). Tokens are simply CSS variables, but you can also import them into your projects if you need them in a JavaScript environment.
+
+```ts
+import { tokens } from "natmfat/lib/tokens";
+tokens.space8 // var(--space-8)
+```
+
+Generally, you should not directly interact with tokens to build user interfaces or even custom components. TailwindCSS utility classes and special compositional components like [Colorway](/docs/component/Colorway) can apply styles directly. 
+
+There are several token categories:
+
+- Color
+- Spacing
+- Typography
+
+### Color
+Each theme is assigned universal color variables, which are determined by common roles and usage. This allows for uniform color application across themes while maintaining full styling flexibility. For more information, see [color](/docs/color).
+
+### Spacing
+Use the spacing scale when building individual components. It includes small increments needed to create appropriate spatial relationships for detail-level designs. Spacing is also used to force elements to have specific sizes, like icons. 
+
+### Typography
+Typography has two of type styles (regular and code) that can be customized through tokens. These tokens are used both within components and across layouts. For more information, see [typography](/docs/typography).
+
+## Base Colors
+
+For reference, here's a list of the base colors that are available.
+
+### Light
+
+```css
+@layer theme {
+  [data-theme="light"] {
+    --background-root: #ebeced;
+    --background-default: #fcfcfc;
+    --background-higher: #f0f1f2;
+    --background-highest: #e4e5e6;
+    --background-overlay: #f0f1f2a0;
+    --foreground-default: #07080a;
+    --foreground-dimmer: #3d4047;
+    --foreground-dimmest: #5c5f66;
+    --outline-dimmest: #d2d4d6;
+    --outline-dimmer: #c0c3c4;
+    --outline-default: #afb1b3;
+    --outline-stronger: #98999c;
+    --outline-strongest: #74767a;
+    --red-dimmest: #ffc7c7;
+    --red-dimmer: #ff9494;
+    --red-default: #fa4b4b;
+    --red-stronger: #c20a0a;
+    --red-strongest: #8a0000;
+    --orange-dimmest: #ffcc99;
+    --orange-dimmer: #ff9933;
+    --orange-default: #d96d00;
+    --orange-stronger: #964b00;
+    --orange-strongest: #693400;
+    --yellow-dimmest: #ebd66e;
+    --yellow-dimmer: #cfb015;
+    --yellow-default: #a68a00;
+    --yellow-stronger: #736000;
+    --yellow-strongest: #4f4200;
+    --lime-dimmest: #c0e378;
+    --lime-dimmer: #93c926;
+    --lime-default: #639400;
+    --lime-stronger: #466900;
+    --lime-strongest: #3a5700;
+    --green-dimmest: #7aeb8d;
+    --green-dimmer: #3cc954;
+    --green-default: #00a11b;
+    --green-stronger: #036e15;
+    --green-strongest: #004d0d;
+    --teal-dimmest: #6fe5fc;
+    --teal-dimmer: #22c1e0;
+    --teal-default: #0093b0;
+    --teal-stronger: #00687d;
+    --teal-strongest: #004857;
+    --blue-dimmest: #b2d9ff;
+    --blue-dimmer: #6bb5ff;
+    --blue-default: #0f87ff;
+    --blue-stronger: #005cb8;
+    --blue-strongest: #004182;
+    --blurple-dimmest: #d7cfff;
+    --blurple-dimmer: #b2a3ff;
+    --blurple-default: #8e78ff;
+    --blurple-stronger: #5b40e3;
+    --blurple-strongest: #412f9c;
+    --purple-dimmest: #e6ccff;
+    --purple-dimmer: #d0a1ff;
+    --purple-default: #b266ff;
+    --purple-stronger: #7f38c7;
+    --purple-strongest: #5b278f;
+    --magenta-dimmest: #ffbfff;
+    --magenta-dimmer: #ff82ff;
+    --magenta-default: #eb3beb;
+    --magenta-stronger: #a321a3;
+    --magenta-strongest: #731c73;
+    --pink-dimmest: #ffc7ec;
+    --pink-dimmer: #ff87d7;
+    --pink-default: #f545ba;
+    --pink-stronger: #ab2980;
+    --pink-strongest: #781e5a;
+    --grey-dimmest: #d5d5d5;
+    --grey-dimmer: #b0b0b0;
+    --grey-default: #898989;
+    --grey-stronger: #616161;
+    --grey-strongest: #454545;
+    --brown-dimmest: #ffc9ab;
+    --brown-dimmer: #dea483;
+    --brown-default: #b07f63;
+    --brown-stronger: #805740;
+    --brown-strongest: #573e30;
+  }
+}
+```
+
+### Dark
+
+```css
+@layer theme {
+  [data-theme="dark"] {
+    --background-root: #0e1525;
+    --background-default: #1c2333;
+    --background-higher: #2b3245;
+    --background-highest: #3c445c;
+    --background-overlay: #0e1525a0;
+    --foreground-default: #f5f9fc;
+    --foreground-dimmer: #c2c8cc;
+    --foreground-dimmest: #9da2a6;
+    --outline-dimmest: #2b3245;
+    --outline-dimmer: #3c445c;
+    --outline-default: #4e5569;
+    --outline-stronger: #5f677a;
+    --outline-strongest: #70788c;
+    --red-dimmest: #660000;
+    --red-dimmer: #a60808;
+    --red-default: #e52222;
+    --red-stronger: #ff6666;
+    --red-strongest: #ffcfcf;
+    --orange-dimmest: #542a00;
+    --orange-dimmer: #703800;
+    --orange-default: #ad5700;
+    --orange-stronger: #d4781c;
+    --orange-strongest: #ffbd7a;
+    --yellow-dimmest: #4d4000;
+    --yellow-dimmer: #635300;
+    --yellow-default: #967d00;
+    --yellow-stronger: #bfa730;
+    --yellow-strongest: #f2e088;
+    --lime-dimmest: #314a00;
+    --lime-dimmer: #3d5c00;
+    --lime-default: #5a8700;
+    --lime-stronger: #87b825;
+    --lime-strongest: #c4e581;
+    --green-dimmest: #044a10;
+    --green-dimmer: #046113;
+    --green-default: #009118;
+    --green-stronger: #6cd97e;
+    --green-strongest: #7aeb8d;
+    --teal-dimmest: #004452;
+    --teal-dimmer: #006073;
+    --teal-default: #0093b0;
+    --teal-stronger: #27b9d6;
+    --teal-strongest: #69d9f0;
+    --blue-dimmest: #004182;
+    --blue-dimmer: #0053a6;
+    --blue-default: #0079f2;
+    --blue-stronger: #57abff;
+    --blue-strongest: #b2d9ff;
+    --blurple-dimmest: #39298a;
+    --blurple-dimmer: #5239cc;
+    --blurple-default: #795eff;
+    --blurple-stronger: #a694ff;
+    --blurple-strongest: #cec4ff;
+    --purple-dimmest: #582987;
+    --purple-dimmer: #7633b8;
+    --purple-default: #a64dff;
+    --purple-stronger: #c78fff;
+    --purple-strongest: #e2c4ff;
+    --magenta-dimmest: #6b1a6b;
+    --magenta-dimmer: #8a218a;
+    --magenta-default: #c73ac7;
+    --magenta-stronger: #f562f5;
+    --magenta-strongest: #ffbfff;
+    --pink-dimmest: #6e1b52;
+    --pink-dimmer: #8f226b;
+    --pink-default: #d4359f;
+    --pink-stronger: #ff70cf;
+    --pink-strongest: #ffbae8;
+    --grey-dimmest: #404040;
+    --grey-dimmer: #545454;
+    --grey-default: #808080;
+    --grey-stronger: #a6a6a6;
+    --grey-strongest: #d4d4d4;
+    --brown-dimmest: #594031;
+    --brown-dimmer: #75503b;
+    --brown-default: #a3765c;
+    --brown-stronger: #d49877;
+    --brown-strongest: #ffc8a8;
+  }
+}
+```

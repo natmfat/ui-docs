@@ -2,7 +2,6 @@ import {
   Button,
   Heading,
   RiArrowRightIcon,
-  RiMagicIcon,
   Text,
   View,
 } from "natmfat";

@@ -2,3 +2,44 @@
 title: Colors
 description: Using color in your app
 ---
+
+
+## Convention
+
+"Dimmest" represents the color with the least contrast against the background; "strongest" represents the color with the most contrast against the background. This naming scheme is compatible with themes, making it easy to maintain components.
+
+## Color Anatomy
+
+The core primary blue family serves as the primary action color across all products and experiences. Additional colors are used sparingly and purposefully.
+
+import { ColorDemo } from "../components/demos/ColorDemo";
+
+<ColorDemo />
+
+## Layering Model
+
+"Surface" colors are layered on top of each other to create depth and spatial associations. The layering model defines the logic of how colors stack on top of each other in a UI when using natmfat. Aspects of the layering model are built directly into the themes, color tokens, and components.
+
+The layering model does not differ between the light and dark themes.
+
+- In the light themes, the second layer is lightest but become one step darker with each added layer. 
+- In the dark themes, layers become one step lighter with each added layer.
+
+import { PaddedSurfaceDemo } from "../components/demos/PaddedSurfaceDemo";
+
+<PaddedSurfaceDemo />
+
+Layers and interactive styles are assigned automagically with the [Surface](/docs/components/Surface) component, so it is unlikely you will ever explicitly assign a layer. Dialogs or modals have the highest layer by default.
+
+## Themes
+
+There are two default themes: light, and dark. Themes serve as an organizational framework for color in natmfat, and are enabled using a [Theme Provider](/docs/components/theme-provider).
+
+## Interaction States
+
+There are five other interaction states defined with tokens for each theme. Interaction tokens are assigned automatically through layered surfaces or colorways.  
+
+import { InteractiveDemo } from "../components/demos/InteractiveDemo";
+
+<InteractiveDemo />
+

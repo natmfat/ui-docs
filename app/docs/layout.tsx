@@ -3,32 +3,33 @@ import { getLayout } from "./[...slug]/content";
 import { ListItem } from "./components/ListItem";
 import { Section } from "../components/Section";
 
-export default  function Layout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <Section>
-      <View className="flex-row gap-6 flex-1 max-w-full">
-      <View className="shrink-0 w-52 gap-6">
-        {Object.entries(getLayout()).map(([heading, items]) => {
-          return (
-            <View key={heading} className="gap-2">
-              <Heading level={1} className="px-3 font-bold" size="default">
-                {heading}
-              </Heading>
-              <View>
-                {items.map((props) => (
-                  <ListItem {...props} key={props.slug} />
-                ))}
+    <Section grow>
+      <View className="flex-row gap-6 flex-1 max-w-full h-full">
+        <View className="shrink-0 w-52 gap-6">
+          {Object.entries(getLayout()).map(([heading, items]) => {
+            return (
+              <View key={heading} className="gap-2">
+                <Heading level={1} className="px-3 font-bold" size="default">
+                  {heading}
+                </Heading>
+                <View>
+                  {items.map((props) => (
+                    <ListItem {...props} key={props.slug} />
+                  ))}
+                </View>
               </View>
-            </View>
-          );
-        })}
+            );
+          })}
+        </View>
+
+        {children}
       </View>
-      {children}
-    </View>
     </Section>
   );
 }

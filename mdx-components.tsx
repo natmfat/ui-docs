@@ -103,7 +103,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     },
     img: ({ alt, ...props }) => (
       <View className="flex-col items-center justify-center gap-2 mt-2 text-center">
-        <View className="rounded-default border border-interactive bg-surface overflow-hidden">
+        <View className="rounded-default border border-outline-dimmest bg-surface overflow-hidden">
           <img
             {...props}
             alt={
