@@ -6,6 +6,7 @@ import { cn } from "natmfat/lib/cn";
 import { ComponentProps, ReactNode, useMemo } from "react";
 import { CodeBlock, sunburst } from "react-code-blocks";
 import { copyToClipboard } from "natmfat/lib/copyToClipboard";
+import { CopyIconButton } from "@/app/components/CopyButton";
 
 type CodeBlockProps = ComponentProps<typeof CodeBlock>;
 
@@ -26,24 +27,16 @@ export function CodeView({
         "mt-2 rounded-default overflow-hidden relative font-mono max-h-96 px-1 bg-[#000]"
       )}
     >
-        <CodeBlock {...(
-          {
-            ...props,
-            text: text,
-            theme: sunburst,
-            showLineNumbers: false,
-          } satisfies CodeBlockProps
-        )} />
+      <CodeBlock
+        {...({
+          ...props,
+          text: text,
+          theme: sunburst,
+          showLineNumbers: false,
+        } satisfies CodeBlockProps)}
+      />
 
-      <IconButton
-        alt="Copy to clipboard"
-        className="absolute top-2 right-2 z-10"
-        onClick={() => {
-          copyToClipboard(text);
-        }}
-      >
-        <RiClipboardIcon />
-      </IconButton>
+      <CopyIconButton text={text} className="z-10" />
     </View>
   );
 }

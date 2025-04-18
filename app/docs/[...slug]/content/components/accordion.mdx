@@ -15,6 +15,8 @@ import { Separator } from "natmfat/components/Separator";
 
 ## Preview
 
+Use [separators](/docs/components/separator) to add lines between each accordion item.
+
 <Preview>
   <Accordion
     type="multiple"
@@ -50,5 +52,12 @@ import { Separator } from "natmfat/components/Separator";
     <AccordionTrigger>Is it accessible?</AccordionTrigger>
     <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
   </AccordionItem>
+  <Separator />
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Is it styled?</AccordionTrigger>
+    <AccordionContent>
+      Yes. It comes with default styles that matches the other components' aesthetic.
+      </AccordionContent>
+    </AccordionItem>
 </Accordion>
 ```

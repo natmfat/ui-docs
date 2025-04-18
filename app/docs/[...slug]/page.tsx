@@ -49,7 +49,7 @@ export default async function Page({
                     target="_blank"
                     rel="noreferrer"
                   >
-                    API References
+                    API Reference
                     <RiExternalLinkIcon />
                   </a>
                 </Button>

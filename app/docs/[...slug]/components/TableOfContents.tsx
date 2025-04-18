@@ -22,7 +22,7 @@ export function TableOfContents({
             <View key={value} asChild>
               <li>
                 <Text asChild>
-                  <a href={`#${id}`} className="w-fit py-0.5">
+                  <a href={`#${id}`} className="w-fit py-0.5 text-foreground-dimmer hover:text-foreground-default transition-colors ease-snappy duration-snappy">
                     {value}
                   </a>
                 </Text>
