@@ -1,3 +1,5 @@
+"use client";
+
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import {
   Command,
@@ -18,11 +20,13 @@ import {
   RiExternalLinkIcon,
   RiGithubIcon,
   RiTwitterXIcon,
+  RiCircleIcon,
 } from "natmfat";
 import { tokens } from "natmfat/lib/tokens";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
+import { getLayout } from "../docs/[...slug]/content";
 
 const commands: Record<
   string,
@@ -34,31 +38,28 @@ const commands: Record<
 > = {
   Navigation: [
     { icon: <RiArrowRightIcon />, name: "Home", href: "/" },
-    { icon: <RiArrowRightIcon />, name: "Tools", href: "/tools" },
-    { icon: <RiArrowRightIcon />, name: "Resume", href: "/resume" },
-  ],
-  Projects: [
+    { icon: <RiArrowRightIcon />, name: "Documentation", href: "/docs" },
     {
-      icon: <RiExternalLinkIcon />,
-      name: "Blockpit",
-      href: "https://blockpit.natmf.at",
+      icon: <RiArrowRightIcon />,
+      name: "Components",
+      href: "/docs/components/accordion",
     },
-    {
-      icon: <RiExternalLinkIcon />,
-      name: "Creative Coding",
-      href: "https://art.natmf.at",
-    },
+    { icon: <RiArrowRightIcon />, name: "Themes", href: "/themes" },
+    { icon: <RiArrowRightIcon />, name: "Magic", href: "/magic" },
   ],
+  ...Object.entries(getLayout()).reduce((acc, [heading, subheadings]) => ({
+    ...acc,
+    [heading]: subheadings.map(({ title, href }) => ({
+      icon: <RiCircleIcon />,
+      name: title,
+      href,
+    })),
+  }), {}),
   Socials: [
     {
       icon: <RiGithubIcon />,
       name: "GitHub",
-      href: "https://github.com/natmfat",
-    },
-    {
-      icon: <RiBlueskyIcon />,
-      name: "Bluesky",
-      href: "https://bsky.app/profile/natmfat.bsky.social",
+      href: "https://github.com/natmfat/ui-docs",
     },
     {
       icon: <RiTwitterXIcon />,
@@ -74,7 +75,6 @@ export function Clui() {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const router = useRouter();
-
 
   useEffect(() => {
     document.body.addEventListener("click", (e) => {
@@ -92,7 +92,7 @@ export function Clui() {
   }, []);
 
   useHotkeys(
-    "meta+j",
+    "meta+k",
     (e) => {
       e.preventDefault();
       setOpen(true);
@@ -104,20 +104,15 @@ export function Clui() {
     <>
       <Interactive>
         <View
-          className="flex-row items-center w-fit flex-grow-0 flex-shrink gap-2 pr-1 pl-2 h-8 select-none"
+          className="h-8 select-none flex-row text-foreground-dimmest hover:text-foreground-dimmer items-center justify-between gap-2 w-64 max-w-full shrink-1 px-1"
           onClick={() => setOpen(true)}
         >
-          <Text color="dimmest">Search and run commands</Text>
-          <Surface elevated className="bg-transparent pointer-events-none">
-            <Interactive>
-              <View className="flex flex-row items-center gap-1 py-0.5 px-1.5">
-                <RiCommandIcon size={tokens.space12} />{" "}
-                <Text size="small" className="font-mono">
-                  {" "}
-                  J
-                </Text>
-              </View>
-            </Interactive>
+          <Text className="pl-2">Search documentation...</Text>
+          <Surface
+            elevated
+            className="flex-row items-center gap-1 text-small border border-outline-dimmest rounded-lg px-0.5"
+          >
+            <RiCommandIcon size={tokens.space12} />K
           </Surface>
         </View>
       </Interactive>
@@ -127,7 +122,6 @@ export function Clui() {
           <DialogTitle>Search and run commands.</DialogTitle>
         </VisuallyHidden>
         <Command ref={ref}>
-          {/* eslint-disable-next-line */}
           <CommandInput autoFocus placeholder="Search & run commands" />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>

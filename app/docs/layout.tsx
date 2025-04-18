@@ -20,7 +20,7 @@ export default function Layout({
                 </Heading>
                 <View>
                   {items.map((props) => (
-                    <ListItem {...props} key={props.slug} />
+                    <ListItem {...props} key={props.href} />
                   ))}
                 </View>
               </View>

@@ -100,13 +100,13 @@ export function getLayout() {
   const layout: Record<
     string,
     {
-      slug: string;
+      href: string;
       title: string;
     }[]
   > = {};
   Object.entries(CONTENT).forEach(([key, values]) => {
     layout[key] = values.map((value) => ({
-      slug: getDocHref(key, value),
+      href: getDocHref(key, value),
       title: capitalize(value),
     }));
   });

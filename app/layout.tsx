@@ -17,6 +17,7 @@ import Link from "next/link";
 import { Section } from "./components/Section";
 import { ThemeButton } from "./components/ThemeButton";
 import { Logo } from "./components/Logo";
+import { Clui } from "./components/Clui";
 
 const fontMono = IBM_Plex_Mono({
   weight: ["400"],
@@ -32,7 +33,8 @@ const fontSans = IBM_Plex_Sans({
 
 export const metadata: Metadata = {
   title: "natmfat/ui",
-  description: "A set of beautifully-designed, accessible components. Works with your favorite frameworks.",
+  description:
+    "A set of beautifully-designed, accessible components. Works with your favorite frameworks.",
 };
 
 export default function RootLayout({
@@ -67,18 +69,7 @@ export default function RootLayout({
               </View>
 
               <View className="flex-row items-center gap-2">
-                <Interactive>
-                  <View className="h-8 select-none flex-row text-foreground-dimmest hover:text-foreground-dimmer items-center justify-between gap-2 w-64 max-w-full shrink-1 px-1">
-                    <Text className="pl-2">Search documentation...</Text>
-
-                    <Surface
-                      elevated
-                      className="flex-row items-center gap-1 text-small border border-outline-dimmest rounded-lg px-0.5"
-                    >
-                      <RiCommandIcon size={tokens.space12} />K
-                    </Surface>
-                  </View>
-                </Interactive>
+                <Clui />
                 <View className="flex-row">
                   <IconButton alt="GitHub" className="w-8 h-8" asChild>
                     <a
