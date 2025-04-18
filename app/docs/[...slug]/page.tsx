@@ -7,10 +7,12 @@ import {
   Heading,
   RiArrowLeftSIcon,
   RiArrowRightSIcon,
+  RiExternalLinkIcon,
   Text,
   View,
 } from "natmfat";
 import Link from "next/link";
+import { tokens } from "natmfat/lib/tokens";
 
 export default async function Page({
   params,
@@ -33,6 +35,26 @@ export default async function Page({
             >
               {frontmatter.description}
             </Heading>
+            {frontmatter.base ? (
+              <View className="py-2 flex-row items-center gap-2">
+                <Button asChild size={tokens.space12} className="w-fit">
+                  <a href={frontmatter.base} target="_blank" rel="noreferrer">
+                    Docs
+                    <RiExternalLinkIcon />
+                  </a>
+                </Button>
+                <Button asChild size={tokens.space12} className="w-fit">
+                  <a
+                    href={`${frontmatter.base}#api-reference`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    API References
+                    <RiExternalLinkIcon />
+                  </a>
+                </Button>
+              </View>
+            ) : null}
             <View className="flex-1 w-full [&>*:first-child]:mt-0 pt-6">
               <Post />
             </View>
