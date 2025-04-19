@@ -1,8 +1,14 @@
-import {Surface as SurfaceRoot, SurfaceProps} from "natmfat"
+import { Surface as SurfaceRoot, SurfaceProps, View } from "natmfat";
 import { cn } from "natmfat/lib/cn";
 
-export const Surface = ({className, ...props }: SurfaceProps) => {
+export const Surface = ({ className, ...props }: SurfaceProps) => {
   return (
-    <SurfaceRoot className={cn(className, "rounded-default p-4 mt-2")} elevated {...props} />
-  )
-}
+    <View className="pt-2">
+      <SurfaceRoot
+        className={cn("rounded-default p-4", className)}
+        elevated
+        {...props}
+      />
+    </View>
+  );
+};

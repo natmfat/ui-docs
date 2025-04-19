@@ -11,7 +11,7 @@ import { ReactNode } from "react";
 
 export const PaddedSurfaceDemo = () => {
   return (
-    <View className="grid grid-cols-2 gap-3 py-4">
+    <View className="grid grid-cols-2 gap-3 pt-4">
       <ThemeProvider value="light" className="bg-transparent">
         <PaddedSurfaceItem label="root">
           <PaddedSurfaceItem label="default" elevated>

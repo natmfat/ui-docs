@@ -11,7 +11,7 @@ const INTERACTIVE_VARIANTS = [
 
 export const InteractiveDemo = () => {
   return (
-    <View className="grid grid-cols-4 gap-3 py-4">
+    <View className="grid grid-cols-4 gap-3 pt-4">
       {BACKGROUNDS.map((background) => (
         <Surface
           className="border border-outline-dimmest p-2 rounded-default gap-2"

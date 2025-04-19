@@ -10,7 +10,7 @@ import { tokens } from "natmfat/lib/tokens";
 import { ReactNode } from "react";
 
 export function ExampleRoot({ children }: { children: ReactNode }) {
-  return <View className="grid grid-cols-2 gap-4 py-4">{children}</View>;
+  return <View className="grid grid-cols-2 gap-4 pt-4">{children}</View>;
 }
 
 export function ExampleItem({

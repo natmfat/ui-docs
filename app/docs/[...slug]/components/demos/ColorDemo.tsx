@@ -7,7 +7,7 @@ const ColorTile = ({ className }: { className?: string }) => (
 
 export const ColorDemo = () => {
   return (
-    <View className="gap-4 py-4">
+    <View className="gap-4 pt-4">
       <View className="flex-row">
         <ColorTile className="bg-primary-strongest" />
         <ColorTile className="bg-primary-stronger" />
