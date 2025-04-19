@@ -30,8 +30,8 @@ importers:
         specifier: ^10.1.1
         version: 10.1.1
       natmfat:
-        specifier: ^0.0.33
-        version: 0.0.33(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^0.0.34
+        version: 0.0.34(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       next:
         specifier: 15.3.0
         version: 15.3.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -1606,8 +1606,8 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  natmfat@0.0.33:
-    resolution: {integrity: sha512-uUfLax2m7nuvo7AEaxPD1MD1s03i+Rl6qHS49Xq37ddo/SJ4Nv12E0Ni6LAABr1QSVwIaNChDMxIeuTowwlLgg==}
+  natmfat@0.0.34:
+    resolution: {integrity: sha512-HV466bIiSF2HqXPyU40W8bdDuQTjmBpKhhZjZ2zhkDua5UYsKJocbiEVBdTGlNyIjZN47tHGlLm2MjmNAQz21A==}
     peerDependencies:
       react: ^19.0.0
       react-dom: ^19.0.0
@@ -3070,7 +3070,7 @@ snapshots:
       '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.1.2)(react@19.1.0)
       '@radix-ui/react-dialog': 1.1.7(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-id': 1.1.1(@types/react@19.1.2)(react@19.1.0)
-      '@radix-ui/react-primitive': 2.0.3(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-primitive': 2.1.0(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
     transitivePeerDependencies:
@@ -3694,7 +3694,7 @@ snapshots:
 
   nanoid@3.3.11: {}
 
-  natmfat@0.0.33(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  natmfat@0.0.34(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       autosize: 6.0.1
       class-variance-authority: 0.7.1

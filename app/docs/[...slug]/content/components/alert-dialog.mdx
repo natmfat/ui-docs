@@ -1,0 +1,60 @@
+---
+title: Alert Dialog
+description: A modal dialog that interrupts the user with important content and expects a response.
+base: https://www.radix-ui.com/primitives/docs/components/alert-dialog
+---
+
+import { Preview } from "../../components/Preview";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+  Button,
+  View,
+} from "natmfat";
+
+## Preview
+
+<Preview>
+  <AlertDialog>
+    <AlertDialogTrigger asChild>
+      <Button>Open AlertDialog</Button>
+    </AlertDialogTrigger>
+    <AlertDialogContent className="gap-3">
+      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+      <AlertDialogDescription multiline>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </AlertDialogDescription>
+      <View className="flex-row gap-2">
+        <AlertDialogCancel>Cancel</AlertDialogCancel>
+        <AlertDialogAction>Yes, delete account.</AlertDialogAction>
+      </View>
+    </AlertDialogContent>
+  </AlertDialog>
+</Preview>
+
+## Usage
+
+````jsx
+  <AlertDialog>
+    <AlertDialogTrigger asChild>
+      <Button>Open AlertDialog</Button>
+    </AlertDialogTrigger>
+    <AlertDialogContent className="gap-3">
+      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+      <AlertDialogDescription multiline>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </AlertDialogDescription>
+      <View className="flex-row gap-2">
+        <AlertDialogCancel>Cancel</AlertDialogCancel>
+        <AlertDialogAction>Yes, delete account.</AlertDialogAction>
+      </View>
+    </AlertDialogContent>
+  </AlertDialog>
+````

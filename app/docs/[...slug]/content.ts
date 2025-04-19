@@ -14,7 +14,7 @@ export const CONTENT = {
   Installation: ["react-router", "next", "vite"],
   Components: [
     "accordion",
-    // "alert-dialog",
+    "alert-dialog",
     // "anchor",
     // "avatar",
     // "banner",
