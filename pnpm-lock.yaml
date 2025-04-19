@@ -30,8 +30,8 @@ importers:
         specifier: ^10.1.1
         version: 10.1.1
       natmfat:
-        specifier: ^0.0.34
-        version: 0.0.34(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^0.0.35
+        version: 0.0.35(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       next:
         specifier: 15.3.0
         version: 15.3.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -1609,8 +1609,8 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  natmfat@0.0.34:
-    resolution: {integrity: sha512-HV466bIiSF2HqXPyU40W8bdDuQTjmBpKhhZjZ2zhkDua5UYsKJocbiEVBdTGlNyIjZN47tHGlLm2MjmNAQz21A==}
+  natmfat@0.0.35:
+    resolution: {integrity: sha512-iK6grG8Eivrpf2FDn1RylgNsx3X0gHTXBdwGlpvbEvZa+t9A7mgL4YHhVSl3mdjs26FGwyoAXYT8ng3cST6g6A==}
     peerDependencies:
       react: ^19.0.0
       react-dom: ^19.0.0
@@ -3703,7 +3703,7 @@ snapshots:
 
   nanoid@3.3.11: {}
 
-  natmfat@0.0.34(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  natmfat@0.0.35(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       autosize: 6.0.1
       class-variance-authority: 0.7.1
