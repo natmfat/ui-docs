@@ -50,7 +50,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <header className="flex border-b border-outline-dimmest border-dashed fixed left-0 right-0 top-0 bg-surface z-50 w-full">
-            <View className="px-6 py-4 border-x border-outline-dimmest border-dashed max-w-7xl w-full mx-auto flex-row justify-between items-center">
+            <Section top className="flex-row justify-between items-center px-6 py-4">
               <View asChild>
                 <nav className="flex-row items-center gap-4">
                   <View className="flex-row items-center gap-2" asChild>
@@ -67,7 +67,6 @@ export default function RootLayout({
                   <Link href="/magic">Magic</Link>
                 </nav>
               </View>
-
               <View className="flex-row items-center gap-2">
                 <Clui />
                 <View className="flex-row">
@@ -83,7 +82,7 @@ export default function RootLayout({
                   <ThemeButton />
                 </View>
               </View>
-            </View>
+            </Section>
           </header>
 
           <View className="items-stretch min-h-screen">

@@ -19,6 +19,11 @@ pre, code {
   overflow-wrap: break-word !important;  /* Break long words if necessary */
 }
 
+.bg-circle {
+  background-image:
+    radial-gradient(ellipse at bottom, var(--orange-dimmest), transparent);
+}
+
 .bg-grid {
   z-index: 2;
 }
@@ -32,6 +37,7 @@ pre, code {
   top: 0;
   left: 0;
   opacity: 0.5;
+  border-radius: var(--border-radius-default);
   background-image:
     radial-gradient(ellipse at top, var(--primary-default), transparent),
     radial-gradient(ellipse at bottom, var(--green-default), transparent);
@@ -48,6 +54,7 @@ pre, code {
   opacity: 0.3;
   z-index: -1;
   background-position: -1px -1px;
+  border-radius: var(--border-radius-default);
   background-size: var(--space-16) var(--space-16);
   background-image:
     linear-gradient(to right, var(--outline-dimmest) 1px, transparent 1px),
