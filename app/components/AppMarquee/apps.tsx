@@ -8,10 +8,10 @@ import { RiPaletteIcon } from "natmfat/icons/RiPaletteIcon";
 import { RiSafeIcon } from "natmfat/icons/RiSafeIcon";
 import { RiSparklingIcon } from "natmfat/icons/RiSparklingIcon";
 import { RiSquareIcon } from "natmfat/icons/RiSquareIcon";
-import { ReactNode } from "react";
+import { ReactElement } from "react";
 
 export type App = {
-  icon: ReactNode;
+  icon: ReactElement;
   name: string;
   href: string;
   previewSrc?: string;

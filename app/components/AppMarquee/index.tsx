@@ -9,9 +9,11 @@ import { apps } from "./apps";
 
 export function AppMarquee({
   className,
+  app: appSelected,
   setApp,
   ...props
 }: Partial<ComponentProps<typeof MarqueeRoot>> & {
+  app: number;
   setApp: (appIdx: number) => void;
 }) {
   return (
@@ -24,7 +26,7 @@ export function AppMarquee({
       <MarqueeGradient position="left" />
       <MarqueeRoot speed={20} pauseOnHover autoFill className="w-full" {...props}>
         {apps.map((app, i) => (
-          <AppPill key={app.name} {...app} setApp={() => setApp(i)} />
+          <AppPill key={app.name} {...app} setApp={() => setApp(i)} active={i === appSelected} />
         ))}
       </MarqueeRoot>
       <MarqueeGradient position="right" />

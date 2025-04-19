@@ -21,7 +21,7 @@ pre, code {
 
 .bg-circle {
   background-image:
-    radial-gradient(ellipse at bottom, var(--orange-dimmest), transparent);
+    radial-gradient(circle at bottom, var(--orange-dimmest), transparent);
 }
 
 .bg-grid {

@@ -13,7 +13,7 @@ export default function Home() {
             className="text-header-big md:text-[64px]"
             multiline
           >
-            Start building your app.
+            Start building your next app.
           </Heading>
           <Heading
             level={2}
