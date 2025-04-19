@@ -94,7 +94,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         <InlineCode {...props} />
       ) : (
         <CodeView
-          className={cn(className, "max-w-full whitespace-pre-wrap")}
+          className={cn(className, "max-w-full whitespace-pre-wrap mt-2")}
           {...props}
           // https://stackoverflow.com/questions/71907116/react-markdown-and-react-syntax-highlighter
           language={getLanguage(className)}

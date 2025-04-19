@@ -1,10 +1,7 @@
 import { Button, Heading, View } from "natmfat";
 import Link from "next/link";
 import { Section } from "./components/Section";
-import Image from "next/image";
-import { Marquee } from "./components/Marquee";
-import { apps } from "./components/AppPill/apps";
-import { AppPill } from "./components/AppPill";
+import { AppSelector } from "./components/AppSelector";
 
 export default function Home() {
   return (
@@ -39,18 +36,7 @@ export default function Home() {
           </View>
         </View>
       </Section>
-      <Section className="flex-row gap-2 items-center">
-        <Marquee>
-          {apps.map((app) => (
-            <AppPill key={app.name} {...app} />
-          ))}
-        </Marquee>
-      </Section>
-      <Section grow className="grid place-items-center py-16 bg-circle">
-        <View className="border border-outline-dimmest overflow-hidden rounded-default max-w-4xl">
-          <img src="/demo-blockpit.png" alt="Personal website for Nathan" />
-        </View>
-      </Section>
+    <AppSelector />
     </>
   );
 }

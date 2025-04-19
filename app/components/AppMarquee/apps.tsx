@@ -1,5 +1,5 @@
+import { RiProfileIcon } from "natmfat";
 import { RiBookIcon } from "natmfat/icons/RiBookIcon";
-import { RiBrainIcon } from "natmfat/icons/RiBrainIcon";
 import { RiCodeBlockIcon } from "natmfat/icons/RiCodeBlockIcon";
 import { RiInfinityIcon } from "natmfat/icons/RiInfinityIcon";
 import { RiLayoutIcon } from "natmfat/icons/RiLayoutIcon";
@@ -13,64 +13,62 @@ import { ReactNode } from "react";
 export type App = {
   icon: ReactNode;
   name: string;
-  description: string;
   href: string;
+  previewSrc?: string;
 };
 
 export const apps: App[] = [
   {
+    icon: <RiCodeBlockIcon />,
+    name: "blockpit",
+    href: "https://www.natmfat.com/project/blockpit",
+    previewSrc: "/preview/blockpit.png",
+  },
+  {
     icon: <RiLinkIcon />,
-    name: "natmf.at",
-    description: "Yet another link shortener, because I won't pay for one.",
+    name: "links",
     href: "#",
   },
   {
     icon: <RiSquareIcon />,
     name: "gitlocker",
-    description: "Password protected codebases, to showcase work to employers.",
     href: "#",
   },
   {
     icon: <RiLayoutIcon />,
     name: "ui",
-    description: "A design system built with Radix Primitives and CSS modules",
     href: "#",
   },
   {
     icon: <RiSafeIcon />,
     name: "vault",
-    description: "An image sharing service, with password protection.",
     href: "#",
   },
   {
     icon: <RiPaletteIcon />,
     name: "art",
-    description: "Exploration of art and code. Made with p5.js and Three.js",
-    href: "#",
-  },
-  {
-    icon: <RiCodeBlockIcon />,
-    name: "blockpit",
-    description: "Creative coding with a custom block code editor and p5.js",
     href: "#",
   },
   {
     icon: <RiSparklingIcon />,
     name: "v0",
-    description: "Generate React components with LLMs, locally",
-    href: "#",
+    href: "https://www.natmfat.com/project/v0",
+    previewSrc: "/preview/v0.png",
   },
   {
     icon: <RiBookIcon />,
     name: "library",
-    description: "A list of recommended books and where to read them",
     href: "#",
   },
-
   {
     icon: <RiInfinityIcon />,
     name: "webring",
-    description: "The 'phat' club. Comes with React components and an API.",
     href: "#",
   },
-]
+  {
+    icon: <RiProfileIcon />,
+    name: "portfolio",
+    href: "https://www.natmfat.com/project/official-portfolio",
+    previewSrc: "/preview/portfolio.png",
+  },
+];

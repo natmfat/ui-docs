@@ -13,18 +13,20 @@ type CodeBlockProps = ComponentProps<typeof CodeBlock>;
 export function CodeView({
   className,
   children,
+  disableCopy,
   ...props
 }: Omit<CodeBlockProps, "text"> & {
   language: string;
   className?: string;
   children?: ReactNode;
+  disableCopy?: boolean;
 }) {
   const text = useMemo(() => getNodeText(children).trim(), [children]);
   return (
     <View
       className={cn(
         className,
-        "mt-2 rounded-default overflow-hidden relative font-mono max-h-96 px-1 bg-[#000]"
+        "rounded-default overflow-hidden relative font-mono max-h-96 px-1 bg-[#000]"
       )}
     >
       <CodeBlock
@@ -36,7 +38,7 @@ export function CodeView({
         } satisfies CodeBlockProps)}
       />
 
-      <CopyIconButton text={text} className="z-10" />
+      {!disableCopy ? <CopyIconButton text={text} className="z-10" /> : null}
     </View>
   );
 }
