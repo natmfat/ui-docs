@@ -1,11 +1,10 @@
 "use client";
 
-import { IconButton, RiClipboardIcon } from "natmfat";
+import { useThemeContext } from "natmfat";
 import { View } from "natmfat/components/View";
 import { cn } from "natmfat/lib/cn";
 import { ComponentProps, ReactNode, useMemo } from "react";
-import { CodeBlock, sunburst } from "react-code-blocks";
-import { copyToClipboard } from "natmfat/lib/copyToClipboard";
+import { CodeBlock, github, sunburst } from "react-code-blocks";
 import { CopyIconButton } from "@/app/components/CopyButton";
 
 type CodeBlockProps = ComponentProps<typeof CodeBlock>;
@@ -21,19 +20,22 @@ export function CodeView({
   children?: ReactNode;
   disableCopy?: boolean;
 }) {
+  const { theme } = useThemeContext();
+  const isDark = theme === "dark";
   const text = useMemo(() => getNodeText(children).trim(), [children]);
   return (
     <View
       className={cn(
         className,
-        "rounded-default overflow-hidden relative font-mono max-h-96 px-1 bg-[#000]"
+        "rounded-default overflow-hidden relative font-mono max-h-96 px-1",
+        isDark ? "bg-[#000]" : "bg-[#fff]"
       )}
     >
       <CodeBlock
         {...({
           ...props,
           text: text,
-          theme: sunburst,
+          theme: isDark ? sunburst : github,
           showLineNumbers: false,
         } satisfies CodeBlockProps)}
       />
