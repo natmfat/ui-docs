@@ -1,0 +1,39 @@
+---
+title: Avatar
+description: An image element with a fallback for representing the user.
+base: https://www.radix-ui.com/primitives/docs/components/avatar
+---
+
+import { Preview } from "../../components/Preview";
+import { Avatar, View } from "natmfat";
+import { tokens } from "natmfat/lib/tokens";
+
+## Preview
+
+<Preview>
+  <View className="flex-row gap-3 py-4 px-6">
+    <Avatar
+      username="natmfat"
+      src="https://www.natmfat.com/logo.png"
+      size={tokens.space40}
+    />
+    <Avatar
+      username="natmfat"
+      src="https://www.natmfat.com/api/logo?seed=10"
+      size={tokens.space40}
+    />
+    <Avatar username="natmfat" size={tokens.space40} />
+  </View>
+</Preview>
+
+## Usage
+
+Avatar fallbacks are based on the username or full name. For many avatars, use the [StackedAvatars](/docs/components/stacked-avatars) component.
+
+```jsx
+<Avatar
+  username="natmfat"
+  src="https://www.natmfat.com/logo.png"
+  size={tokens.space40}
+/>
+```

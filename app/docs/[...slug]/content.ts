@@ -16,7 +16,7 @@ export const CONTENT = {
     "accordion",
     "alert-dialog",
     "anchor",
-    // "avatar",
+    "avatar",
     // "banner",
     // "button",
     // "button-group",

@@ -4,16 +4,20 @@ description: Displays a link.
 ---
 
 import { Preview } from "../../components/Preview";
-import { Anchor, View, RiExternalLinkIcon } from "natmfat";
+import { Anchor, View, Text, RiExternalLinkIcon } from "natmfat";
 import { tokens } from "natmfat/lib/tokens";
 
 ## Preview
 
 <Preview>
   <View className="py-4 px-6">
-    <Anchor href="https://natmfat.com" external>
-      Hello World
-    </Anchor>
+    <Text>
+      <>Built by</>{" "}
+      <Anchor href="https://natmfat.com" external>
+        <>natmfat</>
+      </Anchor>
+      <>.</>
+    </Text>
   </View>
 </Preview>
 
@@ -21,6 +25,6 @@ import { tokens } from "natmfat/lib/tokens";
 
 ```jsx
 <Anchor href="https://natmfat.com" external>
-  Hello World
+  natmfat
 </Anchor>
 ```
