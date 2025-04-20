@@ -19,14 +19,25 @@ export function AppMarquee({
   return (
     <View
       className={cn(
-        "relative flex-row justify-center overflow-hidden max-w-full w-full",
+        "relative flex-row justify-center overflow-hidden max-w-full w-full h-8",
         className
       )}
     >
       <MarqueeGradient position="left" />
-      <MarqueeRoot speed={20} pauseOnHover autoFill className="w-full" {...props}>
+      <MarqueeRoot
+        speed={20}
+        pauseOnHover
+        autoFill
+        className="w-full"
+        {...props}
+      >
         {apps.map((app, i) => (
-          <AppPill key={app.name} {...app} setApp={() => setApp(i)} active={i === appSelected} />
+          <AppPill
+            key={app.name}
+            {...app}
+            setApp={() => setApp(i)}
+            active={i === appSelected}
+          />
         ))}
       </MarqueeRoot>
       <MarqueeGradient position="right" />

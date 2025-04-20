@@ -4,20 +4,17 @@ import "./globals.css";
 import {
   Anchor,
   IconButton,
-  Interactive,
-  RiCommandIcon,
   RiGithubIcon,
-  Surface,
   Text,
   ThemeProvider,
   View,
 } from "natmfat";
-import { tokens } from "natmfat/lib/tokens";
 import Link from "next/link";
 import { Section } from "./components/Section";
 import { ThemeButton } from "./components/ThemeButton";
 import { Logo } from "./components/Logo";
 import { Clui } from "./components/Clui";
+import { getTheme } from "./components/ThemeButton/theme";
 
 const fontMono = IBM_Plex_Mono({
   weight: ["400"],
@@ -37,18 +34,19 @@ export const metadata: Metadata = {
     "A set of beautifully-designed, accessible components. Works with your favorite frameworks.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const theme = await getTheme();
   return (
     <html lang="en">
       <body
         className={`${fontSans.className} ${fontMono.className} antialiased`}
-        data-theme="dark"
+        data-theme={theme}
       >
-        <ThemeProvider>
+        <ThemeProvider value={theme}>
           <header className="flex border-b border-outline-dimmest border-dashed fixed left-0 right-0 top-0 bg-surface z-50 w-full">
             <Section
               top

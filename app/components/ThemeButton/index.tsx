@@ -6,6 +6,7 @@ import { View } from "natmfat/components/View";
 import { RiMoonIcon } from "natmfat/icons/RiMoonIcon";
 import { RiSunIcon } from "natmfat/icons/RiSunIcon";
 import { useEffect } from "react";
+import { setTheme as setThemeAction } from "./theme";
 
 export function ThemeButton() {
   const { theme, setTheme } = useThemeContext();
@@ -19,7 +20,11 @@ export function ThemeButton() {
       <IconButton
         alt="Toggle theme"
         className="h-8 w-8 group"
-        onClick={() => setTheme(oppositeTheme(theme))}
+        onClick={() => {
+          const nextTheme = oppositeTheme(theme);
+          setTheme(nextTheme);
+          setThemeAction(nextTheme);
+        }}
       >
         {isLightTheme(theme) ? (
           <RiMoonIcon />
