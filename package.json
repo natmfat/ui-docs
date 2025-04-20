@@ -17,7 +17,7 @@
     "@radix-ui/react-visually-hidden": "^1.2.0",
     "@stefanprobst/rehype-extract-toc": "^3.0.0",
     "immer": "^10.1.1",
-    "natmfat": "^0.0.35",
+    "natmfat": "^0.0.36",
     "next": "15.3.0",
     "react": "^19.0.0",
     "react-code-blocks": "^0.1.6",

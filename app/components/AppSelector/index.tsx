@@ -1,9 +1,9 @@
 "use client";
 
-import { Section } from "./Section";
+import { Section } from "../Section";
 import { AppMarquee } from "./AppMarquee";
-import { apps } from "./AppMarquee/apps";
-import { App } from "./App";
+import { apps } from "./apps";
+import { App } from "../App";
 import { createContext, useContext, useState } from "react";
 
 type AppContextStore = {
@@ -23,7 +23,7 @@ export const AppSelector = () => {
 
   return (
     <>
-     <Section className="flex-row gap-2 items-center">
+      <Section className="flex-row gap-2 items-center">
         <AppMarquee app={app} setApp={setApp} />
       </Section>
       <Section grow className="grid place-items-center py-16 bg-circle">

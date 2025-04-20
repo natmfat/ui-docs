@@ -50,7 +50,10 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <header className="flex border-b border-outline-dimmest border-dashed fixed left-0 right-0 top-0 bg-surface z-50 w-full">
-            <Section top className="flex-row justify-between items-center px-6 py-4">
+            <Section
+              top
+              className="flex-row justify-between items-center px-6 py-4"
+            >
               <View asChild>
                 <nav className="flex-row items-center gap-4">
                   <View className="flex-row items-center gap-2" asChild>
@@ -91,19 +94,11 @@ export default function RootLayout({
             <Section>
               <footer>
                 Built by{" "}
-                <Anchor
-                  href="https://natmfat.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <Anchor href="https://natmfat.com" external>
                   natmfat
                 </Anchor>
                 . The source code for documentation and examples is available on{" "}
-                <Anchor
-                  href="https://github.com/natmfat/ui-docs"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <Anchor href="https://github.com/natmfat/ui-docs" external>
                   GitHub
                 </Anchor>
                 .

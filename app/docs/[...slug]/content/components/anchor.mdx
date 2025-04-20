@@ -1,0 +1,26 @@
+---
+title: Anchor
+description: Displays a link.
+---
+
+import { Preview } from "../../components/Preview";
+import { Anchor, View, RiExternalLinkIcon } from "natmfat";
+import { tokens } from "natmfat/lib/tokens";
+
+## Preview
+
+<Preview>
+  <View className="py-4 px-6">
+    <Anchor href="https://natmfat.com" external>
+      Hello World
+    </Anchor>
+  </View>
+</Preview>
+
+## Usage
+
+```jsx
+<Anchor href="https://natmfat.com" external>
+  Hello World
+</Anchor>
+```

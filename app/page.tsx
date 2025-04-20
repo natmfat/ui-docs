@@ -36,7 +36,7 @@ export default function Home() {
           </View>
         </View>
       </Section>
-    <AppSelector />
+      <AppSelector />
     </>
   );
 }

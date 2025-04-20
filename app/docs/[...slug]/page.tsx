@@ -55,7 +55,7 @@ export default async function Page({
                 </Button>
               </View>
             ) : null}
-            <View className="flex-1 w-full [&>*:first-child]:mt-0 pt-6">
+            <View className="flex-1 w-full [&>*:first-child]:mt-0 pt-6 gap-2">
               <Post />
             </View>
           </View>

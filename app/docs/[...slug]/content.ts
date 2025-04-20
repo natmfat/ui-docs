@@ -15,7 +15,7 @@ export const CONTENT = {
   Components: [
     "accordion",
     "alert-dialog",
-    // "anchor",
+    "anchor",
     // "avatar",
     // "banner",
     // "button",
@@ -62,7 +62,7 @@ export const getSlugs = (): Array<{ slug: string[] }> => {
             ? ""
             : key.split(" ").join("-").toLocaleLowerCase(),
           value.toLocaleLowerCase(),
-        ].filter(c => c.length > 0),
+        ].filter((c) => c.length > 0),
       }));
     })
     .flat(2);
@@ -87,7 +87,11 @@ export async function importContent(...slug: string[]) {
   } = await import(`./content/${slug.join("/")}.mdx`);
   return {
     Post,
-    frontmatter: frontmatter as { title: string; description: string, base?: string },
+    frontmatter: frontmatter as {
+      title: string;
+      description: string;
+      base?: string;
+    },
     toc: toc as Toc["children"],
   };
 }
