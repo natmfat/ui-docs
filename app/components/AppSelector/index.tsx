@@ -3,7 +3,7 @@
 import { Section } from "../Section";
 import { AppMarquee } from "./AppMarquee";
 import { apps } from "./apps";
-import { App } from "../App";
+import { App } from "./App";
 import { createContext, useContext, useState } from "react";
 
 type AppContextStore = {

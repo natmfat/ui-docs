@@ -2,10 +2,10 @@
 
 import { Surface } from "natmfat/components/Surface";
 import { View } from "natmfat/components/View";
-import { App as AppProps } from "./AppMarquee/apps";
+import { App as AppProps } from "./apps";
 import { Button, RiLinkIcon } from "natmfat";
 import { tokens } from "natmfat/lib/tokens";
-import { CodeView } from "../docs/[...slug]/components/CodeView";
+import { CodeView } from "../../docs/[...slug]/components/CodeView";
 import { IconSizeProvider } from "natmfat/icons/Icon";
 
 export function App({ icon, name, href, previewSrc }: AppProps) {
@@ -19,9 +19,7 @@ export function App({ icon, name, href, previewSrc }: AppProps) {
           elevated
           className="rounded-default grid place-items-center h-8 w-8"
         >
-          <IconSizeProvider value={tokens.space20}>
-          {icon}
-          </IconSizeProvider>
+          <IconSizeProvider value={tokens.space20}>{icon}</IconSizeProvider>
         </Surface>
         {name}
       </Surface>
@@ -46,24 +44,23 @@ export const App = () => {
         </View>
       </Surface>
 
-
       <View className="pt-2 items-end">
-            <View className="mt-auto gap-2">
-              <Surface className="rounded-default shadow-1 w-fit" elevated>
-                <Button
-                  className="w-fit"
-                  size={tokens.space20}
-                  variant="outline"
-                  asChild
-                >
-                  <a href={href} target="_blank" rel="noreferrer">
-                    <RiLinkIcon />
-                    Project Overview
-                  </a>
-                </Button>
-              </Surface>
-            </View>
-          </View>
+        <View className="mt-auto gap-2">
+          <Surface className="rounded-default shadow-1 w-fit" elevated>
+            <Button
+              className="w-fit"
+              size={tokens.space20}
+              variant="outline"
+              asChild
+            >
+              <a href={href} target="_blank" rel="noreferrer">
+                <RiLinkIcon />
+                Project Overview
+              </a>
+            </Button>
+          </Surface>
+        </View>
+      </View>
     </View>
   );
 }
