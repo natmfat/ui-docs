@@ -41,3 +41,62 @@ import { Avatar } from "natmfat/components/Avatar";
   size={tokens.space48}
 />;
 ```
+
+## Reference
+
+import { Reference, ReferenceItem } from "../../components/Reference";
+
+<Reference>
+  <ReferenceItem
+    prop="backgroundColor"
+    type="ColorStyles"
+    description="Solid color if background image doesn't load"
+  />
+  <ReferenceItem
+    prop="heading"
+    type="string"
+    description="Sets the header text of the banner"
+  />
+  <ReferenceItem
+    prop="subheading"
+    type="string"
+    description="Sets the body text of the banner"
+  />
+  <ReferenceItem
+    prop="maxTextWidth"
+    type="number"
+    description="Sets the max width of the header and body text to prevent overlap with banner art"
+  />
+  <ReferenceItem
+    prop="verticalAlign"
+    type='"start" | "end"'
+    description="Sets vertical alignment of text within banner"
+  />
+  <ReferenceItem
+    prop="buttons"
+    type="ButtonProps[]"
+    description="Pass an array of button props to render"
+    defaultValue="[]"
+  />
+  <ReferenceItem
+    prop="src"
+    type="string"
+    description="Avatar url; if not provided, uses fallback based on username or fullName"
+  />
+  <ReferenceItem
+    prop="username"
+    type="string"
+    description="Used for initials if avatar src is not provided"
+  />
+  <ReferenceItem
+    prop="fullName"
+    type="string"
+    description="User's first & last name. Used for initials, takes precedence over username"
+  />
+  <ReferenceItem
+    prop="size"
+    type="SpaceStyles"
+    description="Size of the avatar"
+    defaultValue="tokens.space32"
+  />
+</Reference>

@@ -18,7 +18,7 @@ export const CONTENT = {
     "anchor",
     "avatar",
     "banner",
-    // "button",
+    "button",
     // "button-group",
     // "checkbox",
     // "colorway",

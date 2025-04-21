@@ -2,6 +2,9 @@ import {
   Heading,
   IconButton,
   InlineCode,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
   RiIndeterminateCircleIcon,
   RiInformationIcon,
   Text,
@@ -15,8 +18,7 @@ export const Reference = ({ children }: { children: ReactNode }) => {
     <table className="w-full text-left table table-fixed">
       <colgroup>
         <col className="w-3/12" />
-        <col className="w-3/12" />
-        <col className="w-2/12" />
+        <col className="w-5/12" />
         <col className="w-4/12" />
       </colgroup>
 
@@ -37,11 +39,11 @@ export const Reference = ({ children }: { children: ReactNode }) => {
               Default
             </Heading>
           </th>
-          <th>
+          {/* <th>
             <Heading level={2} size="subheadDefault">
               Description
             </Heading>
-          </th>
+          </th> */}
         </tr>
       </thead>
       <tbody>{children}</tbody>
@@ -63,10 +65,29 @@ export const ReferenceItem = ({
   return (
     <tr className="h-10 border-b border-b-outline-dimmest align-middle last:border-b-transparent">
       <td>
-        <InlineCode>{prop}</InlineCode>
+        <View className="flex-row gap-1">
+          <InlineCode className="whitespace-nowrap">{prop}</InlineCode>
+          <Popover>
+            <PopoverTrigger asChild>
+              <IconButton alt="Info">
+                <RiInformationIcon color={tokens.foregroundDimmer} />
+              </IconButton>
+            </PopoverTrigger>
+            <PopoverContent>{description}</PopoverContent>
+          </Popover>
+        </View>
       </td>
       <td>
-        <InlineCode>{type}</InlineCode>
+        <View className="flex-row gap-1 flex-wrap">
+          {type.includes("|") ? (
+            type
+              .split("|")
+              .map((t) => t.trim())
+              .map((t) => <InlineCode key={t}>{t}</InlineCode>)
+          ) : (
+            <InlineCode>{type}</InlineCode>
+          )}
+        </View>
       </td>
       <td>
         {defaultValue ? (
@@ -75,9 +96,9 @@ export const ReferenceItem = ({
           <RiIndeterminateCircleIcon color={tokens.foregroundDimmer} />
         )}
       </td>
-      <td>
+      {/* <td>
         <Text multiline>{description}</Text>
-      </td>
+      </td> */}
     </tr>
   );
 };

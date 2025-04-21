@@ -1,0 +1,56 @@
+---
+title: Button
+description: Displays a button or a component that looks like a button.
+---
+
+import { Preview } from "../../components/Preview";
+import { Button } from "natmfat";
+import { tokens } from "natmfat/lib/tokens";
+
+## Preview
+
+<Preview transparent>
+  <Button>Button</Button>
+</Preview>
+
+## Usage
+
+```jsx
+import { Button } from "natmfat/components/Button";
+
+<Button>Button</Button>;
+```
+
+## Reference
+
+import { Reference, ReferenceItem } from "../../components/Reference";
+
+<Reference>
+  <ReferenceItem
+    prop="variant"
+    type='"fill" | "noFill" | "outline"'
+    description="What colorway (or interactive, if color is not provided) variant to use"
+  />
+  <ReferenceItem
+    prop="size"
+    type="IconSize"
+    description="Size of the icon (also determines height of the button)"
+  />
+  <ReferenceItem
+    prop="color"
+    type="Color"
+    description="Communicate purpose w/ color"
+  />
+  <ReferenceItem
+    prop="loading"
+    type="boolean"
+    description="Adds loading styles to button"
+    defaultValue="false"
+  />
+  <ReferenceItem
+    prop="asChild"
+    type="boolean"
+    description="Render this component as its child instead"
+    defaultValue="false"
+  />
+</Reference>
