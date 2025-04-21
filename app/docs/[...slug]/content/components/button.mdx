@@ -9,7 +9,7 @@ import { tokens } from "natmfat/lib/tokens";
 
 ## Preview
 
-<Preview transparent>
+<Preview>
   <Button>Button</Button>
 </Preview>
 
@@ -19,6 +19,16 @@ import { tokens } from "natmfat/lib/tokens";
 import { Button } from "natmfat/components/Button";
 
 <Button>Button</Button>;
+```
+
+### Link
+
+You can set the `asChild` parameter and nest the link component to create a link that looks like a button.
+
+```jsx
+<Button asChild>
+  <Link href="/login">Login</Link>
+</Button>
 ```
 
 ## Reference

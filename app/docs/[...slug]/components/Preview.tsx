@@ -1,6 +1,6 @@
 import { Surface, View } from "natmfat";
 import { cn } from "natmfat/lib/cn";
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 export const Preview = ({
   children,
