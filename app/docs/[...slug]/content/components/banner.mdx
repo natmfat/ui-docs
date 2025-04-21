@@ -1,0 +1,106 @@
+---
+title: Banner
+description: A prominent visual element used to highlight specific information, offers, or calls to action.
+---
+
+import { Preview } from "../../components/Preview";
+import { Banner } from "natmfat";
+import { tokens } from "natmfat/lib/tokens";
+
+## Preview
+
+<Preview expand>
+  <Banner
+    backgroundImage=""
+    backgroundColor={tokens.blurpleDefault}
+    heading="100 Days of Python is here!"
+    subheading="Learn Python with our new course."
+    buttons={[{ text: "Open Course" }]}
+  />
+</Preview>
+
+## Usage
+
+```jsx
+import { Banner } from "natmfat/components/Banner";
+import { tokens } from "natmfat/lib/tokens";
+
+<Banner
+  backgroundImage=""
+  backgroundColor={tokens.blurpleDefault}
+  heading="100 Days of Python is here!"
+  subheading="Learn Python with our new course."
+  buttons={[{ text: "Open Course" }]}
+/>;
+```
+
+## Reference
+
+import { Reference, ReferenceItem } from "../../components/Reference";
+
+<Reference>
+  <ReferenceItem
+    prop="backgroundImage"
+    type="string"
+    description="URL for the background image"
+    defaultValue="false"
+  />
+  <ReferenceItem
+    prop="backgroundImage"
+    type="string"
+    description="URL for the background image"
+    defaultValue="false"
+  />
+  <ReferenceItem
+    prop="backgroundColor"
+    type="ColorStyles"
+    description="Solid color if background image doesn't load"
+  />
+  <ReferenceItem
+    prop="heading"
+    type="string"
+    description="Sets the header text of the banner"
+  />
+  <ReferenceItem
+    prop="subheading"
+    type="string"
+    description="Sets the body text of the banner"
+  />
+  <ReferenceItem
+    prop="maxTextWidth"
+    type="number"
+    description="Sets the max width of the header and body text to prevent overlap with banner art"
+  />
+  <ReferenceItem
+    prop="verticalAlign"
+    type='"start" | "end"'
+    description="Sets vertical alignment of text within banner"
+  />
+  <ReferenceItem
+    prop="buttons"
+    type="ButtonProps[]"
+    description="Pass an array of button props to render"
+    defaultValue="[]"
+  />
+  <ReferenceItem
+    prop="gradientStartColor"
+    type="string"
+    description="The color for the start of the gradient. Adjust this to get better legibility of the text over the image."
+  />
+  <ReferenceItem
+    prop="gradientEndColor"
+    type="string"
+    description="The color for the end of the gradient."
+  />
+  <ReferenceItem
+    prop="closable"
+    type="boolean"
+    description="If the banner is closable"
+    defaultValue="false"
+  />
+  <ReferenceItem
+    prop="onClose"
+    type="() => void"
+    description="Function to call when close icon is clicked"
+  />
+</Reference>

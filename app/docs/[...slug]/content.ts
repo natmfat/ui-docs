@@ -17,7 +17,7 @@ export const CONTENT = {
     "alert-dialog",
     "anchor",
     "avatar",
-    // "banner",
+    "banner",
     // "button",
     // "button-group",
     // "checkbox",

@@ -30,7 +30,7 @@ export function StepItem({
           </Surface>
           <Separator orientation="vertical" className="flex-1 h-full" />
         </View>
-        <View className="flex-1 w-full pb-4 group-last:pb-0">
+        <View className="flex-1 w-full pb-4 group-last:pb-0 gap-2">
           <Heading level={1} size="subheadBig">
             {title}
           </Heading>

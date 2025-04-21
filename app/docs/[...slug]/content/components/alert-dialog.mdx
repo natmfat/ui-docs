@@ -40,21 +40,33 @@ import {
 
 ## Usage
 
-````jsx
-  <AlertDialog>
-    <AlertDialogTrigger asChild>
-      <Button>Open AlertDialog</Button>
-    </AlertDialogTrigger>
-    <AlertDialogContent className="gap-3">
-      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-      <AlertDialogDescription multiline>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-      </AlertDialogDescription>
-      <View className="flex-row gap-2">
-        <AlertDialogCancel>Cancel</AlertDialogCancel>
-        <AlertDialogAction>Yes, delete account.</AlertDialogAction>
-      </View>
-    </AlertDialogContent>
-  </AlertDialog>
-````
+```jsx
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "natmfat/components/AlertDialog";
+import { Button } from "natmfat/components/Button";
+import { View } from "natmfat/components/View";
+
+<AlertDialog>
+  <AlertDialogTrigger asChild>
+    <Button>Open AlertDialog</Button>
+  </AlertDialogTrigger>
+  <AlertDialogContent className="gap-3">
+    <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+    <AlertDialogDescription multiline>
+      This action cannot be undone. This will permanently delete your account
+      and remove your data from our servers.
+    </AlertDialogDescription>
+    <View className="flex-row gap-2">
+      <AlertDialogCancel>Cancel</AlertDialogCancel>
+      <AlertDialogAction>Yes, delete account.</AlertDialogAction>
+    </View>
+  </AlertDialogContent>
+</AlertDialog>;
+```

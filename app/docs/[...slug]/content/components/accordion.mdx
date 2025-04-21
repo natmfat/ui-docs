@@ -38,9 +38,7 @@ import { Separator } from "natmfat/components/Separator";
     <Separator />
     <AccordionItem value="item-3">
       <AccordionTrigger>Is it animated?</AccordionTrigger>
-      <AccordionContent>
-        Yes. It's animated by default.
-      </AccordionContent>
+      <AccordionContent>Yes. It's animated by default.</AccordionContent>
     </AccordionItem>
   </Accordion>
 </Preview>
@@ -50,6 +48,14 @@ import { Separator } from "natmfat/components/Separator";
 Use the [Separator](/docs/components/separator) component to add lines between each accordion item.
 
 ```jsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "natmfat/components/Accordion";
+import { Separator } from "natmfat/components/Separator";
+
 <Accordion
   type="multiple"
   className="w-96 max-w-full"
@@ -69,5 +75,5 @@ Use the [Separator](/docs/components/separator) component to add lines between e
       aesthetic.
     </AccordionContent>
   </AccordionItem>
-</Accordion>
+</Accordion>;
 ```

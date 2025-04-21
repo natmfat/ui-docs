@@ -5,7 +5,8 @@
 @import "tailwindcss/utilities.css" layer(utilities);
 @config "natmfat/integrations/tailwind.config";
 
-html, body {
+html,
+body {
   overscroll-behavior: none;
 }
 
@@ -13,15 +14,19 @@ html, body {
   --background-dimmer: var(--interactive-border);
 }
 
-pre, code {
-  white-space: pre-wrap !important;      /* Wrap text while preserving whitespace */
-  word-break: break-all !important;      /* Break words at any character */
-  overflow-wrap: break-word !important;  /* Break long words if necessary */
+pre,
+code {
+  white-space: pre-wrap !important; /* Wrap text while preserving whitespace */
+  word-break: break-all !important; /* Break words at any character */
+  overflow-wrap: break-word !important; /* Break long words if necessary */
 }
 
 .bg-circle {
-  background-image:
-    radial-gradient(circle at bottom, var(--orange-dimmest), transparent);
+  background-image: radial-gradient(
+    circle at bottom,
+    var(--orange-dimmest),
+    transparent
+  );
 }
 
 .bg-grid {
@@ -38,8 +43,11 @@ pre, code {
   left: 0;
   opacity: 0.5;
   border-radius: var(--border-radius-default);
-  background-image:
-    radial-gradient(ellipse at top, var(--primary-default), transparent),
+  background-image: radial-gradient(
+      ellipse at top,
+      var(--primary-default),
+      transparent
+    ),
     radial-gradient(ellipse at bottom, var(--green-default), transparent);
 }
 
@@ -56,7 +64,10 @@ pre, code {
   background-position: -1px -1px;
   border-radius: var(--border-radius-default);
   background-size: var(--space-16) var(--space-16);
-  background-image:
-    linear-gradient(to right, var(--outline-dimmest) 1px, transparent 1px),
+  background-image: linear-gradient(
+      to right,
+      var(--outline-dimmest) 1px,
+      transparent 1px
+    ),
     linear-gradient(to bottom, var(--outline-dimmest) 1px, transparent 1px);
 }

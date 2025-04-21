@@ -1,6 +1,6 @@
 ---
 title: Anchor
-description: Displays a link.
+description: A standard HTML link for navigating to other URLs or site content.
 ---
 
 import { Preview } from "../../components/Preview";
@@ -9,14 +9,18 @@ import { tokens } from "natmfat/lib/tokens";
 
 ## Preview
 
-<Preview>
-  <View className="py-4 px-6">
-    <Text>
+<Preview expand>
+  <View className="py-4 px-6 border border-outline-dimmest border-dashed rounded-default">
+    <Text multiline>
       <>Built by</>{" "}
       <Anchor href="https://natmfat.com" external>
         <>natmfat</>
       </Anchor>
-      <>.</>
+      <>. The source code for documentation and examples is available on </>
+      <Anchor href="https://github.com/natmfat/ui-docs" external>
+        <>GitHub</>
+      </Anchor>
+      .
     </Text>
   </View>
 </Preview>
@@ -24,7 +28,27 @@ import { tokens } from "natmfat/lib/tokens";
 ## Usage
 
 ```jsx
+import { Anchor } from "natmfat/components/Anchor";
+
 <Anchor href="https://natmfat.com" external>
   natmfat
-</Anchor>
+</Anchor>;
 ```
+
+## Reference
+
+import { Reference, ReferenceItem } from "../../components/Reference";
+
+<Reference>
+  <ReferenceItem
+    prop="asChild"
+    type="boolean"
+    description="Change the default rendered element for the one passed as a child, merging their props and behavior."
+    defaultValue="false"
+  />
+  <ReferenceItem
+    prop="external"
+    type="boolean"
+    description="Indicates whether to open link in new tab."
+  />
+</Reference>

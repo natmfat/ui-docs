@@ -10,19 +10,21 @@ import { tokens } from "natmfat/lib/tokens";
 
 ## Preview
 
-<Preview>
-  <View className="flex-row gap-3 py-4 px-6">
+<Preview transparent>
+  <View className="flex-row gap-6 py-4 px-6">
     <Avatar
       username="natmfat"
       src="https://www.natmfat.com/logo.png"
-      size={tokens.space40}
+      size={tokens.space48}
+      className="shadow-1"
     />
     <Avatar
       username="natmfat"
       src="https://www.natmfat.com/api/logo?seed=10"
-      size={tokens.space40}
+      size={tokens.space48}
+      className="shadow-1"
     />
-    <Avatar username="natmfat" size={tokens.space40} />
+    <Avatar username="natmfat" size={tokens.space48} className="shadow-1" />
   </View>
 </Preview>
 
@@ -31,9 +33,11 @@ import { tokens } from "natmfat/lib/tokens";
 Avatar fallbacks are based on the username or full name. For many avatars, use the [StackedAvatars](/docs/components/stacked-avatars) component.
 
 ```jsx
+import { Avatar } from "natmfat/components/Avatar";
+
 <Avatar
   username="natmfat"
   src="https://www.natmfat.com/logo.png"
-  size={tokens.space40}
-/>
+  size={tokens.space48}
+/>;
 ```
