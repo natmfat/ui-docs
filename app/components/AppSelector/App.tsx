@@ -40,6 +40,7 @@ export const App = () => {
           <img
             className="h-[30rem] max-w-full aspect-video object-cover object-left-top"
             src={previewSrc}
+            alt=""
           />
         </View>
       </Surface>

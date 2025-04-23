@@ -1,6 +1,7 @@
 import path from "path";
 import { z } from "zod";
 import { type Toc } from "./components/TableOfContents";
+import { ElementType } from "react";
 
 const GETTING_STARTED = "Getting Started" as const;
 
@@ -53,9 +54,7 @@ export const CONTENT = {
     // "heading",
     // "text",
   ],
-  Magic: [
-    "logo"
-  ],
+  Magic: ["logo"],
 };
 
 // content utilities
@@ -93,8 +92,9 @@ const FRONTMATTER_SCHEMA = z.object({
 });
 
 export async function importContent(...slug: string[]): Promise<{
-  Post: React.ComponentType<{ children: React.ReactNode }>;
+  Post: ElementType;
   frontmatter: z.infer<typeof FRONTMATTER_SCHEMA>;
+  // @audit-ok Toc type matches the output by "rehype-extract-toc", probably no need to validate
   toc: Toc["children"];
 }> {
   const {
@@ -105,8 +105,7 @@ export async function importContent(...slug: string[]): Promise<{
   return {
     Post,
     frontmatter: FRONTMATTER_SCHEMA.parse(frontmatter),
-    // @audit-ok Toc type matches the output by "rehype-extract-toc", probably no need to validate
-    toc: toc as Toc["children"],
+    toc: toc,
   };
 }
 

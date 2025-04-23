@@ -15,9 +15,7 @@ import {
   Text,
   View,
   RiArrowRightIcon,
-  RiBlueskyIcon,
   RiCommandIcon,
-  RiExternalLinkIcon,
   RiGithubIcon,
   RiTwitterXIcon,
   RiCircleIcon,
@@ -47,14 +45,17 @@ const commands: Record<
     { icon: <RiArrowRightIcon />, name: "Themes", href: "/themes" },
     { icon: <RiArrowRightIcon />, name: "Magic", href: "/docs/magic" },
   ],
-  ...Object.entries(getLayout()).reduce((acc, [heading, subheadings]) => ({
-    ...acc,
-    [heading]: subheadings.map(({ title, href }) => ({
-      icon: <RiCircleIcon />,
-      name: title,
-      href,
-    })),
-  }), {}),
+  ...Object.entries(getLayout()).reduce(
+    (acc, [heading, subheadings]) => ({
+      ...acc,
+      [heading]: subheadings.map(({ title, href }) => ({
+        icon: <RiCircleIcon />,
+        name: title,
+        href,
+      })),
+    }),
+    {}
+  ),
   Socials: [
     {
       icon: <RiGithubIcon />,
@@ -131,7 +132,11 @@ export function Clui() {
                   <CommandItem
                     key={name}
                     onSelect={() => {
-                      isExternal(href) ? openNewTab(href) : router.push(href);
+                      if (isExternal(href)) {
+                        openNewTab(href);
+                      } else {
+                        router.push(href);
+                      }
                       setOpen(false);
                     }}
                   >

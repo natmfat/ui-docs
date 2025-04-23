@@ -1,4 +1,4 @@
-import { Heading, Interactive, Surface, Text, View } from "natmfat";
+import { Interactive, Surface, Text, View } from "natmfat";
 
 const BACKGROUNDS = ["root", "default", "higher", "highest"] as const;
 const INTERACTIVE_VARIANTS = [

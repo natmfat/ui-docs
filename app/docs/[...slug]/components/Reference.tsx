@@ -7,7 +7,6 @@ import {
   PopoverTrigger,
   RiIndeterminateCircleIcon,
   RiInformationIcon,
-  Text,
   View,
 } from "natmfat";
 import { tokens } from "natmfat/lib/tokens";

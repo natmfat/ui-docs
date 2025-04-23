@@ -85,6 +85,7 @@ export default async function Page({
       </>
     );
   } catch (e) {
+    console.error(e);
     return notFound();
   }
 }

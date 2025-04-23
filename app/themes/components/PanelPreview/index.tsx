@@ -8,7 +8,11 @@ import { Heading } from "natmfat/components/Heading";
 import { IconButton } from "natmfat/components/IconButton";
 import { Input } from "natmfat/components/Input";
 import { Pill } from "natmfat/components/Pill";
-import { Popover, PopoverContent, PopoverTrigger } from "natmfat/components/Popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "natmfat/components/Popover";
 import { SearchBar } from "natmfat/components/SearchBar";
 import { Separator } from "natmfat/components/Separator";
 import { StatusBanner } from "natmfat/components/StatusBanner";
@@ -146,7 +150,7 @@ export function PanelPreview() {
                 <Separator orientation="horizontal" className="my-3" />
 
                 <View className="items-center justify-center text-center my-3">
-                  <Text>You're all caught up!</Text>
+                  <Text>You&apos;re all caught up!</Text>
                 </View>
               </PopoverContent>
             </Popover>

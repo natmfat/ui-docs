@@ -5,7 +5,7 @@ import {
   SiVite,
 } from "@icons-pack/react-simple-icons";
 import { Heading, Interactive, View } from "natmfat";
-import { rawTokenSubset, tokens } from "natmfat/lib/tokens";
+import { rawTokenSubset } from "natmfat/lib/tokens";
 import Link from "next/link";
 import { cloneElement, ReactNode } from "react";
 
