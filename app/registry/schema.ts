@@ -47,8 +47,12 @@ export const registryComponentSchema = z
           .describe("The path to the file relative to the registry root.")
       )
       .describe(
-        "The main payload of the registry item. This is an array of files that are part of the registry item. Each file is an object with a path, content, type, and target."
+        "The main payload of the registry item. This is an array of files that are part of the registry item."
       )
+      .optional(),
+    target: z
+      .string()
+      .describe("The target directory or file of the registry item.")
       .optional(),
     meta: z
       .record(z.any())
