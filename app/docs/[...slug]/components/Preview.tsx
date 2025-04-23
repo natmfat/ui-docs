@@ -11,7 +11,7 @@ export const Preview = ({
   children: ReactNode;
   className?: string;
   /**
-   * Make surface transparent, use if you want to the element to stand on its own without a bg
+   * Make surface transparent, use if you want to the element to stand on its own without a shadow
    */
   transparent?: boolean;
   /**

@@ -23,7 +23,7 @@ export const CONTENT = {
     "banner",
     "button",
     "button-group",
-    // "checkbox",
+    "checkbox",
     // "colorway",
     // "command",
     // "dialog",
@@ -54,6 +54,7 @@ export const CONTENT = {
     // "heading",
     // "text",
   ],
+  // Composition
   Magic: ["logo"],
 };
 

@@ -41,7 +41,7 @@ code {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.5;
+  opacity: 0.4;
   border-radius: var(--border-radius-default);
   background-image: radial-gradient(
       ellipse at top,
@@ -59,7 +59,7 @@ code {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.3;
+  opacity: 0.25;
   z-index: -1;
   background-position: -1px -1px;
   border-radius: var(--border-radius-default);
