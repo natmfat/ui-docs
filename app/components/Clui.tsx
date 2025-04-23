@@ -45,7 +45,7 @@ const commands: Record<
       href: "/docs/components/accordion",
     },
     { icon: <RiArrowRightIcon />, name: "Themes", href: "/themes" },
-    { icon: <RiArrowRightIcon />, name: "Magic", href: "/magic" },
+    { icon: <RiArrowRightIcon />, name: "Magic", href: "/docs/magic" },
   ],
   ...Object.entries(getLayout()).reduce((acc, [heading, subheadings]) => ({
     ...acc,

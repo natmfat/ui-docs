@@ -1,7 +1,8 @@
 import path from "path";
+import { z } from "zod";
 import { type Toc } from "./components/TableOfContents";
 
-const GETTING_STARTED = "Getting Started";
+const GETTING_STARTED = "Getting Started" as const;
 
 export const CONTENT = {
   [GETTING_STARTED]: [
@@ -10,6 +11,7 @@ export const CONTENT = {
     "typography",
     "theming",
     "colors",
+    "magic",
   ],
   Installation: ["react-router", "next", "vite"],
   Components: [
@@ -19,7 +21,7 @@ export const CONTENT = {
     "avatar",
     "banner",
     "button",
-    // "button-group",
+    "button-group",
     // "checkbox",
     // "colorway",
     // "command",
@@ -50,8 +52,13 @@ export const CONTENT = {
     // "tooltip",
     // "heading",
     // "text",
-  ].sort(),
+  ],
+  Magic: [
+    "logo"
+  ],
 };
+
+// content utilities
 
 export const getSlugs = (): Array<{ slug: string[] }> => {
   return Object.entries(CONTENT)
@@ -79,7 +86,17 @@ function getSlug(heading: string, subheading: string) {
     .toLocaleLowerCase();
 }
 
-export async function importContent(...slug: string[]) {
+const FRONTMATTER_SCHEMA = z.object({
+  title: z.string(),
+  description: z.string(),
+  base: z.string().optional(),
+});
+
+export async function importContent(...slug: string[]): Promise<{
+  Post: React.ComponentType<{ children: React.ReactNode }>;
+  frontmatter: z.infer<typeof FRONTMATTER_SCHEMA>;
+  toc: Toc["children"];
+}> {
   const {
     default: Post,
     frontmatter,
@@ -87,11 +104,8 @@ export async function importContent(...slug: string[]) {
   } = await import(`./content/${slug.join("/")}.mdx`);
   return {
     Post,
-    frontmatter: frontmatter as {
-      title: string;
-      description: string;
-      base?: string;
-    },
+    frontmatter: FRONTMATTER_SCHEMA.parse(frontmatter),
+    // @audit-ok Toc type matches the output by "rehype-extract-toc", probably no need to validate
     toc: toc as Toc["children"],
   };
 }
@@ -126,7 +140,7 @@ export function getFooterButtons(slug: string[]): {
   left: FooterButton | null;
   right: FooterButton | null;
 } {
-  let heading = GETTING_STARTED;
+  let heading: string = GETTING_STARTED;
   let subheading = slug[0];
   if (slug.length === 2) {
     [heading, subheading] = slug;

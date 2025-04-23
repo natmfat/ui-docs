@@ -1,0 +1,87 @@
+---
+title: Button Group
+description: Displays a set of buttons - where no more than one of the buttons can be checked at a time.
+---
+
+import { Preview } from "../../components/Preview";
+import { ButtonGroup, ButtonGroupItem } from "natmfat";
+import { tokens } from "natmfat/lib/tokens";
+
+## Preview
+
+<Preview>
+  <ButtonGroup
+    style={{ width: tokens.space256 }}
+    orientation="horizontal"
+    defaultValue="unread"
+    color="primary"
+  >
+    <ButtonGroupItem value="unread">Unread</ButtonGroupItem>
+    <ButtonGroupItem value="all">All</ButtonGroupItem>
+  </ButtonGroup>
+</Preview>
+
+## Usage
+
+```jsx
+import { ButtonGroup, ButtonGroupItem } from "natmfat/components/ButtonGroup";
+import { tokens } from "natmfat/lib/tokens";
+
+<ButtonGroup
+  style={{ width: tokens.space256 }}
+  orientation="horizontal"
+  defaultValue="unread"
+  color="primary"
+>
+  <ButtonGroupItem value="unread">Unread</ButtonGroupItem>
+  <ButtonGroupItem value="all">All</ButtonGroupItem>
+</ButtonGroup>;
+```
+
+import { Reference, ReferenceItem } from "../../components/Reference";
+
+<Reference>
+  <ReferenceItem
+    prop="name"
+    type="string"
+    description="Button group name, use for form inputs"
+  />
+  <ReferenceItem
+    prop="value"
+    type="string"
+    description="Highlight this value"
+  />
+  <ReferenceItem
+    prop="defaultValue"
+    type="string"
+    description="Initial value to highlight in button group"
+  />
+  <ReferenceItem
+    prop="onChange"
+    type="(value: string) => void"
+    description="When a button within the button group is clicked"
+  />
+  <ReferenceItem
+    prop="orientation"
+    type='"horizontal" | "vertical"'
+    description="What kind of layout to use (defaults to horizontal)"
+    defaultValue='"horizontal"'
+  />
+  <ReferenceItem
+    prop="disabled"
+    type="boolean"
+    description="Make all buttons within the group disabled"
+  />
+  <ReferenceItem
+    prop="size"
+    type="ButtonProps['size']"
+    description="Size of the buttons"
+    defaultValue="tokens.space16"
+  />
+  <ReferenceItem
+    prop="color"
+    type="Color"
+    description="Use this color in all child styles that use the colorway utility"
+    defaultValue="primary"
+  />
+</Reference>

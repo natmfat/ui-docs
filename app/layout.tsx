@@ -65,7 +65,7 @@ export default async function RootLayout({
                   <Link href="/docs">Docs</Link>
                   <Link href="/docs/components/accordion">Components</Link>
                   <Link href="/themes">Themes</Link>
-                  <Link href="/magic">Magic</Link>
+                  <Link href="/docs/magic">Magic</Link>
                 </nav>
               </View>
               <View className="flex-row items-center gap-2">
