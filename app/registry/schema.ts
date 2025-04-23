@@ -1,16 +1,5 @@
 import { z } from "zod";
 
-const registryItem = z.enum([
-  "registry:lib",
-  "registry:component",
-  "registry:ui",
-  "registry:hook",
-  "registry:theme",
-  "registry:page",
-  "registry:file",
-  "registry:style",
-]);
-
 export const registryComponentSchema = z
   .object({
     name: z
@@ -18,9 +7,6 @@ export const registryComponentSchema = z
       .describe(
         "The name of the item. This is used to identify the item in the registry. It should be unique for your registry."
       ),
-    type: registryItem.describe(
-      "The type of the item. This is used to determine the type and target path of the item when resolved for a project."
-    ),
     description: z
       .string()
       .describe(
@@ -56,24 +42,9 @@ export const registryComponentSchema = z
       .optional(),
     files: z
       .array(
-        z.object({
-          path: z
-            .string()
-            .describe("The path to the file relative to the registry root.")
-            .optional(),
-          content: z.string().describe("The content of the file.").optional(),
-          type: registryItem
-            .describe(
-              "The type of the file. This is used to determine the type of the file when resolved for a project."
-            )
-            .optional(),
-          target: z
-            .string()
-            .describe(
-              "The target path of the file. This is the path to the file in the project."
-            )
-            .optional(),
-        })
+        z
+          .string()
+          .describe("The path to the file relative to the registry root.")
       )
       .describe(
         "The main payload of the registry item. This is an array of files that are part of the registry item. Each file is an object with a path, content, type, and target."

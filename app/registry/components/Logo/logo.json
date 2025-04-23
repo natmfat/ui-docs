@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.natmfat.com/registry/schema.json",
+  "name": "logo",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "registry/components/Logo/index.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "path": "registry/components/Logo/Canvas.ts",
+      "type": "registry:ui"
+    }
+  ]
+}
