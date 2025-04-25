@@ -26,7 +26,7 @@ export const CONTENT = {
     "checkbox",
     // "colorway",
     "command",
-    // "dialog",
+    "dialog",
     // "icon-button",
     // "inline-code",
     // "input",

@@ -26,7 +26,9 @@ import { tokens } from "natmfat/lib/tokens";
 ```jsx
 import { ButtonGroup, ButtonGroupItem } from "natmfat/components/ButtonGroup";
 import { tokens } from "natmfat/lib/tokens";
+```
 
+```jsx
 <ButtonGroup
   style={{ width: tokens.space256 }}
   orientation="horizontal"
@@ -35,7 +37,7 @@ import { tokens } from "natmfat/lib/tokens";
 >
   <ButtonGroupItem value="unread">Unread</ButtonGroupItem>
   <ButtonGroupItem value="all">All</ButtonGroupItem>
-</ButtonGroup>;
+</ButtonGroup>
 ```
 
 import { Reference, ReferenceItem } from "../../components/Reference";
@@ -82,6 +84,6 @@ import { Reference, ReferenceItem } from "../../components/Reference";
     prop="color"
     type="Color"
     description="Use this color in all child styles that use the colorway utility"
-    defaultValue="primary"
+    defaultValue='"primary"'
   />
 </Reference>

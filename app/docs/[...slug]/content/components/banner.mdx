@@ -24,14 +24,16 @@ import { tokens } from "natmfat/lib/tokens";
 ```jsx
 import { Banner } from "natmfat/components/Banner";
 import { tokens } from "natmfat/lib/tokens";
+```
 
+```jsx
 <Banner
   backgroundImage=""
   backgroundColor={tokens.blurpleDefault}
   heading="100 Days of Python is here!"
   subheading="Learn Python with our new course."
   buttons={[{ text: "Open Course" }]}
-/>;
+/>
 ```
 
 ## Reference
@@ -43,13 +45,6 @@ import { Reference, ReferenceItem } from "../../components/Reference";
     prop="backgroundImage"
     type="string"
     description="URL for the background image"
-    defaultValue="false"
-  />
-  <ReferenceItem
-    prop="backgroundImage"
-    type="string"
-    description="URL for the background image"
-    defaultValue="false"
   />
   <ReferenceItem
     prop="backgroundColor"
@@ -69,11 +64,13 @@ import { Reference, ReferenceItem } from "../../components/Reference";
   <ReferenceItem
     prop="maxTextWidth"
     type="number"
+    defaultValue="640"
     description="Sets the max width of the header and body text to prevent overlap with banner art"
   />
   <ReferenceItem
     prop="verticalAlign"
     type='"start" | "end"'
+    verticalAlign='"start"'
     description="Sets vertical alignment of text within banner"
   />
   <ReferenceItem
@@ -85,11 +82,13 @@ import { Reference, ReferenceItem } from "../../components/Reference";
   <ReferenceItem
     prop="gradientStartColor"
     type="string"
+    defaultValue='"rgba(15, 23, 38, .5)"'
     description="The color for the start of the gradient. Adjust this to get better legibility of the text over the image."
   />
   <ReferenceItem
     prop="gradientEndColor"
     type="string"
+    defaultValue='"rgba(15, 23, 38, 0)"'
     description="The color for the end of the gradient."
   />
   <ReferenceItem

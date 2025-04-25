@@ -1,0 +1,112 @@
+---
+title: Dialog
+description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+base: https://www.radix-ui.com/primitives/docs/components/dialog
+baseReference: https://www.radix-ui.com/primitives/docs/components/dialog#api-reference
+---
+
+import { Preview } from "../../components/Preview";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogTitle,
+  DialogDescription,
+  DialogContent,
+  DialogClose,
+  Button,
+  View,
+  Input,
+  Text,
+} from "natmfat";
+
+## Preview
+
+<Preview>
+  <Dialog>
+    <DialogTrigger asChild>
+      <Button>Edit Profile</Button>
+    </DialogTrigger>
+    <DialogContent>
+      <DialogTitle>Edit Profile</DialogTitle>
+      <DialogDescription>
+        Make changes to your profile here. Click save when you're done.
+      </DialogDescription>
+      <View className="gap-2 py-4">
+        <fieldset className="flex items-center gap-2">
+          <label className="text-right w-[90px]" htmlFor="name">
+            <Text>Name</Text>
+          </label>
+          <Input id="name" defaultValue="Nathan Pham" />
+        </fieldset>
+        <fieldset className="flex items-center gap-2">
+          <label className="text-right w-[90px]" htmlFor="username">
+            <Text>Username</Text>
+          </label>
+          <Input id="username" defaultValue="@natmfat" />
+        </fieldset>
+      </View>
+      <DialogClose asChild className="self-end">
+        <Button color="primary">Save changes</Button>
+      </DialogClose>
+    </DialogContent>
+  </Dialog>
+</Preview>
+
+## Usage
+
+```jsx
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "natmfat/components/Dialog";
+```
+
+```jsx
+<Dialog>
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Are you absolutely sure?</DialogTitle>
+      <DialogDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </DialogDescription>
+    </DialogHeader>
+  </DialogContent>
+</Dialog>
+```
+
+## Reference
+
+import { Reference, ReferenceItem } from "../../components/Reference";
+
+<Reference>
+  <ReferenceItem
+    prop="background"
+    type="Background"
+    defaultValue="root"
+    description="Optional background for surface. Defaults to root."
+  />
+  <ReferenceItem
+    prop="maxWidth"
+    type="512 | 872 | string"
+    defaultValue="512"
+    description="Maximum width of the dialog. Use 872 for bigger dialogs."
+  />
+  <ReferenceItem
+    prop="fitContent"
+    type="boolean"
+    defaultValue="false"
+    description="Dialog wrapper will shrink to hug the content's size."
+  />
+  <ReferenceItem
+    prop="centered"
+    type="boolean"
+    defaultValue="false"
+    description="Vertically center dialog (or not). You probably shouldn't if you suspect content will overflow"
+  />
+</Reference>
