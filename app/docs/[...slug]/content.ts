@@ -25,7 +25,7 @@ export const CONTENT = {
     "button-group",
     "checkbox",
     // "colorway",
-    // "command",
+    "command",
     // "dialog",
     // "icon-button",
     // "inline-code",
@@ -90,6 +90,7 @@ const FRONTMATTER_SCHEMA = z.object({
   title: z.string(),
   description: z.string(),
   base: z.string().optional(),
+  baseReference: z.string().optional(),
 });
 
 export async function importContent(...slug: string[]): Promise<{

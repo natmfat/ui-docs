@@ -1,0 +1,85 @@
+---
+title: Command
+description: Fast, composable, command menu for React.
+base: https://cmdk.paco.me/
+---
+
+import { Preview } from "../../components/Preview";
+import {
+  Command,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+} from "natmfat/components/Command";
+import { RiCalendarIcon } from "natmfat/icons/RiCalendarIcon";
+import { RiEmojiStickerIcon } from "natmfat/icons/RiEmojiStickerIcon";
+import { RiCalculatorIcon } from "natmfat/icons/RiCalculatorIcon";
+import { RiUserIcon } from "natmfat/icons/RiUserIcon";
+import { RiBankCardIcon } from "natmfat/icons/RiBankCardIcon";
+import { RiSettingsIcon } from "natmfat/icons/RiSettingsIcon";
+
+## Preview
+
+<Preview expand>
+  <Command className="w-full">
+    <CommandInput placeholder="Search & run commands" className="h-[26px]" />
+    <CommandList>
+      <CommandEmpty>No results found.</CommandEmpty>
+      <CommandGroup heading="Suggestions">
+        <CommandItem>
+          <RiCalendarIcon />
+          Calendar
+        </CommandItem>
+        <CommandItem>
+          <RiEmojiStickerIcon />
+          Search Emoji
+        </CommandItem>
+      </CommandGroup>
+      <CommandGroup heading="Settings">
+        <CommandItem>
+          <RiUserIcon />
+          Profile
+        </CommandItem>
+        <CommandItem>
+          <RiBankCardIcon />
+          Billing
+        </CommandItem>
+        <CommandItem>
+          <RiSettingsIcon />
+          Settings
+        </CommandItem>
+      </CommandGroup>
+    </CommandList>
+  </Command>
+</Preview>
+
+## Usage
+
+```jsx
+import {
+  Command,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+} from "natmfat/components/Command";
+
+<Command className="w-full">
+  <CommandInput placeholder="Search & run commands" />
+  <CommandList>
+    <CommandEmpty>No results found.</CommandEmpty>
+    <CommandGroup heading="Suggestions">
+      <CommandItem>Calendar</CommandItem>
+      <CommandItem>Search Emoji</CommandItem>
+    </CommandGroup>
+    <CommandGroup heading="Settings">
+      <CommandItem>Profile</CommandItem>
+      <CommandItem>Billing</CommandItem>
+      <CommandItem>Settings</CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>;
+```

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.natmfat.com/registry/schema.json",
   "name": "logo",
-  "type": "registry:ui",
   "files": [
     "registry/components/Logo/index.tsx",
     "registry/components/Logo/Canvas.ts"

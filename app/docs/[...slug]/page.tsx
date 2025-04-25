@@ -35,24 +35,28 @@ export default async function Page({
             >
               {frontmatter.description}
             </Heading>
-            {frontmatter.base ? (
+            {frontmatter.base || frontmatter.baseReference ? (
               <View className="py-2 flex-row items-center gap-2">
-                <Button asChild size={tokens.space12} className="w-fit">
-                  <a href={frontmatter.base} target="_blank" rel="noreferrer">
-                    Docs
-                    <RiExternalLinkIcon />
-                  </a>
-                </Button>
-                <Button asChild size={tokens.space12} className="w-fit">
-                  <a
-                    href={`${frontmatter.base}#api-reference`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    API Reference
-                    <RiExternalLinkIcon />
-                  </a>
-                </Button>
+                {frontmatter.base ? (
+                  <Button asChild size={tokens.space12} className="w-fit">
+                    <a href={frontmatter.base} target="_blank" rel="noreferrer">
+                      Docs
+                      <RiExternalLinkIcon />
+                    </a>
+                  </Button>
+                ) : null}
+                {frontmatter.baseReference ? (
+                  <Button asChild size={tokens.space12} className="w-fit">
+                    <a
+                      href={frontmatter.baseReference}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      API Reference
+                      <RiExternalLinkIcon />
+                    </a>
+                  </Button>
+                ) : null}
               </View>
             ) : null}
             <View className="flex-1 w-full [&>*:first-child]:mt-0 pt-6 gap-2">
