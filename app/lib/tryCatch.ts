@@ -14,3 +14,18 @@ export async function tryCatch<T, E = Error>(
     return [undefined, error as E] as const;
   }
 }
+
+export const isError = <T, E>(result: Result<T, E>): result is Failure<E> => {
+  return result[1] !== undefined;
+};
+
+export const isOk = <T, E>(result: Result<T, E>): result is Success<T> => {
+  return result[0] !== undefined;
+};
+
+export const unwrap = <T, E>(result: Result<T, E>): T => {
+  if (isError(result)) {
+    throw result[1];
+  }
+  return result[0];
+};
