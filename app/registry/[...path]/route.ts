@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import { access, constants, readFile } from "fs/promises";
+import fs from "fs/promises";
 import { join, extname } from "path";
 import mime from "mime-types";
 import { tryCatch } from "@/app/lib/tryCatch";
@@ -9,7 +9,7 @@ const BASE_PATH = join(process.cwd(), "/app/registry");
 
 export async function GET(
   _: NextRequest,
-  { params }: { params: { path: string[] } }
+  { params }: { params: Promise<{ path: string[] }> }
 ) {
   let [resolvedPath = "", error] = await tryCatch(
     resolvePath(BASE_PATH, (await params).path)
@@ -18,12 +18,12 @@ export async function GET(
     return Response.json({ message: "Unauthorized" }, { status: 403 });
   }
 
-  [, error] = await tryCatch(access(resolvedPath, constants.F_OK));
+  [, error] = await tryCatch(fs.access(resolvedPath, fs.constants.F_OK));
   if (error) {
     return Response.json({ message: "Not found" }, { status: 404 });
   }
 
-  return new Response(await readFile(resolvedPath, "utf-8"), {
+  return new Response(await fs.readFile(resolvedPath, "utf-8"), {
     headers: {
       "Content-Type": lookup(resolvedPath),
     },

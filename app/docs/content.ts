@@ -2,6 +2,7 @@ import path from "path";
 import { z } from "zod";
 import { type Toc } from "./components/TableOfContents";
 import { ElementType } from "react";
+import { resolvePath } from "../lib/resolvePath";
 
 const GETTING_STARTED = "Getting Started" as const;
 
@@ -86,28 +87,23 @@ function getSlug(heading: string, subheading: string) {
     .toLocaleLowerCase();
 }
 
-const FRONTMATTER_SCHEMA = z.object({
+const frontmatterSchema = z.object({
   title: z.string(),
   description: z.string(),
   base: z.string().optional(),
   baseReference: z.string().optional(),
 });
 
-export async function importContent(...slug: string[]): Promise<{
-  Post: ElementType;
-  frontmatter: z.infer<typeof FRONTMATTER_SCHEMA>;
-  // @audit-ok Toc type matches the output by "rehype-extract-toc", probably no need to validate
-  toc: Toc["children"];
-}> {
+export async function importContent(slug: string[]) {
   const {
     default: Post,
     frontmatter,
     toc,
   } = await import(`./content/${slug.join("/")}.mdx`);
   return {
-    Post,
-    frontmatter: FRONTMATTER_SCHEMA.parse(frontmatter),
-    toc: toc,
+    Post: Post as ElementType,
+    frontmatter: await frontmatterSchema.parseAsync(frontmatter),
+    toc: toc as Toc["children"],
   };
 }
 
