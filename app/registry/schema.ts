@@ -44,7 +44,7 @@ export const registryComponentSchema = z
       .array(
         z
           .string()
-          .describe("The path to the file relative to the registry root.")
+          .describe("The path to the file relative to the app directory.")
       )
       .describe(
         "The main payload of the registry item. This is an array of files that are part of the registry item."

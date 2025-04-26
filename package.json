@@ -16,7 +16,9 @@
     "@next/mdx": "^15.3.0",
     "@radix-ui/react-visually-hidden": "^1.2.0",
     "@stefanprobst/rehype-extract-toc": "^3.0.0",
+    "@types/mime-types": "^2.1.4",
     "immer": "^10.1.1",
+    "mime-types": "^3.0.1",
     "natmfat": "^0.0.36",
     "next": "15.3.0",
     "react": "^19.0.0",
@@ -30,6 +32,7 @@
     "remark": "^15.0.1",
     "remark-frontmatter": "^5.0.0",
     "remark-mdx-frontmatter": "^5.1.0",
+    "sanitize-filename": "^1.6.3",
     "zod": "^3.24.3",
     "zod-to-json-schema": "^3.24.5",
     "zustand": "^5.0.3"

@@ -12,6 +12,7 @@ export default function Layout({
     <Section grow>
       <View className="flex-row gap-6 flex-1 max-w-full h-full">
         <View className="shrink-0 w-52 gap-6">
+          {/* @todo sticky */}
           {Object.entries(getLayout()).map(([heading, items]) => {
             return (
               <View key={heading} className="gap-2">

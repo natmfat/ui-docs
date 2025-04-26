@@ -26,9 +26,15 @@ importers:
       '@stefanprobst/rehype-extract-toc':
         specifier: ^3.0.0
         version: 3.0.0
+      '@types/mime-types':
+        specifier: ^2.1.4
+        version: 2.1.4
       immer:
         specifier: ^10.1.1
         version: 10.1.1
+      mime-types:
+        specifier: ^3.0.1
+        version: 3.0.1
       natmfat:
         specifier: ^0.0.36
         version: 0.0.36(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -68,6 +74,9 @@ importers:
       remark-mdx-frontmatter:
         specifier: ^5.1.0
         version: 5.1.0
+      sanitize-filename:
+        specifier: ^1.6.3
+        version: 1.6.3
       zod:
         specifier: ^3.24.3
         version: 3.24.3
@@ -1228,6 +1237,9 @@ packages:
 
   '@types/mdx@2.0.13':
     resolution: {integrity: sha512-+OWZQfAYyio6YkJb3HLxDrvnx6SWWDbC0zVPfBRzUk0/nqoDyf6dNxQi3eArPe8rJ473nobTMQ/8Zk+LxJ+Yuw==}
+
+  '@types/mime-types@2.1.4':
+    resolution: {integrity: sha512-lfU4b34HOri+kAY5UheuFMWPDOI+OPceBSHZKp69gEyTL/mmJ4cnU6Y/rlme3UL3GyOn6Y42hyIEw0/q8sWx5w==}
 
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
@@ -2455,6 +2467,14 @@ packages:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
     engines: {node: '>=8.6'}
 
+  mime-db@1.54.0:
+    resolution: {integrity: sha512-aU5EJuIN2WDemCcAp2vFBfp/m4EAhWJnUNSSw0ixs7/kXbd6Pg64EmwJkNdFhB8aWt1sH2CTXrLxo/iAGV3oPQ==}
+    engines: {node: '>= 0.6'}
+
+  mime-types@3.0.1:
+    resolution: {integrity: sha512-xRc4oEhT6eaBpU1XF7AjpOFD+xQmXNB5OVKwp4tqCuBpHLS/ZbBDrc07mYTDqVMg6PfxUjjNp85O6Cd2Z/5HWA==}
+    engines: {node: '>= 0.6'}
+
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
 
@@ -2810,6 +2830,9 @@ packages:
     resolution: {integrity: sha512-x/+Cz4YrimQxQccJf5mKEbIa1NzeCRNI5Ecl/ekmlYaampdNLPalVyIcCZNNH3MvmqBugV5TMYZXv0ljslUlaw==}
     engines: {node: '>= 0.4'}
 
+  sanitize-filename@1.6.3:
+    resolution: {integrity: sha512-y/52Mcy7aw3gRm7IrcGDFx/bCk4AhRh2eI9luHOQM86nZsqwiRkkq2GekHXBBD+SmPidc8i2PqtYZl+pWJ8Oeg==}
+
   scheduler@0.26.0:
     resolution: {integrity: sha512-NlHwttCI/l5gCPR3D1nNXtWABUmBwvZpEQiD4IXSbIDq8BzLIK/7Ir5gTFSGZDUu37K5cMNp0hFtzO38sC7gWA==}
 
@@ -2993,6 +3016,9 @@ packages:
   trough@2.2.0:
     resolution: {integrity: sha512-tmMpK00BjZiUyVyvrBK7knerNgmgvcV/KLVyuma/SC+TQN167GrMRciANTz09+k3zW8L8t60jWO1GpfkZdjTaw==}
 
+  truncate-utf8-bytes@1.0.2:
+    resolution: {integrity: sha512-95Pu1QXQvruGEhv62XCMO3Mm90GscOCClvrIUwCM0PYOXK3kaF3l3sIHxx71ThJfcbM2O5Au6SO3AWCSEfW4mQ==}
+
   ts-api-utils@2.1.0:
     resolution: {integrity: sha512-CUgTZL1irw8u29bzrOD/nH85jqyc74D6SshFgujOIA7osm2Rz7dYH77agkx7H4FBNxDq7Cjf+IjaX/8zwFW+ZQ==}
     engines: {node: '>=18.12'}
@@ -3089,6 +3115,9 @@ packages:
     peerDependenciesMeta:
       '@types/react':
         optional: true
+
+  utf8-byte-length@1.0.5:
+    resolution: {integrity: sha512-Xn0w3MtiQ6zoz2vFyUVruaCL53O/DwUvkEeOvj+uulMm0BkUGYWmBYVyElqZaSLhY6ZD0ulfU3aBra2aVT4xfA==}
 
   vfile-message@4.0.2:
     resolution: {integrity: sha512-jRDZ1IMLttGj41KcZvlrYAaI3CfqpLpfpf+Mfig13viT6NKvRzWZ+lXz0Y5D60w6uJIBAOGq9mSHf0gktF0duw==}
@@ -4282,6 +4311,8 @@ snapshots:
       '@types/unist': 3.0.3
 
   '@types/mdx@2.0.13': {}
+
+  '@types/mime-types@2.1.4': {}
 
   '@types/ms@2.1.0': {}
 
@@ -5919,6 +5950,12 @@ snapshots:
       braces: 3.0.3
       picomatch: 2.3.1
 
+  mime-db@1.54.0: {}
+
+  mime-types@3.0.1:
+    dependencies:
+      mime-db: 1.54.0
+
   minimatch@3.1.2:
     dependencies:
       brace-expansion: 1.1.11
@@ -6432,6 +6469,10 @@ snapshots:
       es-errors: 1.3.0
       is-regex: 1.2.1
 
+  sanitize-filename@1.6.3:
+    dependencies:
+      truncate-utf8-bytes: 1.0.2
+
   scheduler@0.26.0: {}
 
   semver@6.3.1: {}
@@ -6661,6 +6702,10 @@ snapshots:
 
   trough@2.2.0: {}
 
+  truncate-utf8-bytes@1.0.2:
+    dependencies:
+      utf8-byte-length: 1.0.5
+
   ts-api-utils@2.1.0(typescript@5.8.3):
     dependencies:
       typescript: 5.8.3
@@ -6810,6 +6855,8 @@ snapshots:
       tslib: 2.8.1
     optionalDependencies:
       '@types/react': 19.1.2
+
+  utf8-byte-length@1.0.5: {}
 
   vfile-message@4.0.2:
     dependencies:
