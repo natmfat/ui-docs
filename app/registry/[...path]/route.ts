@@ -11,16 +11,13 @@ export async function GET(
   _: NextRequest,
   { params }: { params: Promise<{ path: string[] }> }
 ) {
-  const resolvedPathResult = await tryCatch(
-    resolvePath(BASE_PATH, (await params).path)
-  );
-  if (isError(resolvedPathResult)) {
+  const result = await tryCatch(resolvePath(BASE_PATH, (await params).path));
+  if (isError(result)) {
     return Response.json({ message: "Unauthorized" }, { status: 403 });
   }
 
-  const resolvedPath = unwrap(resolvedPathResult);
-  const fileExists = await tryCatch(fs.access(resolvedPath, fs.constants.F_OK));
-  if (isError(fileExists)) {
+  const resolvedPath = unwrap(result);
+  if (isError(await tryCatch(fs.access(resolvedPath, fs.constants.F_OK)))) {
     return Response.json({ message: "Not found" }, { status: 404 });
   }
 

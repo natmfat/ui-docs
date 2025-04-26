@@ -1,8 +1,7 @@
 import path from "path";
 import { z } from "zod";
-import { type Toc } from "./components/TableOfContents";
+import { type Toc } from "../components/TableOfContents";
 import { ElementType } from "react";
-import { resolvePath } from "../lib/resolvePath";
 
 const GETTING_STARTED = "Getting Started" as const;
 
@@ -99,7 +98,7 @@ export async function importContent(slug: string[]) {
     default: Post,
     frontmatter,
     toc,
-  } = await import(`./content/${slug.join("/")}.mdx`);
+  } = await import(`../content/${slug.join("/")}.mdx`);
   return {
     Post: Post as ElementType,
     frontmatter: await frontmatterSchema.parseAsync(frontmatter),

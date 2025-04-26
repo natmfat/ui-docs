@@ -1,5 +1,5 @@
 import { Heading, View } from "natmfat";
-import { getLayout } from "./content";
+import { getLayout } from "./[...slug]/content";
 import { ListItem } from "./components/ListItem";
 import { Section } from "../components/Section";
 

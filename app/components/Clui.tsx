@@ -24,7 +24,7 @@ import { tokens } from "natmfat/lib/tokens";
 import { useRouter } from "next/navigation";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
-import { getLayout } from "../docs/content";
+import { getLayout } from "../docs/[...slug]/content";
 
 const commands: Record<
   string,
