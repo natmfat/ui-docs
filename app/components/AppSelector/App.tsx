@@ -5,7 +5,7 @@ import { View } from "natmfat/components/View";
 import { App as AppProps } from "./apps";
 import { Button, RiLinkIcon } from "natmfat";
 import { tokens } from "natmfat/lib/tokens";
-import { CodeView } from "../../docs/[...slug]/components/CodeView";
+import { CodeView } from "../../docs/components/CodeView";
 import { IconSizeProvider } from "natmfat/icons/Icon";
 
 export function App({ icon, name, href, previewSrc }: AppProps) {

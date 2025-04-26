@@ -1,40 +1,33 @@
 import { NextRequest } from "next/server";
 import { access, constants, readFile } from "fs/promises";
-import { join, extname, normalize } from "path";
+import { join, extname } from "path";
 import mime from "mime-types";
-import sanitize from "sanitize-filename";
+import { tryCatch } from "@/app/lib/tryCatch";
+import { resolvePath } from "@/app/lib/resolvePath";
 
 const BASE_PATH = join(process.cwd(), "/app/registry");
 
 export async function GET(
-  request: NextRequest,
+  _: NextRequest,
   { params }: { params: { path: string[] } }
 ) {
-  const requestedPath = (await params).path.map((p) => sanitize(p)).join("/");
-  const resolvedPath = normalize(join(BASE_PATH, requestedPath));
-
-  if (!resolvedPath.startsWith(BASE_PATH)) {
+  let [resolvedPath = "", error] = await tryCatch(
+    resolvePath(BASE_PATH, (await params).path)
+  );
+  if (error) {
     return Response.json({ message: "Unauthorized" }, { status: 403 });
   }
 
-  if (await fileExists(resolvedPath)) {
-    return new Response(await readFile(resolvedPath, "utf-8"), {
-      headers: {
-        "Content-Type": lookup(resolvedPath),
-      },
-    });
+  [, error] = await tryCatch(access(resolvedPath, constants.F_OK));
+  if (error) {
+    return Response.json({ message: "Not found" }, { status: 404 });
   }
 
-  return Response.json({ message: "Not found" }, { status: 404 });
-}
-
-async function fileExists(filePath: string): Promise<boolean> {
-  try {
-    await access(filePath, constants.F_OK);
-    return true;
-  } catch (error) {
-    return false;
-  }
+  return new Response(await readFile(resolvedPath, "utf-8"), {
+    headers: {
+      "Content-Type": lookup(resolvedPath),
+    },
+  });
 }
 
 function lookup(filePath: string): string {

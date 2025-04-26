@@ -1,6 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import { Anchor, Heading, InlineCode, Separator, Text, View } from "natmfat";
-import { CodeView } from "./app/docs/[...slug]/components/CodeView";
+import { CodeView } from "./app/docs/components/CodeView";
 import Link from "next/link";
 import { cn } from "natmfat/lib/cn";
 

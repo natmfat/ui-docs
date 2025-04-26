@@ -1,0 +1,65 @@
+---
+title: IconButton
+description: A button that only contains an icon.
+---
+
+import { Preview } from "../../components/Preview";
+import { IconButton } from "natmfat";
+import { RiSunIcon } from "natmfat/icons/RiSunIcon";
+import { tokens } from "natmfat/lib/tokens";
+
+## Preview
+
+<Preview>
+  <IconButton alt="Sun" aria-label="Toggle theme" className="h-8 w-8">
+    <RiSunIcon />
+  </IconButton>
+</Preview>
+
+## Usage
+
+```jsx
+import { IconButton } from "natmfat/components/IconButton";
+import { RiSunIcon } from "natmfat/icons/RiSunIcon";
+```
+
+```jsx
+<IconButton alt="Sun" aria-label="Toggle theme">
+  <RiSunIcon />
+</IconButton>
+```
+
+## Reference
+
+import { Reference, ReferenceItem } from "../../components/Reference";
+
+<Reference>
+  <ReferenceItem
+    prop="size"
+    type="IconButtonSize"
+    description="what size should the IconButton be; 24(default), 28, 32, 36, 40"
+    defaultValue="tokens.space24"
+  />
+  <ReferenceItem
+    prop="alt"
+    type="string"
+    description="Explain what the button does; required for accessibility"
+    required
+  />
+  <ReferenceItem
+    prop="color"
+    type="Color"
+    description="Communicate purpose w/ color"
+  />
+  <ReferenceItem
+    prop="variant"
+    type='"fill" | "noFill" | "outline"'
+    description="Icon button variant"
+    defaultValue='"noFill"'
+  />
+  <ReferenceItem
+    prop="asChild"
+    type="boolean"
+    description="Render this component as its child instead"
+  />
+</Reference>

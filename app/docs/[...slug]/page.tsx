@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import { getFooterButtons, getSlugs, importContent } from "./content";
+import { getFooterButtons, getSlugs, importContent } from "../content";
 import React from "react";
-import { TableOfContents } from "./components/TableOfContents";
+import { TableOfContents } from "../components/TableOfContents";
 import {
   Button,
   Heading,
