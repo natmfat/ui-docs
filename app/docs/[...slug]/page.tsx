@@ -22,12 +22,12 @@ export default async function Page({
 }) {
   const { slug } = await params;
   const footer = getFooterButtons(slug);
-  const [data, error] = await tryCatch(importContent(slug));
-  if (error) {
-    console.error(error);
+  const result = await tryCatch(importContent(slug));
+  if (result.error) {
+    console.error(result);
     return notFound();
   }
-  const { Post, frontmatter, toc } = data;
+  const { Post, frontmatter, toc } = result.data;
 
   return (
     <>
