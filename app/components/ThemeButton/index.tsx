@@ -19,7 +19,7 @@ export function ThemeButton() {
     <View asChild>
       <IconButton
         alt="Toggle theme"
-        className="h-8 w-8 group"
+        className="group h-8 w-8"
         onClick={() => {
           const nextTheme = oppositeTheme(theme);
           setTheme(nextTheme);
@@ -29,7 +29,7 @@ export function ThemeButton() {
         {isLightTheme(theme) ? (
           <RiMoonIcon />
         ) : (
-          <RiSunIcon className="rotate-0 group-hover:rotate-180 transition-transform duration-chill" />
+          <RiSunIcon className="duration-chill rotate-0 transition-transform group-hover:rotate-180" />
         )}
       </IconButton>
     </View>

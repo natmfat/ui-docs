@@ -1,4 +1,4 @@
-import { Surface as SurfaceRoot, SurfaceProps, View } from "natmfat";
+import { SurfaceProps, Surface as SurfaceRoot, View } from "natmfat";
 import { cn } from "natmfat/lib/cn";
 
 export const Surface = ({ className, ...props }: SurfaceProps) => {

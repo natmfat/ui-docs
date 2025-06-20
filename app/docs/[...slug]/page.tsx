@@ -1,7 +1,4 @@
-import { notFound } from "next/navigation";
-import { getFooterButtons, getSlugs, importContent } from "./content";
-import React from "react";
-import { TableOfContents } from "../components/TableOfContents";
+import { tryCatch } from "@/app/lib/tryCatch";
 import {
   Button,
   Heading,
@@ -11,9 +8,11 @@ import {
   Text,
   View,
 } from "natmfat";
-import Link from "next/link";
 import { tokens } from "natmfat/lib/tokens";
-import { tryCatch } from "@/app/lib/tryCatch";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { TableOfContents } from "../components/TableOfContents";
+import { getFooterButtons, getSlugs, importContent } from "./content";
 
 export default async function Page({
   params,
@@ -31,7 +30,7 @@ export default async function Page({
 
   return (
     <>
-      <View className="flex-1 max-w-full">
+      <View className="max-w-full flex-1">
         <View className="w-full">
           <Heading level={1}>{frontmatter.title}</Heading>
           <Heading
@@ -42,7 +41,7 @@ export default async function Page({
             {frontmatter.description}
           </Heading>
           {frontmatter.base || frontmatter.baseReference ? (
-            <View className="py-2 flex-row items-center gap-2">
+            <View className="flex-row items-center gap-2 py-2">
               {frontmatter.base ? (
                 <Button asChild size={tokens.space12} className="w-fit">
                   <a href={frontmatter.base} target="_blank" rel="noreferrer">
@@ -65,7 +64,7 @@ export default async function Page({
               ) : null}
             </View>
           ) : null}
-          <View className="flex-1 w-full [&>*:first-child]:mt-0 pt-6 gap-2">
+          <View className="w-full flex-1 gap-2 pt-6 [&>*:first-child]:mt-0">
             <Post />
           </View>
         </View>

@@ -19,8 +19,8 @@ export function AppMarquee({
   return (
     <View
       className={cn(
-        "relative flex-row justify-center overflow-hidden max-w-full w-full h-8",
-        className
+        "relative h-8 w-full max-w-full flex-row justify-center overflow-hidden",
+        className,
       )}
     >
       <MarqueeGradient position="left" />
@@ -49,9 +49,9 @@ function MarqueeGradient({ position }: { position: "left" | "right" }) {
   return (
     <View
       className={cn(
-        "pointer-events-none absolute top-0 w-20 h-full from-background-root to-transparent z-10",
+        "from-background-root pointer-events-none absolute top-0 z-10 h-full w-20 to-transparent",
         position === "left" && "left-0 bg-gradient-to-r",
-        position === "right" && "right-0 bg-gradient-to-l"
+        position === "right" && "right-0 bg-gradient-to-l",
       )}
     />
   );

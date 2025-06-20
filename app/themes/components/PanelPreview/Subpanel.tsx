@@ -3,6 +3,6 @@ import { cn } from "natmfat/lib/cn";
 
 export function Subpanel({ className, ...props }: ViewProps) {
   return (
-    <View className={cn("gap-2 justify-around h-full", className)} {...props} />
+    <View className={cn("h-full justify-around gap-2", className)} {...props} />
   );
 }

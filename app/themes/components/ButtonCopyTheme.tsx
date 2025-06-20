@@ -30,10 +30,10 @@ export function ButtonCopyTheme() {
         <DialogTitle>Copy Theme</DialogTitle>
         <Surface
           elevated
-          className="rounded-default border border-[var(--interactive-border)] mt-2 relative"
+          className="rounded-default relative mt-2 border border-[var(--interactive-border)]"
         >
           <CopyIconButton text={textColorVars} />
-          <pre className="max-h-52 overflow-y-auto p-2 ">
+          <pre className="max-h-52 overflow-y-auto p-2">
             <code>{textColorVars}</code>
           </pre>
         </Surface>

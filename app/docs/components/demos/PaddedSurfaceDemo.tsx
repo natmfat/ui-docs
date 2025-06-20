@@ -42,13 +42,15 @@ export const PaddedSurfaceItem = ({
 }: SurfaceProps & { label: Background; children?: ReactNode }) => (
   <Surface
     className={cn(
-      "p-4 rounded-default gap-2 aspect-video",
-      label === "root" && "border border-outline-dimmest"
+      "rounded-default aspect-video gap-2 p-4",
+      label === "root" && "border-outline-dimmest border",
     )}
     background={label}
     {...props}
   >
-    <Text size="small" color="dimmer">{label}</Text>
+    <Text size="small" color="dimmer">
+      {label}
+    </Text>
     {children}
   </Surface>
 );

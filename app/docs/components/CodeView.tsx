@@ -1,11 +1,11 @@
 "use client";
 
+import { CopyIconButton } from "@/app/components/CopyButton";
 import { useThemeContext } from "natmfat";
 import { View } from "natmfat/components/View";
 import { cn } from "natmfat/lib/cn";
 import { ComponentProps, ReactNode, useMemo } from "react";
 import { CodeBlock, github, sunburst } from "react-code-blocks";
-import { CopyIconButton } from "@/app/components/CopyButton";
 
 type CodeBlockProps = ComponentProps<typeof CodeBlock>;
 
@@ -27,8 +27,8 @@ export function CodeView({
     <View
       className={cn(
         className,
-        "rounded-default overflow-hidden relative font-mono max-h-96 px-1",
-        isDark ? "bg-[#000]" : "bg-[#fff]"
+        "rounded-default relative max-h-96 overflow-hidden px-1 font-mono",
+        isDark ? "bg-[#000]" : "bg-[#fff]",
       )}
     >
       <CodeBlock

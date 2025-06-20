@@ -2,7 +2,7 @@ import { Text, View } from "natmfat";
 import { cn } from "natmfat/lib/cn";
 
 const ColorTile = ({ className }: { className?: string }) => (
-  <View className={cn("aspect-square shrink-0 grow-0 w-18", className)}></View>
+  <View className={cn("aspect-square w-18 shrink-0 grow-0", className)}></View>
 );
 
 export const ColorDemo = () => {

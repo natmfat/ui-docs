@@ -2,7 +2,11 @@
 
 import { Color, Colorway } from "natmfat/components/Colorway";
 import { Interactive } from "natmfat/components/Interactive";
-import { Popover, PopoverContent, PopoverTrigger } from "natmfat/components/Popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "natmfat/components/Popover";
 import { Text } from "natmfat/components/Text";
 import { useThemeContext } from "natmfat/components/ThemeProvider";
 import { View } from "natmfat/components/View";
@@ -48,21 +52,21 @@ export function ColorInput({
   }, [theme, cleared, tokenValue, setValue]);
 
   return (
-    <View className="text-center gap-1">
+    <View className="gap-1 text-center">
       <View className="relative">
         <Interactive>
           <HexColorInput
             prefixed
             color={value}
             onChange={setValue}
-            className="px-2 pl-7 py-1 placeholder:text-foreground-dimmest text-foreground-default focus:outline-none w-full"
+            className="placeholder:text-foreground-dimmest text-foreground-default w-full px-2 py-1 pl-7 focus:outline-none"
           />
         </Interactive>
 
         <Text
           size="small"
           color="dimmest"
-          className="absolute right-1.5 top-1/2 -translate-y-1/2 select-none pointer-events-none"
+          className="pointer-events-none absolute top-1/2 right-1.5 -translate-y-1/2 select-none"
         >
           {displayName}
         </Text>
@@ -71,7 +75,7 @@ export function ColorInput({
           <PopoverTrigger asChild>
             <Colorway color={baseColor as Color} variant="outlineStatic">
               <View
-                className="h-5 w-5 rounded-lg absolute left-1.5 top-1/2 -translate-y-1/2 cursor-pointer"
+                className="absolute top-1/2 left-1.5 h-5 w-5 -translate-y-1/2 cursor-pointer rounded-lg"
                 style={{
                   backgroundColor: value,
                 }}

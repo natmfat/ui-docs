@@ -1,6 +1,3 @@
-import type { Metadata } from "next";
-import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
-import "./globals.css";
 import {
   Anchor,
   IconButton,
@@ -9,12 +6,15 @@ import {
   ThemeProvider,
   View,
 } from "natmfat";
+import type { Metadata } from "next";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import Link from "next/link";
+import { Clui } from "./components/Clui";
+import { Logo } from "./components/Logo";
 import { Section } from "./components/Section";
 import { ThemeButton } from "./components/ThemeButton";
-import { Logo } from "./components/Logo";
-import { Clui } from "./components/Clui";
 import { getTheme } from "./components/ThemeButton/theme";
+import "./globals.css";
 
 const fontMono = IBM_Plex_Mono({
   weight: ["400"],
@@ -47,10 +47,10 @@ export default async function RootLayout({
         data-theme={theme}
       >
         <ThemeProvider value={theme}>
-          <header className="flex border-b border-outline-dimmest border-dashed fixed left-0 right-0 top-0 bg-surface z-50 w-full">
+          <header className="border-outline-dimmest bg-surface fixed top-0 right-0 left-0 z-50 flex w-full border-b border-dashed">
             <Section
               top
-              className="flex-row justify-between items-center px-6 py-4"
+              className="flex-row items-center justify-between px-6 py-4"
             >
               <View asChild>
                 <nav className="flex-row items-center gap-4">
@@ -71,7 +71,7 @@ export default async function RootLayout({
               <View className="flex-row items-center gap-2">
                 <Clui />
                 <View className="flex-row">
-                  <IconButton alt="GitHub" className="w-8 h-8" asChild>
+                  <IconButton alt="GitHub" className="h-8 w-8" asChild>
                     <a
                       href="https://github.com/natmfat/ui-docs"
                       target="_blank"
@@ -86,8 +86,8 @@ export default async function RootLayout({
             </Section>
           </header>
 
-          <View className="items-stretch min-h-screen">
-            <View className="pt-16 flex-1 h-full">{children}</View>
+          <View className="min-h-screen items-stretch">
+            <View className="h-full flex-1 pt-16">{children}</View>
 
             <Section>
               <footer>

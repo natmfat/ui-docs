@@ -9,7 +9,7 @@ export function PanelColor() {
     <View className="w-full">
       <View className="flex-row gap-2">
         <View className="w-fit min-w-52 flex-shrink-0">
-          <Surface elevated className="gap-2 p-2 rounded-default">
+          <Surface elevated className="rounded-default gap-2 p-2">
             <ColorAliasInput defaultValue="blue" colorAlias="primary" />
             <ColorAliasInput defaultValue="green" colorAlias="positive" />
             <ColorAliasInput defaultValue="red" colorAlias="negative" />

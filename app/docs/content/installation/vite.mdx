@@ -11,7 +11,6 @@ import { StatusBanner, RiInformationIcon } from "natmfat";
   text="The following guide is for Tailwind v4."
 />
 
-
 import { StepRoot, StepItem } from "../../components/Step";
 
 <StepRoot>
@@ -47,13 +46,14 @@ pnpm add natmfat
 @import "natmfat/styles/layers.css";
 @import "natmfat/styles/core.css";
 
-/* replace @import "tailwindcss" with the necessary parts: */
+/_ replace @import "tailwindcss" with the necessary parts: _/
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 
-/* legacy config; "important" isn't supported yet in v4 */
+/_ legacy config; "important" isn't supported yet in v4 _/
 @config "natmfat/integrations/tailwind.config.ts";
-```
+
+````
   </StepItem>
   <StepItem value={5} title="Setup Vite">
     natmfat imports CSS modules directly within components, so you may need to add this to your Vite config.
@@ -66,6 +66,7 @@ export default defineConfig({
       noExternal: ["natmfat"],
     },
 });
-```
+````
+
   </StepItem>
 </StepRoot>

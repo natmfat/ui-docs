@@ -1,7 +1,7 @@
 import { Pill } from "natmfat/components/Pill";
 
-import { App as AppPillProps } from "./apps";
 import { cn } from "natmfat/lib/cn";
+import { App as AppPillProps } from "./apps";
 
 export function AppPill({
   icon,
@@ -13,10 +13,10 @@ export function AppPill({
   return (
     <Pill
       className={cn(
-        "select-none mx-1 px-3 h-8 gap-1.5 items-center",
+        "mx-1 h-8 items-center gap-1.5 px-3 select-none",
         previewSrc
           ? "cursor-pointer"
-          : "pointer-events-none text-foreground-dimmer"
+          : "text-foreground-dimmer pointer-events-none",
       )}
       color={active ? "primary" : undefined}
       variant={previewSrc ? "fill" : "muteStatic"}

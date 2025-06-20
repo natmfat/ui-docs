@@ -2,14 +2,14 @@ import { Heading } from "natmfat/components/Heading";
 import { Text } from "natmfat/components/Text";
 import { View } from "natmfat/components/View";
 
+import { Pill } from "natmfat";
+import { Section } from "../components/Section";
 import { ButtonCopyTheme } from "./components/ButtonCopyTheme";
 import { ButtonImportTheme } from "./components/ButtonImportTheme";
 import { ButtonResetTheme } from "./components/ButtonResetTheme";
 import { PanelColor } from "./components/PanelColor";
 import { PanelPreview } from "./components/PanelPreview";
 import { ThemeSwitcher } from "./components/ThemeSwitcher";
-import { Pill } from "natmfat";
-import { Section } from "../components/Section";
 
 export default function ThemePage() {
   return (
@@ -25,7 +25,7 @@ export default function ThemePage() {
       </Section>
 
       <Section>
-        <View className="flex-row gap-2 justify-between">
+        <View className="flex-row justify-between gap-2">
           <View className="flex-row gap-2">
             <ButtonImportTheme />
             <ButtonCopyTheme />
@@ -35,7 +35,7 @@ export default function ThemePage() {
           <ThemeSwitcher />
         </View>
 
-        <View className="gap-2 mt-2">
+        <View className="mt-2 gap-2">
           <PanelColor />
           <PanelPreview />
         </View>

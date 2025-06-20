@@ -17,7 +17,7 @@ const frameworkToLogo = {
 } as const;
 
 export function FrameworkRoot({ children }: { children: ReactNode }) {
-  return <View className="grid grid-cols-2 gap-3 mt-2">{children}</View>;
+  return <View className="mt-2 grid grid-cols-2 gap-3">{children}</View>;
 }
 
 export function FrameworkItem({

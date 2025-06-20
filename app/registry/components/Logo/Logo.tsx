@@ -24,13 +24,13 @@ export const Logo = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-default select-none cursor-pointer w-8 h-8 aspect-square",
-        className
+        "rounded-default aspect-square h-8 w-8 cursor-pointer overflow-hidden select-none",
+        className,
       )}
       style={{ backgroundColor: "#710b2c" }}
     >
       <canvas
-        className="w-8 h-8 aspect-square disable-blur"
+        className="disable-blur aspect-square h-8 w-8"
         ref={canvasRef}
         onClick={() => canvas.current?.reset()}
       ></canvas>

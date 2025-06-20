@@ -11,14 +11,14 @@ import {
   CommandList,
   DialogTitle,
   Interactive,
-  Surface,
-  Text,
-  View,
   RiArrowRightIcon,
+  RiCircleIcon,
   RiCommandIcon,
   RiGithubIcon,
   RiTwitterXIcon,
-  RiCircleIcon,
+  Surface,
+  Text,
+  View,
 } from "natmfat";
 import { tokens } from "natmfat/lib/tokens";
 import { useRouter } from "next/navigation";
@@ -54,7 +54,7 @@ const commands: Record<
         href,
       })),
     }),
-    {}
+    {},
   ),
   Socials: [
     {
@@ -98,20 +98,20 @@ export function Clui() {
       e.preventDefault();
       setOpen(true);
     },
-    [open]
+    [open],
   );
 
   return (
     <>
       <Interactive>
         <View
-          className="h-8 select-none flex-row text-foreground-dimmest hover:text-foreground-dimmer items-center justify-between gap-2 w-64 max-w-full shrink-1 px-1"
+          className="text-foreground-dimmest hover:text-foreground-dimmer h-8 w-64 max-w-full shrink-1 flex-row items-center justify-between gap-2 px-1 select-none"
           onClick={() => setOpen(true)}
         >
           <Text className="pl-2">Search documentation...</Text>
           <Surface
             elevated
-            className="flex-row items-center gap-1 text-small border border-outline-dimmest rounded-lg px-0.5"
+            className="text-small border-outline-dimmest flex-row items-center gap-1 rounded-lg border px-0.5"
           >
             <RiCommandIcon size={tokens.space12} />K
           </Surface>

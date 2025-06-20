@@ -1,8 +1,8 @@
 import type { MDXComponents } from "mdx/types";
 import { Anchor, Heading, InlineCode, Separator, Text, View } from "natmfat";
-import { CodeView } from "./app/docs/components/CodeView";
-import Link from "next/link";
 import { cn } from "natmfat/lib/cn";
+import Link from "next/link";
+import { CodeView } from "./app/docs/components/CodeView";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -51,7 +51,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ul: (props) => <ul {...props} className="list-disc pl-6" />,
     ol: (props) => <ul {...props} className="list-decimal pl-6" />,
     li: (props) => (
-      <li {...props} className="[&>ul]:mt-0 [&>ol]:mt-0 align-middle" />
+      <li {...props} className="align-middle [&>ol]:mt-0 [&>ul]:mt-0" />
     ),
     a: ({ href, children, ...props }) =>
       href.startsWith("https") ? (
@@ -77,14 +77,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     },
     img: ({ alt, ...props }) => (
       <View className="flex-col items-center justify-center gap-2 text-center">
-        <View className="rounded-default border border-outline-dimmest bg-surface overflow-hidden">
+        <View className="rounded-default border-outline-dimmest bg-surface overflow-hidden border">
           <img
             {...props}
             alt={
               alt ||
               "This image does not have a description. Please @ me on my socials to fix this as soon as possible!"
             }
-            className="w-full height-auto"
+            className="height-auto w-full"
           />
         </View>
         {alt ? (

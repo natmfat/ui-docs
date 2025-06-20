@@ -14,14 +14,14 @@ import { ReactNode } from "react";
 
 export const Reference = ({ children }: { children: ReactNode }) => {
   return (
-    <table className="w-full text-left table table-fixed">
+    <table className="table w-full table-fixed text-left">
       <colgroup>
         <col className="w-3/12" />
         <col className="w-5/12" />
         <col className="w-4/12" />
       </colgroup>
 
-      <thead className="h-10 border-b border-b-outline-dimmest">
+      <thead className="border-b-outline-dimmest h-10 border-b">
         <tr>
           <th>
             <Heading level={2} size="subheadDefault">
@@ -62,7 +62,7 @@ export const ReferenceItem = ({
   defaultValue?: string;
 }) => {
   return (
-    <tr className="h-10 border-b border-b-outline-dimmest align-middle last:border-b-transparent">
+    <tr className="border-b-outline-dimmest h-10 border-b align-middle last:border-b-transparent">
       <td>
         <View className="flex-row gap-1">
           <InlineCode className="whitespace-nowrap">{prop}</InlineCode>
@@ -77,7 +77,7 @@ export const ReferenceItem = ({
         </View>
       </td>
       <td>
-        <View className="flex-row gap-1 flex-wrap">
+        <View className="flex-row flex-wrap gap-1">
           {type.includes("|") ? (
             type
               .split("|")

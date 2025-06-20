@@ -1,23 +1,23 @@
 "use client";
 
+import { Button, RiLinkIcon } from "natmfat";
 import { Surface } from "natmfat/components/Surface";
 import { View } from "natmfat/components/View";
-import { App as AppProps } from "./apps";
-import { Button, RiLinkIcon } from "natmfat";
+import { IconSizeProvider } from "natmfat/icons/Icon";
 import { tokens } from "natmfat/lib/tokens";
 import { CodeView } from "../../docs/components/CodeView";
-import { IconSizeProvider } from "natmfat/icons/Icon";
+import { App as AppProps } from "./apps";
 
 export function App({ icon, name, href, previewSrc }: AppProps) {
   return (
     <View>
       <Surface
-        className="rounded-t-default w-fit px-3 pt-2 flex-row items-center gap-3 text-subhead-default border-t border-x border-outline-dimmest z-10 translate-y-[1px]"
+        className="rounded-t-default text-subhead-default border-outline-dimmest z-10 w-fit translate-y-[1px] flex-row items-center gap-3 border-x border-t px-3 pt-2"
         elevated
       >
         <Surface
           elevated
-          className="rounded-default grid place-items-center h-8 w-8"
+          className="rounded-default grid h-8 w-8 place-items-center"
         >
           <IconSizeProvider value={tokens.space20}>{icon}</IconSizeProvider>
         </Surface>
@@ -25,9 +25,9 @@ export function App({ icon, name, href, previewSrc }: AppProps) {
       </Surface>
       <Surface
         elevated
-        className="p-3 rounded-b-default rounded-tr-default border border-outline-dimmest relative"
+        className="rounded-b-default rounded-tr-default border-outline-dimmest relative border p-3"
       >
-        <View className="shadow-2 absolute bottom-[2px] left-0 z-20 -translate-x-12 translate-y-12 rounded-default border border-outline-dimmest">
+        <View className="shadow-2 rounded-default border-outline-dimmest absolute bottom-[2px] left-0 z-20 -translate-x-12 translate-y-12 border">
           <CodeView language="jsx" disableCopy>{`
 import { Button } from "natmfat"
 
@@ -36,16 +36,16 @@ export const App = () => {
 }`}</CodeView>
         </View>
 
-        <View className="overflow-hidden relative rounded-default border border-outline-dimmest">
+        <View className="rounded-default border-outline-dimmest relative overflow-hidden border">
           <img
-            className="h-[30rem] max-w-full aspect-video object-cover object-left-top"
+            className="aspect-video h-[30rem] max-w-full object-cover object-left-top"
             src={previewSrc}
             alt=""
           />
         </View>
       </Surface>
 
-      <View className="pt-2 items-end">
+      <View className="items-end pt-2">
         <View className="mt-auto gap-2">
           <Surface className="rounded-default shadow-1 w-fit" elevated>
             <Button

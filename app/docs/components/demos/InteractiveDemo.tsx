@@ -14,7 +14,7 @@ export const InteractiveDemo = () => {
     <View className="grid grid-cols-4 gap-3 pt-4">
       {BACKGROUNDS.map((background) => (
         <Surface
-          className="border border-outline-dimmest p-2 rounded-default gap-2"
+          className="border-outline-dimmest rounded-default gap-2 border p-2"
           key={background}
           background={background}
         >

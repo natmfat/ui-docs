@@ -20,17 +20,17 @@ export function StepItem({
 }) {
   return (
     <View asChild>
-      <li className="flex-row gap-4 w-full group">
+      <li className="group w-full flex-row gap-4">
         <View className="items-center">
           <Surface
-            className="h-7 w-7 font-mono grid place-items-center rounded-full grow-0"
+            className="grid h-7 w-7 grow-0 place-items-center rounded-full font-mono"
             elevated
           >
             {value}
           </Surface>
-          <Separator orientation="vertical" className="flex-1 h-full" />
+          <Separator orientation="vertical" className="h-full flex-1" />
         </View>
-        <View className="flex-1 w-full pb-4 group-last:pb-0 gap-2">
+        <View className="w-full flex-1 gap-2 pb-4 group-last:pb-0">
           <Heading level={1} size="subheadBig">
             {title}
           </Heading>

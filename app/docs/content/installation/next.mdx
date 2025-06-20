@@ -31,15 +31,15 @@ pnpm add natmfat
 import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 
 const fontMono = IBM_Plex_Mono({
-    weight: ["400"],
-    subsets: ["latin"],
-    variable: "--font-family-code",
+weight: ["400"],
+subsets: ["latin"],
+variable: "--font-family-code",
 });
 
 const fontSans = IBM_Plex_Sans({
-    weight: ["400", "500", "600"],
-    subsets: ["latin"],
-    variable: "--font-family-default",
+weight: ["400", "500", "600"],
+subsets: ["latin"],
+variable: "--font-family-default",
 });
 
 export default function RootLayout() {
@@ -58,12 +58,14 @@ export default function RootLayout() {
 @import "natmfat/styles/layers.css";
 @import "natmfat/styles/core.css";
 
-/* replace @import "tailwindcss" with the necessary parts: */
+/_ replace @import "tailwindcss" with the necessary parts: _/
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 
-/* legacy config; "important" isn't supported yet in v4 */
+/_ legacy config; "important" isn't supported yet in v4 _/
 @config "natmfat/integrations/tailwind.config.ts";
+
 ```
   </StepItem>
 </StepRoot>
+```

@@ -51,9 +51,9 @@ export function PanelPreview() {
     <ThemeProvider
       data-theme="custom"
       style={colorVars as CSSProperties}
-      className="w-full p-2 rounded-default border border-[var(--interactive-border)]"
+      className="rounded-default w-full border border-[var(--interactive-border)] p-2"
     >
-      <View className="w-full flex-1 grid grid-cols-3 gap-2 items-stretch">
+      <View className="grid w-full flex-1 grid-cols-3 items-stretch gap-2">
         {/* Subsection 1 */}
         <Subpanel>
           <View className="flex-row gap-2">
@@ -87,7 +87,7 @@ export function PanelPreview() {
             </Pill>
           </View>
 
-          <View className="flex-row gap-2 items-center">
+          <View className="flex-row items-center gap-2">
             <IconButton
               alt="Star"
               color="primary"
@@ -128,7 +128,7 @@ export function PanelPreview() {
                 </IconButton>
               </PopoverTrigger>
               <PopoverContent>
-                <View className="flex-row gap-8 items-center">
+                <View className="flex-row items-center gap-8">
                   <Heading level={2}>Notifcations</Heading>
                   <Button
                     size={tokens.space12}
@@ -149,7 +149,7 @@ export function PanelPreview() {
 
                 <Separator orientation="horizontal" className="my-3" />
 
-                <View className="items-center justify-center text-center my-3">
+                <View className="my-3 items-center justify-center text-center">
                   <Text>You&apos;re all caught up!</Text>
                 </View>
               </PopoverContent>
@@ -160,7 +160,7 @@ export function PanelPreview() {
 
           <Surface
             elevated
-            className="border border-[var(--interactive-border)] rounded-default p-3 gap-2 flex-row items-center"
+            className="rounded-default flex-row items-center gap-2 border border-[var(--interactive-border)] p-3"
           >
             <Avatar
               src="https://natmfat.com/logo.png"
@@ -181,7 +181,7 @@ export function PanelPreview() {
         <Subpanel>
           <Surface
             elevated
-            className="gap-3 p-4 rounded-default border border-[var(--interactive-border)] h-full"
+            className="rounded-default h-full gap-3 border border-[var(--interactive-border)] p-4"
           >
             <Heading level={1} size="headerDefault">
               Sign up
@@ -251,7 +251,7 @@ export function PanelPreview() {
             </Text>
           </View>
 
-          <Surface elevated className="p-2 rounded-default gap-1">
+          <Surface elevated className="rounded-default gap-1 p-2">
             <EnhancedCheckbox>
               Response to comment <Anchor href="#">#384</Anchor> from Travis
             </EnhancedCheckbox>

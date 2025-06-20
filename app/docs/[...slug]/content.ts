@@ -1,7 +1,7 @@
 import path from "path";
+import { ElementType } from "react";
 import { z } from "zod";
 import { type Toc } from "../components/TableOfContents";
-import { ElementType } from "react";
 
 const GETTING_STARTED = "Getting Started" as const;
 
@@ -81,7 +81,7 @@ function getSlug(heading: string, subheading: string) {
       heading === GETTING_STARTED
         ? ""
         : heading.split(" ").join("-").toLocaleLowerCase(),
-      subheading
+      subheading,
     )
     .toLocaleLowerCase();
 }
@@ -147,7 +147,7 @@ export function getFooterButtons(slug: string[]): {
     const key = contentKeys[i];
     if (key.toLocaleLowerCase() === heading.toLocaleLowerCase()) {
       const subheadings = CONTENT[key as keyof typeof CONTENT].map((h) =>
-        h.toLocaleLowerCase()
+        h.toLocaleLowerCase(),
       );
       const j = subheadings.indexOf(subheading);
 

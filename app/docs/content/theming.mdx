@@ -29,10 +29,10 @@ Tokens use CSS variables as a source of truth exclusively, so code only needs to
 
 ```ts
 import { tokens } from "natmfat/lib/tokens";
-tokens.space8 // var(--space-8)
+tokens.space8; // var(--space-8)
 ```
 
-Generally, you should not directly interact with tokens to build user interfaces or even custom components. TailwindCSS utility classes and special compositional components like [Colorway](/docs/component/Colorway) can apply styles directly. 
+Generally, you should not directly interact with tokens to build user interfaces or even custom components. TailwindCSS utility classes and special compositional components like [Colorway](/docs/component/Colorway) can apply styles directly.
 
 There are several token categories:
 
@@ -41,12 +41,15 @@ There are several token categories:
 - Typography
 
 ### Color
+
 Each theme is assigned universal color variables, which are determined by common roles and usage. This allows for uniform color application across themes while maintaining full styling flexibility. For more information, see [color](/docs/color).
 
 ### Spacing
-Use the spacing scale when building individual components. It includes small increments needed to create appropriate spatial relationships for detail-level designs. Spacing is also used to force elements to have specific sizes, like icons. 
+
+Use the spacing scale when building individual components. It includes small increments needed to create appropriate spatial relationships for detail-level designs. Spacing is also used to force elements to have specific sizes, like icons.
 
 ### Typography
+
 Typography has two of type styles (regular and code) that can be customized through tokens. These tokens are used both within components and across layouts. For more information, see [typography](/docs/typography).
 
 ## Base Colors

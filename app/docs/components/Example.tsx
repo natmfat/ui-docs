@@ -1,9 +1,9 @@
 import {
-  View,
-  Surface,
   RiCheckboxCircleIcon,
   RiCloseCircleIcon,
+  Surface,
   Text,
+  View,
 } from "natmfat";
 import { cn } from "natmfat/lib/cn";
 import { tokens } from "natmfat/lib/tokens";
@@ -29,7 +29,7 @@ export function ExampleItem({
       <Surface
         className={cn(
           className,
-          "aspect-video grid place-items-center relative text-header-default [&_*]:text-header-default p-8 rounded-default"
+          "text-header-default [&_*]:text-header-default rounded-default relative grid aspect-video place-items-center p-8",
         )}
         elevated
       >
@@ -48,7 +48,11 @@ export function ExampleItem({
         </View>
         {children}
       </Surface>
-      {description ? <Text color="dimmer" maxLines={2}>{description}</Text> : null}
+      {description ? (
+        <Text color="dimmer" maxLines={2}>
+          {description}
+        </Text>
+      ) : null}
     </View>
   );
 }

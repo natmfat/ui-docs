@@ -43,11 +43,8 @@ code {
   left: 0;
   opacity: 0.4;
   border-radius: var(--border-radius-default);
-  background-image: radial-gradient(
-      ellipse at top,
-      var(--primary-default),
-      transparent
-    ),
+  background-image:
+    radial-gradient(ellipse at top, var(--primary-default), transparent),
     radial-gradient(ellipse at bottom, var(--green-default), transparent);
 }
 
@@ -64,10 +61,7 @@ code {
   background-position: -1px -1px;
   border-radius: var(--border-radius-default);
   background-size: var(--space-16) var(--space-16);
-  background-image: linear-gradient(
-      to right,
-      var(--outline-dimmest) 1px,
-      transparent 1px
-    ),
+  background-image:
+    linear-gradient(to right, var(--outline-dimmest) 1px, transparent 1px),
     linear-gradient(to bottom, var(--outline-dimmest) 1px, transparent 1px);
 }

@@ -31,14 +31,14 @@ export function ButtonImportTheme() {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder={`[data-theme="custom"] {\n\n}`}
-          className="mt-2 font-mono min-h-52"
+          className="mt-2 min-h-52 font-mono"
         />
         <Button
           onClick={() => {
             setValue("");
             insertColorVars(cssToColorVars(value));
           }}
-          className="self-end mt-2"
+          className="mt-2 self-end"
         >
           <RiSparklingIcon />
           Import Theme

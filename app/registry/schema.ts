@@ -5,18 +5,18 @@ export const registryComponentSchema = z
     name: z
       .string()
       .describe(
-        "The name of the item. This is used to identify the item in the registry. It should be unique for your registry."
+        "The name of the item. This is used to identify the item in the registry. It should be unique for your registry.",
       ),
     description: z
       .string()
       .describe(
-        "The description of the item. This is used to provide a brief overview of the item."
+        "The description of the item. This is used to provide a brief overview of the item.",
       )
       .optional(),
     title: z
       .string()
       .describe(
-        "The human-readable title for your registry item. Keep it short and descriptive."
+        "The human-readable title for your registry item. Keep it short and descriptive.",
       )
       .optional(),
     author: z
@@ -31,23 +31,23 @@ export const registryComponentSchema = z
     devDependencies: z
       .array(z.string())
       .describe(
-        "An array of NPM dev dependencies required by the registry item."
+        "An array of NPM dev dependencies required by the registry item.",
       )
       .optional(),
     registryDependencies: z
       .array(z.string())
       .describe(
-        "An array of registry items that this item depends on. Use the name of the item to reference shadcn/ui components and urls to reference other registries."
+        "An array of registry items that this item depends on. Use the name of the item to reference shadcn/ui components and urls to reference other registries.",
       )
       .optional(),
     files: z
       .array(
         z
           .string()
-          .describe("The path to the file relative to the app directory.")
+          .describe("The path to the file relative to the app directory."),
       )
       .describe(
-        "The main payload of the registry item. This is an array of files that are part of the registry item."
+        "The main payload of the registry item. This is an array of files that are part of the registry item.",
       )
       .optional(),
     target: z
@@ -57,7 +57,7 @@ export const registryComponentSchema = z
     meta: z
       .record(z.any())
       .describe(
-        "Additional metadata for the registry item. This is an object with any key value pairs."
+        "Additional metadata for the registry item. This is an object with any key value pairs.",
       )
       .optional(),
   })

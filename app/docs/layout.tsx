@@ -1,7 +1,7 @@
 import { Heading, View } from "natmfat";
+import { Section } from "../components/Section";
 import { getLayout } from "./[...slug]/content";
 import { ListItem } from "./components/ListItem";
-import { Section } from "../components/Section";
 
 export default function Layout({
   children,
@@ -10,8 +10,8 @@ export default function Layout({
 }>) {
   return (
     <Section grow>
-      <View className="flex-row gap-6 flex-1 max-w-full h-full">
-        <View className="shrink-0 w-52 gap-6">
+      <View className="h-full max-w-full flex-1 flex-row gap-6">
+        <View className="w-52 shrink-0 gap-6">
           {/* @todo sticky */}
           {Object.entries(getLayout()).map(([heading, items]) => {
             return (

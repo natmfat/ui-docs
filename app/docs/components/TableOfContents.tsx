@@ -1,4 +1,4 @@
-import { View, Text } from "natmfat";
+import { Text, View } from "natmfat";
 
 export type Toc = {
   depth: number;
@@ -22,7 +22,10 @@ export function TableOfContents({
             <View key={value} asChild>
               <li>
                 <Text asChild>
-                  <a href={`#${id}`} className="w-fit py-0.5 text-foreground-dimmer hover:text-foreground-default transition-colors ease-snappy duration-snappy">
+                  <a
+                    href={`#${id}`}
+                    className="text-foreground-dimmer hover:text-foreground-default ease-snappy duration-snappy w-fit py-0.5 transition-colors"
+                  >
                     {value}
                   </a>
                 </Text>

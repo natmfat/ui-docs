@@ -1,6 +1,6 @@
 import { Surface, View } from "natmfat";
 import { cn } from "natmfat/lib/cn";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 export const Preview = ({
   children,
@@ -21,13 +21,13 @@ export const Preview = ({
 }) => {
   return (
     <View className={className}>
-      <View className="aspect-video w-full border border-outline-dimmest rounded-default p-8 grid place-items-center bg-grid">
+      <View className="border-outline-dimmest rounded-default bg-grid grid aspect-video w-full place-items-center border p-8">
         <Surface
           background="root"
           className={cn(
             "rounded-default shadow-1",
-            transparent && "shadow-none bg-transparent",
-            expand && "w-full"
+            transparent && "bg-transparent shadow-none",
+            expand && "w-full",
           )}
         >
           {children}
