@@ -43,7 +43,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fontSans.className} ${fontMono.className} antialiased`}
+        className={`${fontSans.variable} ${fontMono.variable} antialiased`}
         data-theme={theme}
       >
         <ThemeProvider value={theme}>

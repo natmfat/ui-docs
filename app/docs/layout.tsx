@@ -11,7 +11,7 @@ export default function Layout({
   return (
     <Section grow>
       <View className="h-full max-w-full flex-1 flex-row gap-6">
-        <View className="w-52 shrink-0 gap-6">
+        <View className="max-h-[calc(100vh-8rem)] w-52 shrink-0 gap-6 overflow-y-scroll">
           {/* @todo sticky */}
           {Object.entries(getLayout()).map(([heading, items]) => {
             return (

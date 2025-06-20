@@ -1,13 +1,23 @@
-@import "natmfat/styles/layers.css";
-@import "natmfat/styles/core.css";
-
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/utilities.css" layer(utilities);
+@import "tailwindcss";
 @config "natmfat/integrations/tailwind.config";
+
+@import "natmfat/styles/core.css";
+@import "natmfat/styles/layers.css";
 
 html,
 body {
   overscroll-behavior: none;
+}
+
+/* https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll */
+/* Hide scrollbars */
+* {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Older Safari and Chromium */
 }
 
 [data-theme] {

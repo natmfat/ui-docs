@@ -3,14 +3,37 @@ title: Logo
 description: A randomized logo component with a customizable default for your app
 ---
 
-@todo
-
-## Installation
-
-```bash
-pnpm dlx natmfat add logo
-```
-
 ## Preview
 
+import { Preview } from "../../components/Preview";
+import { Logo } from "@natmfat/magic";
+import { View, Text } from "natmfat";
+
+<Preview transparent>
+  <View className="flex-row items-center gap-2">
+    <Logo />
+    <Text className="text-subhead-default font-bold">natmfat/ui</Text>
+  </View>
+</Preview>
+
 ## Usage
+
+```jsx
+import { Logo } from "@natmfat/magic";
+```
+
+```jsx
+<Logo />
+```
+
+## Reference
+
+import { Reference, ReferenceItem } from "../../components/Reference";
+
+<Reference>
+  <ReferenceItem
+    prop="defaultGrid"
+    type="Grid"
+    description="10x10 grid to use for logo. Defaults to natmfat butterfly."
+  />
+</Reference>

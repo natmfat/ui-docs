@@ -45,7 +45,7 @@ variable: "--font-family-default",
 export default function RootLayout() {
     return (
       <body
-        className={\`\${fontSans.className} \${fontMono.className} antialiased\`}
+        className={`${fontSans.variable} ${fontMono.variable} antialiased`}
         data-theme="dark"
       ></body>
     )
@@ -55,17 +55,10 @@ export default function RootLayout() {
   <StepItem value={4} title="Setup TailwindCSS">
     I highly recommend using TailwindCSS to create layouts and apply basic styles to components. After installing TailwindCSS, you must overwrite the `globals.css` file with our own custom styles. natmfat already ships with a version of [preflight](https://tailwindcss.com/docs/preflight), so re-including it is unnecessary and may create visual inconsistencies. Our recommended TailwindCSS config gives you access to natmfat colors and applies TailwindCSS classes with maximum precedence.
 ```css
-@import "natmfat/styles/layers.css";
+@import "tailwindcss";
+@import "natmfat/styles/reset.css"; /* Do not include if using Tailwind */
 @import "natmfat/styles/core.css";
-
-/_ replace @import "tailwindcss" with the necessary parts: _/
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/utilities.css" layer(utilities);
-
-/_ legacy config; "important" isn't supported yet in v4 _/
-@config "natmfat/integrations/tailwind.config.ts";
-
+@config "natmfat/integrations/tailwind.config";
 ```
   </StepItem>
 </StepRoot>
-```
